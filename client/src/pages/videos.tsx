@@ -14,12 +14,20 @@ const categories = ["All", "Music Videos", "Live Performances", "Shorts", "Inter
 // Video data from Sean Austin's YouTube channel
 const videos = [
   {
+    id: "swz5sJINEn0",
+    title: "New Release",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2026",
+    featured: true,
+  },
+  {
     id: "ViNfJ5HTJfM",
     title: "Confessions",
     subtitle: "Official Music Video",
     category: "Music Videos",
     date: "2023",
-    featured: true,
+    featured: false,
   },
   {
     id: "fjte4utXa-w",
@@ -312,6 +320,35 @@ export default function VideosPage() {
             </a>
           </div>
         </div>
+
+        {/* Featured Video Section */}
+        {featuredVideo && (
+          <div className="max-w-7xl mx-auto px-6 pt-12 pb-0">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded uppercase tracking-wider">
+                New Release
+              </span>
+              <h2 className="font-display text-2xl font-bold text-white">{featuredVideo.title}</h2>
+              <span className="text-muted-foreground text-sm">{featuredVideo.subtitle}</span>
+            </div>
+            <div
+              className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 cursor-pointer border border-primary/30 group"
+              onClick={() => setSelectedVideo(featuredVideo)}
+            >
+              <img
+                src={`https://img.youtube.com/vi/${featuredVideo.id}/maxresdefault.jpg`}
+                alt={featuredVideo.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
+                  <Play className="w-9 h-9 text-white ml-1" fill="white" />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Main Content */}
         <div className="max-w-7xl mx-auto px-6 py-12">
