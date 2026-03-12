@@ -14,12 +14,20 @@ const categories = ["All", "Music Videos", "Live Performances", "Shorts", "Inter
 // Video data from Sean Austin's YouTube channel
 const videos = [
   {
+    id: "swz5sJINEn0",
+    title: "New Release",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2026",
+    featured: true,
+  },
+  {
     id: "ViNfJ5HTJfM",
     title: "Confessions",
     subtitle: "Official Music Video",
     category: "Music Videos",
     date: "2023",
-    featured: true,
+    featured: false,
   },
   {
     id: "fjte4utXa-w",
