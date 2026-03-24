@@ -8,35 +8,23 @@ export default function FeaturedRelease() {
       <div className="max-w-3xl mx-auto">
         <p className="text-sm uppercase tracking-wider text-muted-foreground mb-2">New Release</p>
         <h2 className="font-display text-3xl font-bold text-primary" data-testid="text-featured-release-title">
-          After Midnight EP
+          Ready Mi Ready
         </h2>
         <p className="mt-4 text-muted-foreground">
           Experience soulful reggae storytelling with a modern edge. Stream now on all platforms.
         </p>
 
-        {/* Apple Music Album Link with Cover Art */}
-        <div className="mt-8">
-          <a
-            href="https://music.apple.com/us/album/after-midnight-feat-friends-ep/1876787290"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block group"
-          >
-            <div className="relative mx-auto w-64 h-64 rounded-lg overflow-hidden shadow-lg group-hover:scale-105 transition-transform">
-              <img
-                src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/67/3c/e5/673ce540-b3a4-331f-7b7b-0e3beb5f88a0/artwork.jpg/600x600bb.jpg"
-                alt="After Midnight EP Cover"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <SiApplemusic className="w-12 h-12 text-white" />
-              </div>
-            </div>
-            <p className="mt-3 text-sm text-muted-foreground flex items-center justify-center gap-2 group-hover:text-primary transition-colors">
-              <SiApplemusic className="w-4 h-4" />
-              Listen on Apple Music
-            </p>
-          </a>
+        {/* Apple Music Embed */}
+        <div className="mt-8 flex justify-center">
+          <iframe
+            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+            frameBorder="0"
+            height="175"
+            style={{ width: "100%", maxWidth: "660px", overflow: "hidden", borderRadius: "10px" }}
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+            src="https://embed.music.apple.com/us/song/ready-mi-ready/1883816379"
+            title="Ready Mi Ready on Apple Music"
+          />
         </div>
 
         <div className="mt-8">
