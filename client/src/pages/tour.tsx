@@ -6,6 +6,13 @@ import { Calendar, MapPin } from "lucide-react";
 // Hardcoded tour dates - all sold out
 const tourDates = [
   {
+    id: "6",
+    date: "Apr 11, 2026",
+    venue: "The House of Blues Foundation Room",
+    city: "Houston",
+    country: "TX",
+  },
+  {
     id: "4",
     date: "May 2, 2026",
     venue: "Rototom Sunsplash",
