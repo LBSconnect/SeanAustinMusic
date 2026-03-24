@@ -6,6 +6,14 @@ import { Music, ExternalLink } from "lucide-react";
 // Album releases with artwork (using Spotify cover art URLs)
 const releases = [
   {
+    id: "ready-mi-ready",
+    title: "Ready Mi Ready (feat. Troyton)",
+    url: "https://open.spotify.com/track/1ZU4hR5PFxKqWGstKd15ho",
+    cover: "https://i.scdn.co/image/ab67616d0000b273057cb603c53ad9f6b8db58e0",
+    year: "2026",
+    type: "Single",
+  },
+  {
     id: "afronomixx",
     title: "AFRONOMIXX",
     url: "https://open.spotify.com/album/7jvc3J4O8FBlokmrWXGwdg",
@@ -82,7 +90,7 @@ export default function MusicPage() {
           </div>
 
           {/* Releases Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
             {releases.map((release) => (
               <a
                 key={release.id}
@@ -99,14 +107,14 @@ export default function MusicPage() {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-display text-lg font-semibold text-primary">
+                  <CardContent className="p-3">
+                    <h3 className="font-display text-sm font-semibold text-primary">
                       {release.title}
                     </h3>
                     <p className="text-xs text-muted-foreground mt-1">
                       {release.year} • {release.type}
                     </p>
-                    <p className="text-sm text-muted-foreground mt-2 flex items-center gap-1">
+                    <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
                       <ExternalLink className="w-3 h-3" />
                       Stream Now
                     </p>
