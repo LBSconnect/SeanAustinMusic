@@ -38,14 +38,6 @@ const releases = [
     type: "Album",
   },
   {
-    id: "same-girl",
-    title: "The Same Girl (feat. Lion Heights)",
-    url: "https://open.spotify.com/album/48ZbMV1G84CD1JcONeP2mG",
-    cover: "https://i.scdn.co/image/ab67616d0000b273db09f1fd7f05a8f6d7ea17a4",
-    year: "2021",
-    type: "Single",
-  },
-  {
     id: "confessions",
     title: "Confessions",
     url: "https://open.spotify.com/album/5dFZAtVtZHrU0f3qFGgXsE",
