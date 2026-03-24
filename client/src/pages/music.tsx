@@ -6,6 +6,14 @@ import { Music, ExternalLink } from "lucide-react";
 // Album releases with artwork (using Spotify cover art URLs)
 const releases = [
   {
+    id: "ready-mi-ready",
+    title: "Ready Mi Ready (feat. Troyton)",
+    url: "https://open.spotify.com/track/1ZU4hR5PFxKqWGstKd15ho",
+    cover: "https://i.scdn.co/image/ab67616d0000b273057cb603c53ad9f6b8db58e0",
+    year: "2026",
+    type: "Single",
+  },
+  {
     id: "afronomixx",
     title: "AFRONOMIXX",
     url: "https://open.spotify.com/album/7jvc3J4O8FBlokmrWXGwdg",
