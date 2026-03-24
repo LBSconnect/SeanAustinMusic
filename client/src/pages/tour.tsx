@@ -6,25 +6,11 @@ import { Calendar, MapPin } from "lucide-react";
 // Hardcoded tour dates - all sold out
 const tourDates = [
   {
-    id: "1",
-    date: "Mar 15, 2026",
-    venue: "The O2 Academy Brixton",
-    city: "London",
-    country: "United Kingdom",
-  },
-  {
-    id: "2",
-    date: "Apr 5, 2026",
-    venue: "Brooklyn Steel",
-    city: "New York",
-    country: "United States",
-  },
-  {
-    id: "3",
-    date: "Apr 18, 2026",
-    venue: "Afro Nation Festival",
-    city: "Accra",
-    country: "Ghana",
+    id: "6",
+    date: "Apr 11, 2026",
+    venue: "The House of Blues Foundation Room",
+    city: "Houston",
+    country: "TX",
   },
   {
     id: "4",

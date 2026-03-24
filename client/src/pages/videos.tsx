@@ -38,14 +38,6 @@ const videos = [
     featured: false,
   },
   {
-    id: "0B0s4Aye4Qk",
-    title: "Same Girl",
-    subtitle: "feat. Lion Heights",
-    category: "Music Videos",
-    date: "2024",
-    featured: false,
-  },
-  {
     id: "NG84wpFztB0",
     title: "Lemonade",
     subtitle: "Official Music Video",
@@ -119,14 +111,6 @@ const videos = [
   },
   // Shorts
   {
-    id: "K6w9xlub0fk",
-    title: "February 17, 2026",
-    subtitle: "Short Clip",
-    category: "Shorts",
-    date: "2026",
-    featured: false,
-  },
-  {
     id: "zYgUfRP7BSM",
     title: "AFRONOMIXX",
     subtitle: "New Album Preview",
@@ -189,14 +173,6 @@ const videos = [
     subtitle: "Live Performance",
     category: "Live Performances",
     date: "2024",
-    featured: false,
-  },
-  {
-    id: "shM3DEuVpqo",
-    title: "Same Girl Live",
-    subtitle: "Austin Reggae Festival 2022 with Lion Heights",
-    category: "Live Performances",
-    date: "2022",
     featured: false,
   },
   {

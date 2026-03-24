@@ -6,22 +6,6 @@ import { Music, ExternalLink } from "lucide-react";
 // Album releases with artwork (using Spotify cover art URLs)
 const releases = [
   {
-    id: "after-midnight",
-    title: "After Midnight",
-    url: "https://open.spotify.com/album/4uAy6vNkZGeFdxjNy30A5M",
-    cover: "https://i.scdn.co/image/ab67616d0000b273443a4503329897b684a7f6e6",
-    year: "2026",
-    type: "EP",
-  },
-  {
-    id: "mercy",
-    title: "Mercy",
-    url: "https://open.spotify.com/album/2mTYcXq3dwObt3twqtwImR",
-    cover: "https://i.scdn.co/image/ab67616d0000b27320f844f6411b6297c88bf780",
-    year: "2024",
-    type: "Single",
-  },
-  {
     id: "afronomixx",
     title: "AFRONOMIXX",
     url: "https://open.spotify.com/album/7jvc3J4O8FBlokmrWXGwdg",
