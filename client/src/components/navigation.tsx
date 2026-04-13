@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { FaInstagram, FaXTwitter, FaYoutube, FaFacebook, FaTiktok } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
-import siteLogo from "@assets/IMG_0989_1771277715074.jpg";
+import siteLogo from "@assets/Sean-Austin-reggae-artist-Houston-1.jpg";
 
 const navLinks = [
   { href: "/", label: "Home" },

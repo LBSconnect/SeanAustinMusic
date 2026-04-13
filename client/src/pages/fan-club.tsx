@@ -10,12 +10,12 @@ import { apiRequest } from "@/lib/queryClient";
 import { Check, Star, Crown, Heart, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const galleryPhotos = [
-  "/attached_assets/Sean_Austin_new1.jpeg",
-  "/attached_assets/Sean_Austin_new2.jpeg",
-  "/attached_assets/Sean_Austin_new3.jpeg",
-  "/attached_assets/Sean_Austin_new6.jpeg",
-  "/attached_assets/Sean_Austin_new7.jpeg",
-  "/attached_assets/Sean_Austin_new5.jpeg",
+  "/attached_assets/Sean-Austin-reggae-artist-Houston-8.jpeg",
+  "/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg",
+  "/attached_assets/Sean-Austin-reggae-artist-Houston-10.jpeg",
+  "/attached_assets/Sean-Austin-reggae-artist-Houston-13.jpeg",
+  "/attached_assets/Sean-Austin-reggae-artist-Houston-14.jpeg",
+  "/attached_assets/Sean-Austin-reggae-artist-Houston-12.jpeg",
 ];
 
 interface FanClubProduct {
@@ -167,7 +167,7 @@ export default function FanClubPage() {
             <Card
               className="relative overflow-hidden border-0"
               style={{
-                backgroundImage: "url('/attached_assets/Sean_Austin_new4.jpeg')",
+                backgroundImage: "url('/attached_assets/Sean-Austin-reggae-artist-Houston-11.jpeg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center top",
               }}
@@ -202,7 +202,7 @@ export default function FanClubPage() {
             <Card
               className="relative overflow-hidden border-2 border-primary"
               style={{
-                backgroundImage: "url('/attached_assets/Sean_Austin_new5.jpeg')",
+                backgroundImage: "url('/attached_assets/Sean-Austin-reggae-artist-Houston-12.jpeg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center top",
               }}
