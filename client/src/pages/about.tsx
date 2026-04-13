@@ -78,7 +78,7 @@ export default function SocialPage() {
           <img
             src="/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg"
             alt=""
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-top lg:object-center"
             style={{ opacity: 0.35 }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/90" />
