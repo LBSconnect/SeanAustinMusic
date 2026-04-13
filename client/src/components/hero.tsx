@@ -1,6 +1,6 @@
 import { Music, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@assets/Sean_Austin_new2.jpeg";
+import heroBg from "@assets/Sean-Austin-reggae-artist-Houston-11.jpeg";
 
 export default function Hero() {
   return (
@@ -33,6 +33,9 @@ export default function Hero() {
           <span style={{ color: "#1A6B1A" }}>REGGAE.</span>
         </h1>
         <p className="mt-4 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto text-gray-300 leading-relaxed px-2">
+          Sean Austin is a Reggae Artist based in Houston Texas.
+        </p>
+        <p className="mt-2 text-base sm:text-lg max-w-2xl mx-auto text-gray-300 leading-relaxed px-2">
           Sean Austin blends Jamaican roots with modern global sound
           music that moves your spirit and your body.
         </p>

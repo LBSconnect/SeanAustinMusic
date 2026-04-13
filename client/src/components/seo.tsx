@@ -6,6 +6,7 @@ interface SEOProps {
   path?: string;
   image?: string;
   type?: string;
+  noSuffix?: boolean;
 }
 
 const SITE_URL = "https://www.seanaustinmusic.com";
@@ -16,10 +17,11 @@ export default function SEO({
   title,
   description,
   path = "/",
-  image = "/attached_assets/Sean_Austin_new2.jpeg",
+  image = "/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg",
   type = "website",
+  noSuffix = false,
 }: SEOProps) {
-  const fullTitle = `${title} | ${SITE_NAME}`;
+  const fullTitle = noSuffix ? title : `${title} | ${SITE_NAME}`;
   const url = `${SITE_URL}${path}`;
   const absoluteImage = image.startsWith("http") ? image : `${SITE_URL}${image}`;
 

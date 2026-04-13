@@ -1,5 +1,5 @@
 import { useState } from "react";
-import videoBg from "@assets/IMG_0989_1771277715074.jpg";
+import videoBg from "@assets/Sean-Austin-reggae-artist-Houston-1.jpg";
 import SEO from "@/components/seo";
 import { Card } from "@/components/ui/card";
 import { Play, ExternalLink } from "lucide-react";

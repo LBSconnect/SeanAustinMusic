@@ -66,8 +66,9 @@ export default function SocialPage() {
   return (
     <>
       <SEO
-        title="Social - Sean Austin"
+        title="About Sean Austin | Houston Top Reggae Artist"
         description="Connect with Sean Austin on social media. Follow for music updates, behind the scenes content, and more."
+        noSuffix
       />
       <div className="min-h-screen py-20 px-6">
         <div className="max-w-6xl mx-auto">
