@@ -12,6 +12,7 @@ const quickLinks = [
   { href: "/merch", label: "Merch" },
   { href: "/fan-club", label: "Fan Club" },
   { href: "/epk", label: "Press Kit" },
+  { href: "/reggae-artist-houston-texas", label: "Reggae Artist Houston" },
 ];
 
 const socialLinks = [

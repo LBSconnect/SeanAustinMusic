@@ -18,6 +18,7 @@ import ContactPage from "@/pages/contact";
 import EPKPage from "@/pages/epk";
 import FanClubPage from "@/pages/fan-club";
 import MerchPage from "@/pages/merch";
+import ReggaeArtistHoustonPage from "@/pages/reggae-artist-houston";
 import AdminLogin from "@/pages/admin-login";
 import AdminDashboard from "@/pages/admin-dashboard";
 import NotFound from "@/pages/not-found";
@@ -35,6 +36,7 @@ function PublicRouter() {
       <Route path="/epk" component={EPKPage} />
       <Route path="/fan-club" component={FanClubPage} />
       <Route path="/merch" component={MerchPage} />
+      <Route path="/reggae-artist-houston-texas" component={ReggaeArtistHoustonPage} />
       <Route component={NotFound} />
     </Switch>
   );
