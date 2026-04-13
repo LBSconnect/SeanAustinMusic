@@ -70,8 +70,21 @@ export default function SocialPage() {
         description="Connect with Sean Austin on social media. Follow for music updates, behind the scenes content, and more."
         noSuffix
       />
-      <div className="min-h-screen py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <div
+        className="relative min-h-screen py-20 px-6"
+      >
+        {/* Background photo */}
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg"
+            alt=""
+            className="w-full h-full object-cover object-top"
+            style={{ opacity: 0.35 }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/90" />
+        </div>
+
+        <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
               Connect With Sean Austin
@@ -79,14 +92,6 @@ export default function SocialPage() {
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
               Follow along for music updates, behind the scenes content, tour announcements, and more.
             </p>
-          </div>
-
-          <div className="mb-10 rounded-xl overflow-hidden h-[320px] sm:h-[440px] lg:h-[560px]">
-            <img
-              src="/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg"
-              alt="Sean Austin — Reggae Artist Houston Texas"
-              className="w-full h-full object-cover object-top"
-            />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
