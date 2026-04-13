@@ -39,6 +39,11 @@ export default function Hero() {
           Sean Austin blends Jamaican roots with modern global sound
           music that moves your spirit and your body.
         </p>
+        <p className="mt-3 text-sm text-primary/80">
+          <a href="/reggae-artist-houston-texas" className="hover:text-primary underline underline-offset-4 transition-colors">
+            Reggae Artist in Houston, Texas — Book Live Performances &amp; Events
+          </a>
+        </p>
         <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
           <a href="https://open.spotify.com/artist/0ZTUFRHKN1R7Se9eq5QTAT" target="_blank" rel="noopener noreferrer">
             <Button size="lg" data-testid="button-stream-now">
