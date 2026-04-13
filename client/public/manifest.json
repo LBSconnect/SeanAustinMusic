@@ -1,0 +1,51 @@
+{
+  "name": "Sean Austin — Reggae Artist Houston Texas",
+  "short_name": "Sean Austin",
+  "description": "Sean Austin is a Reggae Artist based in Houston Texas. Stream authentic Caribbean music, watch videos, and book live performances.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f0f0f",
+  "theme_color": "#0f0f0f",
+  "lang": "en-US",
+  "categories": ["music", "entertainment"],
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg",
+      "type": "image/jpeg",
+      "label": "Sean Austin — Houston Texas Reggae Artist"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Stream Music",
+      "short_name": "Stream",
+      "description": "Stream Sean Austin's music on Spotify",
+      "url": "/music",
+      "icons": [{ "src": "/favicon.png", "sizes": "any" }]
+    },
+    {
+      "name": "Book Sean Austin",
+      "short_name": "Book",
+      "description": "Book Sean Austin for your Houston event",
+      "url": "/reggae-artist-houston-texas",
+      "icons": [{ "src": "/favicon.png", "sizes": "any" }]
+    },
+    {
+      "name": "Tour Dates",
+      "short_name": "Tour",
+      "description": "Upcoming live show dates",
+      "url": "/tour",
+      "icons": [{ "src": "/favicon.png", "sizes": "any" }]
+    }
+  ]
+}

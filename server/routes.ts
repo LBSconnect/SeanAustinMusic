@@ -451,29 +451,41 @@ export async function registerRoutes(
 
   app.get("/sitemap.xml", (_req, res) => {
     const baseUrl = "https://www.seanaustinmusic.com";
+    const now = new Date().toISOString().split("T")[0];
     const pages = [
-      { path: "/", priority: "1.0", changefreq: "weekly" },
-      { path: "/music", priority: "0.9", changefreq: "weekly" },
-      { path: "/videos", priority: "0.8", changefreq: "weekly" },
-      { path: "/tour", priority: "0.9", changefreq: "daily" },
-      { path: "/about", priority: "0.7", changefreq: "monthly" },
-      { path: "/contact", priority: "0.6", changefreq: "monthly" },
-      { path: "/epk", priority: "0.8", changefreq: "monthly" },
-      { path: "/merch", priority: "0.8", changefreq: "weekly" },
-      { path: "/fan-club", priority: "0.8", changefreq: "monthly" },
+      { path: "/", priority: "1.0", changefreq: "weekly", lastmod: now },
+      { path: "/reggae-artist-houston-texas", priority: "0.95", changefreq: "monthly", lastmod: now },
+      { path: "/music", priority: "0.9", changefreq: "weekly", lastmod: now },
+      { path: "/tour", priority: "0.9", changefreq: "daily", lastmod: now },
+      { path: "/videos", priority: "0.8", changefreq: "weekly", lastmod: now },
+      { path: "/epk", priority: "0.8", changefreq: "monthly", lastmod: now },
+      { path: "/merch", priority: "0.8", changefreq: "weekly", lastmod: now },
+      { path: "/fan-club", priority: "0.8", changefreq: "monthly", lastmod: now },
+      { path: "/social", priority: "0.7", changefreq: "monthly", lastmod: now },
+      { path: "/contact", priority: "0.6", changefreq: "monthly", lastmod: now },
     ];
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${pages
   .map(
     (p) => `  <url>
     <loc>${baseUrl}${p.path}</loc>
+    <lastmod>${p.lastmod}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>
   </url>`
   )
   .join("\n")}
+  <url>
+    <loc>${baseUrl}/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg</loc>
+    <image:image>
+      <image:loc>${baseUrl}/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg</image:loc>
+      <image:title>Sean Austin — Reggae Artist Houston Texas</image:title>
+      <image:caption>Sean Austin is a Reggae Artist based in Houston Texas performing Caribbean roots reggae and dancehall</image:caption>
+    </image:image>
+  </url>
 </urlset>`;
 
     res.header("Content-Type", "application/xml");

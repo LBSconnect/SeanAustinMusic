@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
+import { Helmet } from "react-helmet-async";
 import SEO from "@/components/seo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -8,7 +9,89 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
-import { Mail, Send, Calendar, MapPin, Users, Music } from "lucide-react";
+import { Mail, Send, Calendar, MapPin, Users, Music, ChevronDown } from "lucide-react";
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "EntertainmentBusiness"],
+  "@id": "https://www.seanaustinmusic.com/reggae-artist-houston-texas#business",
+  "name": "Sean Austin — Reggae Artist Houston Texas",
+  "description": "Sean Austin is a Reggae Artist based in Houston Texas, performing authentic Caribbean roots reggae, dancehall, and live music for concerts, festivals, corporate events, weddings, and private parties in Houston TX and worldwide.",
+  "url": "https://www.seanaustinmusic.com/reggae-artist-houston-texas",
+  "email": "iamseanaustin@icloud.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Houston",
+    "addressRegion": "TX",
+    "addressCountry": "US",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "29.7604",
+    "longitude": "-95.3698",
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Houston" },
+    { "@type": "State", "name": "Texas" },
+    { "@type": "Country", "name": "United States" },
+    "Worldwide",
+  ],
+  "image": "https://www.seanaustinmusic.com/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg",
+  "priceRange": "$$",
+  "hasMap": "https://www.google.com/maps/place/Houston,+TX",
+  "sameAs": [
+    "https://www.seanaustinmusic.com/",
+    "https://instagram.com/iamseanaustin",
+    "https://open.spotify.com/artist/0ZTUFRHKN1R7Se9eq5QTAT",
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is Sean Austin the reggae artist in Houston Texas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sean Austin is a Jamaican-born reggae artist based in Houston, Texas. He performs authentic roots reggae, dancehall, and Caribbean music at Houston venues, festivals, and private events. He is known for hits like 'Confessions' (produced by Grammy-nominated Troyton Hinds), 'Same Girl', 'Purple Hearts', and 'AFRONOMIXX'.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "Does Sean Austin perform live reggae music in Houston?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Sean Austin performs live reggae music in Houston, Texas at venues like the House of Blues Foundation Room. He is available for Houston concerts, festivals, club shows, corporate events, weddings, and private parties. Submit a booking request at seanaustinmusic.com/reggae-artist-houston-texas.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "How do I book Sean Austin for a Houston event?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To book Sean Austin for your Houston, Texas event, fill out the booking request form at seanaustinmusic.com/reggae-artist-houston-texas or email iamseanaustin@icloud.com directly. Sean Austin is available for Houston concerts, corporate events, festivals, weddings, and private parties. Expect a response within 48 hours.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "What type of music does Sean Austin play?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sean Austin performs reggae, roots reggae, dancehall, and Caribbean music. His sound blends authentic Jamaican reggae with modern production, creating music that appeals to fans of Bob Marley, Sean Paul, Shaggy, and Vybz Kartel. Based in Houston, Texas, he brings Caribbean island energy to every performance.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "Is Sean Austin available for private events and weddings in Houston?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Sean Austin is available for private events in Houston Texas including weddings, birthday parties, corporate events, anniversaries, and other celebrations. He also performs at Houston-area festivals, clubs, and concert venues. Contact him at seanaustinmusic.com/reggae-artist-houston-texas to check availability and pricing.",
+      },
+    },
+  ],
+};
 
 const photos = [
   "/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg",
@@ -64,6 +147,14 @@ export default function ReggaeArtistHoustonPage() {
         path="/reggae-artist-houston-texas"
         noSuffix
       />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
       <div className="min-h-screen py-20 px-6">
         <div className="max-w-6xl mx-auto">
 
@@ -73,7 +164,7 @@ export default function ReggaeArtistHoustonPage() {
               Reggae Artist in Houston, Texas
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Sean Austin is a Reggae Artist based in Houston Texas — bringing authentic Caribbean music,
+              Sean Austin is a Reggae Artist based in Houston Texas bringing authentic Caribbean music,
               roots reggae, and electrifying live performances to the Houston music scene and beyond.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -108,7 +199,7 @@ export default function ReggaeArtistHoustonPage() {
                 <p>
                   With a distinctive blend of roots reggae, dancehall, and contemporary Caribbean sounds, Sean brings
                   an authentic island energy that sets Houston dance floors and concert venues alive. His music resonates
-                  across generations — from longtime reggae fans to new listeners discovering the genre for the first time.
+                  across generations from longtime reggae fans to new listeners discovering the genre for the first time.
                 </p>
                 <p>
                   His breakout hit <em>"Confessions"</em>, produced by Grammy-nominated producer Troyton Hinds,
@@ -120,7 +211,7 @@ export default function ReggaeArtistHoustonPage() {
                   From intimate Houston venues to international festival stages, Sean Austin delivers performances
                   that leave lasting impressions. His catalog includes acclaimed releases such as <em>"Same Girl"</em>,
                   the album <em>"Purple Hearts"</em>, <em>"AFRONOMIXX"</em>, and his latest single
-                  <em>"Ready Mi Ready"</em> (feat. Troyton) — cementing his status as a rising force in
+                  <em>"Ready Mi Ready"</em> (feat. Troyton) cementing his status as a rising force in
                   the global reggae movement rooted right here in Houston, Texas.
                 </p>
                 <div className="pt-2 space-y-1 text-sm">
@@ -135,6 +226,8 @@ export default function ReggaeArtistHoustonPage() {
                   src="/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg"
                   alt="Sean Austin — Reggae Artist based in Houston Texas"
                   className="w-full h-auto object-cover rounded-xl"
+                  fetchPriority="high"
+                  loading="eager"
                 />
               </div>
             </div>
@@ -165,7 +258,7 @@ export default function ReggaeArtistHoustonPage() {
             </h2>
             <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
               Bring live reggae to your Houston event. Sean Austin is available for concerts,
-              festivals, private events, corporate shows, and more — locally in Houston and worldwide.
+              festivals, private events, corporate shows, and more locally in Houston and worldwide.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
@@ -283,6 +376,66 @@ export default function ReggaeArtistHoustonPage() {
                   iamseanaustin@icloud.com
                 </a>
               </p>
+            </div>
+          </section>
+
+          {/* Stream section */}
+          <section className="mb-16 text-center">
+            <h2 className="font-display text-3xl font-bold text-primary mb-4">
+              Stream Houston Reggae Music
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Listen to Sean Austin's full catalog — Houston's authentic Caribbean reggae and dancehall — on all major platforms.
+            </p>
+            <div className="max-w-md mx-auto">
+              <iframe
+                style={{ borderRadius: "12px" }}
+                src="https://open.spotify.com/embed/artist/0ZTUFRHKN1R7Se9eq5QTAT?utm_source=generator&theme=0"
+                width="100%"
+                height="200"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title="Sean Austin — Houston Reggae Artist on Spotify"
+              />
+            </div>
+          </section>
+
+          {/* FAQ / Q&A for Featured Snippets & voice search */}
+          <section className="mb-16">
+            <h2 className="font-display text-3xl font-bold text-primary mb-8 text-center">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4 max-w-3xl mx-auto">
+              {[
+                {
+                  q: "Who is Sean Austin the reggae artist in Houston Texas?",
+                  a: "Sean Austin is a Jamaican-born reggae artist based in Houston, Texas. He performs authentic roots reggae, dancehall, and Caribbean music at Houston venues, festivals, and private events. Known for hits like \"Confessions\", \"Same Girl\", \"Purple Hearts\", and the album \"AFRONOMIXX\".",
+                },
+                {
+                  q: "Does Sean Austin perform live reggae music in Houston?",
+                  a: "Yes. Sean Austin performs live reggae in Houston, Texas at venues like the House of Blues Foundation Room and other premier Houston stages. He is available for Houston concerts, clubs, festivals, corporate events, weddings, and private parties.",
+                },
+                {
+                  q: "How do I book Sean Austin for a Houston event?",
+                  a: "Fill out the booking form above or email iamseanaustin@icloud.com directly. Sean Austin is available for Houston concerts, corporate events, festivals, weddings, and private parties — with a response within 48 hours.",
+                },
+                {
+                  q: "What type of music does Sean Austin play?",
+                  a: "Sean Austin performs reggae, roots reggae, dancehall, and Caribbean music — blending authentic Jamaican reggae with modern production. Fans of Bob Marley, Sean Paul, Shaggy, and Vybz Kartel will love his sound.",
+                },
+                {
+                  q: "Is Sean Austin available for private events and weddings in Houston?",
+                  a: "Yes! Sean Austin is available for Houston private events including weddings, birthday parties, corporate functions, and anniversary celebrations. He also performs at Houston-area festivals and concert venues.",
+                },
+              ].map(({ q, a }) => (
+                <details key={q} className="group bg-card/50 rounded-xl px-6 py-4 cursor-pointer">
+                  <summary className="flex items-center justify-between gap-4 font-semibold text-foreground list-none">
+                    {q}
+                    <ChevronDown className="w-5 h-5 text-primary shrink-0 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <p className="mt-3 text-muted-foreground leading-relaxed">{a}</p>
+                </details>
+              ))}
             </div>
           </section>
 
