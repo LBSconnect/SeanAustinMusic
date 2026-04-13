@@ -164,7 +164,7 @@ export default function ReggaeArtistHoustonPage() {
               Reggae Artist in Houston, Texas
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Sean Austin is a Reggae Artist based in Houston Texas — bringing authentic Caribbean music,
+              Sean Austin is a Reggae Artist based in Houston Texas bringing authentic Caribbean music,
               roots reggae, and electrifying live performances to the Houston music scene and beyond.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -199,7 +199,7 @@ export default function ReggaeArtistHoustonPage() {
                 <p>
                   With a distinctive blend of roots reggae, dancehall, and contemporary Caribbean sounds, Sean brings
                   an authentic island energy that sets Houston dance floors and concert venues alive. His music resonates
-                  across generations — from longtime reggae fans to new listeners discovering the genre for the first time.
+                  across generations from longtime reggae fans to new listeners discovering the genre for the first time.
                 </p>
                 <p>
                   His breakout hit <em>"Confessions"</em>, produced by Grammy-nominated producer Troyton Hinds,
@@ -211,7 +211,7 @@ export default function ReggaeArtistHoustonPage() {
                   From intimate Houston venues to international festival stages, Sean Austin delivers performances
                   that leave lasting impressions. His catalog includes acclaimed releases such as <em>"Same Girl"</em>,
                   the album <em>"Purple Hearts"</em>, <em>"AFRONOMIXX"</em>, and his latest single
-                  <em>"Ready Mi Ready"</em> (feat. Troyton) — cementing his status as a rising force in
+                  <em>"Ready Mi Ready"</em> (feat. Troyton) cementing his status as a rising force in
                   the global reggae movement rooted right here in Houston, Texas.
                 </p>
                 <div className="pt-2 space-y-1 text-sm">
