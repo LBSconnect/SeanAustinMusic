@@ -95,8 +95,19 @@ export default function TourPage() {
         </script>
       </Helmet>
 
-      <div className="min-h-screen py-20 px-6">
-        <div className="max-w-4xl mx-auto">
+      <div className="relative min-h-screen py-20 px-6">
+        {/* Background photo */}
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src="/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg"
+            alt=""
+            className="w-full h-full object-cover object-top lg:object-center"
+            style={{ opacity: 0.35 }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/90" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
               Tour Dates 2026
