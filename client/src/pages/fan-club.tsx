@@ -11,6 +11,9 @@ import { Check, Star, Crown, Heart, X, ChevronLeft, ChevronRight } from "lucide-
 
 const galleryPhotos = [
   "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg",
+  "/attached_assets/Sean-Austin-reggae-artist-Houston-17.jpeg",
+  "/attached_assets/Sean-Austin-reggae-artist-Houston-18.jpeg",
+  "/attached_assets/Sean-Austin-reggae-artist-Houston-19.jpeg",
   "/attached_assets/Sean-Austin-reggae-artist-Houston-8.jpeg",
   "/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg",
   "/attached_assets/Sean-Austin-reggae-artist-Houston-10.jpeg",
