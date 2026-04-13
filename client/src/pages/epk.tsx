@@ -77,11 +77,17 @@ export default function EPKPage() {
                 <CardTitle>Press Photos</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="mb-4 flex items-center justify-center bg-card/30 rounded-lg overflow-hidden">
+                <div className="mb-4 relative rounded-lg overflow-hidden">
                   <img
                     src={PRESS_PHOTO_URL}
                     alt="Sean Austin Press Photo"
-                    className="w-full h-auto object-contain rounded-lg max-h-[300px] sm:max-h-[350px] md:max-h-[400px]"
+                    className="w-full h-auto object-cover rounded-lg max-h-[360px] sm:max-h-[420px] md:max-h-[480px]"
+                  />
+                  {/* Blend edges into page background */}
+                  <div className="absolute inset-0 rounded-lg"
+                    style={{
+                      background: "radial-gradient(ellipse at center, transparent 45%, hsl(var(--background)) 100%)"
+                    }}
                   />
                 </div>
                 <p className="text-muted-foreground mb-4">
