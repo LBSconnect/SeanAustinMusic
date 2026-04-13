@@ -83,7 +83,7 @@ export default function SocialPage() {
 
           <div className="mb-10 rounded-xl overflow-hidden max-h-[480px]">
             <img
-              src="/attached_assets/Sean-Austin-reggae-artist-Houston-18.jpeg"
+              src="/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg"
               alt="Sean Austin — Reggae Artist Houston Texas"
               className="w-full h-full object-cover object-top"
             />
