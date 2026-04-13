@@ -9,6 +9,16 @@
   --primary-foreground: 0 0% 98%;
   --border: 0 0% 90%;
   --radius: 0.5rem;
+
+  /* Typography */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+.dark {
+  /* Typography inherits from :root — no override needed */
 }
 
 .dark {
@@ -19,12 +29,18 @@
   --border: 0 0% 16%;
 }
 
+/* Bebas Neue — consistent letter-spacing and rendering across all display headings */
+.font-display {
+  letter-spacing: 0.04em;
+  font-variant-ligatures: none;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }
 
