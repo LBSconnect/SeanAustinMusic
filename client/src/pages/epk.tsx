@@ -77,11 +77,11 @@ export default function EPKPage() {
                 <CardTitle>Press Photos</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="mb-4 relative rounded-lg overflow-hidden">
+                <div className="mb-4 relative rounded-lg overflow-hidden aspect-[3/4]">
                   <img
                     src={PRESS_PHOTO_URL}
                     alt="Sean Austin Press Photo"
-                    className="w-full h-auto object-cover rounded-lg max-h-[360px] sm:max-h-[420px] md:max-h-[480px]"
+                    className="w-full h-full object-cover object-top rounded-lg"
                   />
                   {/* Blend edges into page background */}
                   <div className="absolute inset-0 rounded-lg"
