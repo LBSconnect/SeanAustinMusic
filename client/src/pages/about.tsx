@@ -81,7 +81,7 @@ export default function SocialPage() {
             </p>
           </div>
 
-          <div className="mb-10 rounded-xl overflow-hidden max-h-[480px]">
+          <div className="mb-10 rounded-xl overflow-hidden aspect-[16/9]">
             <img
               src="/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg"
               alt="Sean Austin — Reggae Artist Houston Texas"
