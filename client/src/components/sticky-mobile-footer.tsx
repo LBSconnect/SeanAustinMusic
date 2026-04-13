@@ -6,7 +6,7 @@ import { trackStreamClick } from "@/lib/tracking";
 export default function StickyMobileFooter() {
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-card/95 backdrop-blur-md border-t border-border/50 px-4 py-3 safe-area-bottom"
+      className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-card/95 backdrop-blur-md border-t border-border/50 px-4 pt-3 pb-safe-or-3"
       data-testid="sticky-mobile-footer"
     >
       <div className="flex items-center gap-3">
