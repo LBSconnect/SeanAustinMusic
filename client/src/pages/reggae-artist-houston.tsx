@@ -258,7 +258,7 @@ export default function ReggaeArtistHoustonPage() {
             </h2>
             <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto">
               Bring live reggae to your Houston event. Sean Austin is available for concerts,
-              festivals, private events, corporate shows, and more — locally in Houston and worldwide.
+              festivals, private events, corporate shows, and more locally in Houston and worldwide.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
