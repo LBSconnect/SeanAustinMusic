@@ -81,6 +81,14 @@ export default function SocialPage() {
             </p>
           </div>
 
+          <div className="mb-10 rounded-xl overflow-hidden max-h-[480px]">
+            <img
+              src="/attached_assets/Sean-Austin-reggae-artist-Houston-18.jpeg"
+              alt="Sean Austin — Reggae Artist Houston Texas"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {socialPlatforms.map((platform) => (
               <a
