@@ -81,11 +81,11 @@ export default function Navigation() {
           <Button
             size="icon"
             variant="ghost"
-            className="lg:hidden"
+            className="lg:hidden h-11 w-11"
             onClick={() => setMobileOpen(!mobileOpen)}
             data-testid="button-mobile-menu"
           >
-            {mobileOpen ? <X /> : <Menu />}
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
         </div>
       </div>

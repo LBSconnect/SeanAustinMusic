@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -40,6 +40,7 @@ const testimonials: Testimonial[] = [
 export default function TestimonialCarousel() {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const touchStartX = useRef<number | null>(null);
 
   const goTo = useCallback((index: number) => {
     if (isTransitioning) return;
@@ -75,7 +76,16 @@ export default function TestimonialCarousel() {
           <h2 className="font-display text-3xl sm:text-4xl font-bold">What Fans Are Saying</h2>
         </div>
 
-        <div className="relative">
+        <div
+          className="relative"
+          onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+          onTouchEnd={(e) => {
+            if (touchStartX.current === null) return;
+            const diff = touchStartX.current - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+            touchStartX.current = null;
+          }}
+        >
           <Card className="p-8 sm:p-12 text-center">
             <Quote className="w-8 h-8 text-primary/30 mx-auto mb-6" />
             <div
@@ -108,18 +118,19 @@ export default function TestimonialCarousel() {
               <ChevronLeft className="w-5 h-5" />
             </Button>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               {testimonials.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => goTo(i)}
                   data-testid={`button-testimonial-dot-${i}`}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    i === current
-                      ? "bg-primary w-6"
-                      : "bg-muted-foreground/30"
-                  }`}
-                />
+                  aria-label={`Go to testimonial ${i + 1}`}
+                  className="flex items-center justify-center w-11 h-11"
+                >
+                  <span className={`rounded-full transition-all duration-300 h-2 ${
+                    i === current ? "bg-primary w-6" : "w-2 bg-muted-foreground/30"
+                  }`} />
+                </button>
               ))}
             </div>
 

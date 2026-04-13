@@ -66,3 +66,16 @@ html {
 button, a {
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Safe-area utilities for iOS notch / home bar */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.pb-safe-or-3 {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+/* Ensure all interactive elements have adequate touch targets */
+button, [role="button"], a, input, select, textarea {
+  touch-action: manipulation;
+}

@@ -102,7 +102,7 @@ export default function TourPage() {
               Tour Dates 2026
             </h1>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-              Sean Austin — Reggae Artist based in Houston, Texas — performing live worldwide.
+              Sean Austin Reggae Artist based in Houston, Texas performing live worldwide.
               Catch a show near you.
             </p>
           </div>

@@ -101,6 +101,7 @@ export default function ContactPage() {
                     <Input
                       id="name"
                       placeholder="Your full name"
+                      autoComplete="name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
@@ -112,6 +113,8 @@ export default function ContactPage() {
                       id="email"
                       type="email"
                       placeholder="your@email.com"
+                      autoComplete="email"
+                      inputMode="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
@@ -123,7 +126,7 @@ export default function ContactPage() {
                   <Label htmlFor="subject">Inquiry Type</Label>
                   <select
                     id="subject"
-                    className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm"
+                    className="w-full h-11 px-3 rounded-md border border-input bg-background text-base"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   >
