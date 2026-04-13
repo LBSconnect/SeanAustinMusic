@@ -16,7 +16,6 @@ const galleryPhotos = [
   "/attached_assets/Sean-Austin-reggae-artist-Houston-19.jpeg",
   "/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg",
   "/attached_assets/Sean-Austin-reggae-artist-Houston-13.jpeg",
-  "/attached_assets/Sean-Austin-reggae-artist-Houston-14.jpeg",
 ];
 
 interface FanClubProduct {
