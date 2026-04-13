@@ -75,8 +75,9 @@ export default function MusicPage() {
   return (
     <>
       <SEO
-        title="Music - Sean Austin"
-        description="Listen to Sean Austin's music catalog. Stream albums, singles, and EPs on all platforms."
+        title="Sean Austin Music | Houston Reggae Songs and Performances"
+        description="Listen to Sean Austin's music catalog. Houston reggae songs, albums, singles, and live performances on all platforms."
+        noSuffix
       />
       <div className="min-h-screen py-20 px-6">
         <div className="max-w-6xl mx-auto">

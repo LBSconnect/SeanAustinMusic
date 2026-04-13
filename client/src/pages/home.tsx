@@ -6,8 +6,9 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Sean Austin - Official Website"
-        description="Official website of reggae artist Sean Austin. Stream music, watch videos, and get tour dates."
+        title="Reggae Artist in Houston Texas | Sean Austin"
+        description="Sean Austin is a Reggae Artist based in Houston Texas. Stream music, watch videos, and get tour dates."
+        noSuffix
       />
       <Hero />
       <FeaturedRelease />
