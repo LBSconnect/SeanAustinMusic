@@ -11,7 +11,7 @@ export default function FeaturedRelease() {
           Island Breeze
         </h2>
         <p className="mt-4 text-muted-foreground">
-          The latest single from Sean Austin — a smooth island groove featuring Dameon Gayle. Stream now on all platforms.
+          The latest single from Sean Austin, a smooth island groove featuring Dameon Gayle. Stream now on all platforms.
         </p>
 
         {/* Apple Music Embed */}
