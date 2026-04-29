@@ -96,7 +96,7 @@ const faqSchema = {
 const photos = [
   "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg",
   "/attached_assets/Sean-Austin-reggae-artist-Houston-11.jpeg",
-  "/attached_assets/Sean-Austin-reggae-artist-Houston-13.jpeg",
+
   "/attached_assets/Sean-Austin-reggae-artist-Houston-4.jpg",
 ];
 

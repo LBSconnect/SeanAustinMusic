@@ -13,7 +13,6 @@ const galleryPhotos = [
   "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg",
   "/attached_assets/Sean-Austin-reggae-artist-Houston-17.jpeg",
   "/attached_assets/Sean-Austin-reggae-artist-Houston-18.jpeg",
-  "/attached_assets/Sean-Austin-reggae-artist-Houston-13.jpeg",
 ];
 
 interface FanClubProduct {
@@ -200,7 +199,7 @@ export default function FanClubPage() {
             <Card
               className="relative overflow-hidden border-2 border-primary"
               style={{
-                backgroundImage: "url('/attached_assets/Sean-Austin-reggae-artist-Houston-13.jpeg')",
+                backgroundImage: "url('/attached_assets/Sean-Austin-reggae-artist-Houston-18.jpeg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center top",
               }}
