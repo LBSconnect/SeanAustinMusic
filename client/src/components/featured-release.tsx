@@ -8,10 +8,10 @@ export default function FeaturedRelease() {
       <div className="max-w-3xl mx-auto">
         <p className="text-sm uppercase tracking-wider text-muted-foreground mb-2">New Release</p>
         <h2 className="font-display text-3xl font-bold text-primary" data-testid="text-featured-release-title">
-          Ready Mi Ready
+          Island Breeze
         </h2>
         <p className="mt-4 text-muted-foreground">
-          Experience soulful reggae storytelling with a modern edge. Stream now on all platforms.
+          The latest single from Sean Austin — a smooth island groove featuring Dameon Gayle. Stream now on all platforms.
         </p>
 
         {/* Apple Music Embed */}
@@ -22,8 +22,8 @@ export default function FeaturedRelease() {
             height="175"
             style={{ width: "100%", maxWidth: "660px", overflow: "hidden", borderRadius: "10px" }}
             sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-            src="https://embed.music.apple.com/us/song/ready-mi-ready/1883816379"
-            title="Ready Mi Ready on Apple Music"
+            src="https://embed.music.apple.com/us/album/island-breeze-single/1891567464"
+            title="Island Breeze on Apple Music"
           />
         </div>
 
