@@ -68,7 +68,7 @@ const eventSchema = {
           "addressCountry": show.country,
         },
       },
-      "image": "https://www.seanaustinmusic.com/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg",
+      "image": "https://www.seanaustinmusic.com/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg",
       "url": "https://www.seanaustinmusic.com/tour",
       "description": `Sean Austin performs live reggae at ${show.venue} in ${show.city}${show.state ? `, ${show.state}` : ""}, ${show.countryLabel}. Authentic Caribbean roots reggae and dancehall.`,
       "organizer": {

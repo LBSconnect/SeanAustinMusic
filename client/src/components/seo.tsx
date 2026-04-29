@@ -17,7 +17,7 @@ export default function SEO({
   title,
   description,
   path = "/",
-  image = "/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg",
+  image = "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg",
   type = "website",
   noSuffix = false,
 }: SEOProps) {
