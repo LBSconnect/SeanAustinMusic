@@ -1,6 +1,5 @@
 import { Music, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@assets/Sean-Austin-reggae-artist-Houston-17.jpeg";
 
 export default function Hero() {
   return (
@@ -9,31 +8,34 @@ export default function Hero() {
       style={{ minHeight: "100svh" }}
       data-testid="section-hero"
     >
-      {/* Base background */}
+      {/* Dark base so nothing flashes unstyled */}
       <div className="absolute inset-0 bg-background" />
 
-      {/* Full-bleed artist photo */}
-      <div className="absolute inset-0 overflow-hidden">
-        <img
-          src={heroBg}
-          alt=""
-          className="w-full h-full object-cover object-top"
-          style={{ opacity: 0.75 }}
-          fetchPriority="high"
-        />
-      </div>
-
-      {/* Gradient scrim — covers only the bottom 50% so the image is always
-          clearly visible in the top half on every screen size and orientation */}
+      {/* Artist photo — public URL avoids Vite bundling quirks; center 20%
+          keeps the subject visible on both portrait mobile and landscape desktop */}
       <div
-        className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/85 to-transparent"
-        style={{ height: "52%" }}
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "url('/attached_assets/Sean-Austin-reggae-artist-Houston-17.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 20%",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.85,
+        }}
       />
 
-      {/* Spacer — reserves the top 50% of the viewport for the image */}
-      <div className="flex-1" style={{ minHeight: "50svh" }} />
+      {/* Gradient scrim — only the bottom 55% fades to background so the
+          top portion of the image is always unobstructed */}
+      <div
+        className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/85 to-transparent"
+        style={{ height: "55%" }}
+      />
 
-      {/* Content — always sits in the bottom half, never overlapping the image */}
+      {/* Spacer — flex-1 pushes content into the lower half on every viewport */}
+      <div className="flex-1" style={{ minHeight: "48svh" }} />
+
+      {/* Content — always in the bottom ~45%, never overlaps the image face */}
       <div className="relative z-10 max-w-5xl mx-auto w-full text-center px-4 sm:px-6 pb-14 sm:pb-20">
         <h1
           className="font-display text-3xl sm:text-5xl md:text-6xl font-bold leading-tight"

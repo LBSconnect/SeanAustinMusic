@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import SEO from "@/components/seo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, Music, Video, Quote, Mail } from "lucide-react";
+import { Download, Music, Video, Quote, Mail, ExternalLink } from "lucide-react";
 import type { PressQuote } from "@shared/schema";
 
 // Press photo for download
@@ -67,6 +67,47 @@ export default function EPKPage() {
                     that leave lasting impressions. His catalog includes acclaimed releases such as "Same Girl" and the album
                     "Purple Hearts," cementing his status as a rising force in the global reggae movement.
                   </p>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-border/50">
+                  <p className="text-sm font-semibold text-primary mb-3 uppercase tracking-wider">Press Coverage</p>
+                  <ul className="space-y-2">
+                    {[
+                      {
+                        title: "Sean Austin is ready to scale new heights",
+                        source: "Jamaica Star",
+                        date: "April 2026",
+                        url: "https://jamaica-star.com/article/entertainment/20260420/sean-austin-ready-scale-new-heights",
+                      },
+                      {
+                        title: "Sean Austin eyes charts with 'Confession'",
+                        source: "Jamaica Star",
+                        date: "May 2021",
+                        url: "https://jamaica-star.com/article/entertainment/20210511/sean-austin-eyes-charts-%E2%80%98confession%E2%80%99",
+                      },
+                      {
+                        title: "Sean Austin promises purposeful music",
+                        source: "Jamaica Star",
+                        date: "April 2021",
+                        url: "https://jamaica-star.com/article/entertainment/20210419/sean-austin-promises-purposeful-music",
+                      },
+                    ].map((article) => (
+                      <li key={article.url}>
+                        <a
+                          href={article.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-start gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 group-hover:text-primary" />
+                          <span>
+                            <span className="font-medium text-foreground group-hover:text-primary">{article.title}</span>
+                            <span className="text-muted-foreground/70"> — {article.source}, {article.date}</span>
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </CardContent>
             </Card>
