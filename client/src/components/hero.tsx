@@ -17,11 +17,11 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "url('/attached_assets/Sean-Austin-reggae-artist-Houston-17.jpeg')",
+            "url('/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg')",
           backgroundSize: "cover",
-          backgroundPosition: "center 20%",
+          backgroundPosition: "center top",
           backgroundRepeat: "no-repeat",
-          opacity: 0.85,
+          opacity: 0.9,
         }}
       />
 
