@@ -6,6 +6,14 @@ import { Music, ExternalLink } from "lucide-react";
 // Album releases with artwork (using Spotify cover art URLs)
 const releases = [
   {
+    id: "island-breeze",
+    title: "Island Breeze (feat. Dameon Gayle)",
+    url: "https://music.apple.com/us/album/island-breeze-single/1891567464",
+    cover: "https://cdn-images.dzcdn.net/images/cover/6281c828592241ac7ff25cbf3b3654e6/500x500-000000-80-0-0.jpg",
+    year: "2026",
+    type: "Single",
+  },
+  {
     id: "ready-mi-ready",
     title: "Ready Mi Ready (feat. Troyton)",
     url: "https://open.spotify.com/track/1ZU4hR5PFxKqWGstKd15ho",

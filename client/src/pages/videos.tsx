@@ -15,11 +15,19 @@ const categories = ["All", "Music Videos", "Live Performances", "Shorts", "Inter
 const videos = [
   {
     id: "swz5sJINEn0",
-    title: "New Release",
-    subtitle: "Official Music Video",
+    title: "Ready Mi Ready",
+    subtitle: "feat. Troyton | Official Music Video",
     category: "Music Videos",
     date: "2026",
     featured: true,
+  },
+  {
+    id: "GvuL-CSqDkU",
+    title: "The Same Girl",
+    subtitle: "feat. Lion Heights | Official Music Video",
+    category: "Music Videos",
+    date: "2023",
+    featured: false,
   },
   {
     id: "ViNfJ5HTJfM",
