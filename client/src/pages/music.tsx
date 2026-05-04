@@ -22,6 +22,22 @@ const releases = [
     type: "Single",
   },
   {
+    id: "same-street",
+    title: "Same Street",
+    url: "https://www.youtube.com/watch?v=UJjSybBxtZs",
+    cover: "https://cdn-images.dzcdn.net/images/cover/9faa0906d476cf5c2ebdc6f670e5c23a/500x500-000000-80-0-0.jpg",
+    year: "2026",
+    type: "Single",
+  },
+  {
+    id: "mamma-youre-my-sunshine",
+    title: "Mamma You're My Sunshine",
+    url: "https://www.youtube.com/watch?v=Ds9vadF5EK4",
+    cover: "https://img.youtube.com/vi/Ds9vadF5EK4/hqdefault.jpg",
+    year: "2024",
+    type: "Single",
+  },
+  {
     id: "afronomixx",
     title: "AFRONOMIXX",
     url: "https://open.spotify.com/album/7jvc3J4O8FBlokmrWXGwdg",
