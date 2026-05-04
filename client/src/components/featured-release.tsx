@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Music, ShoppingBag } from "lucide-react";
-import { SiApplemusic } from "react-icons/si";
 
 export default function FeaturedRelease() {
   return (
@@ -14,28 +13,28 @@ export default function FeaturedRelease() {
           The latest single from Sean Austin, a smooth island groove featuring Dameon Gayle. Stream now on all platforms.
         </p>
 
-        {/* Apple Music Embed */}
-        <div className="mt-8 flex justify-center">
+        {/* Stream embeds — equal height, side-by-side on sm+ screens */}
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* Apple Music — Island Breeze */}
           <iframe
             allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
             frameBorder="0"
             height="175"
-            style={{ width: "100%", maxWidth: "660px", overflow: "hidden", borderRadius: "10px" }}
+            style={{ width: "100%", overflow: "hidden", borderRadius: "10px" }}
             sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
             src="https://embed.music.apple.com/us/album/island-breeze-single/1891567464"
             title="Island Breeze on Apple Music"
           />
-        </div>
 
-        <div className="mt-8">
+          {/* Spotify — Ready Mi Ready (compact track embed, same 175px height) */}
           <iframe
-            style={{ borderRadius: "12px" }}
-            src="https://open.spotify.com/embed/artist/0ZTUFRHKN1R7Se9eq5QTAT?utm_source=generator&theme=0"
+            style={{ borderRadius: "10px" }}
+            src="https://open.spotify.com/embed/track/1ZU4hR5PFxKqWGstKd15ho?utm_source=generator&theme=0"
             width="100%"
-            height="352"
+            height="175"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
-            title="Spotify Player"
+            title="Ready Mi Ready on Spotify"
             data-testid="embed-spotify"
           />
         </div>
