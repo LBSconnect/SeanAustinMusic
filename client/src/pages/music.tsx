@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import SEO from "@/components/seo";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -19,6 +20,22 @@ const releases = [
     url: "https://open.spotify.com/track/1ZU4hR5PFxKqWGstKd15ho",
     cover: "https://i.scdn.co/image/ab67616d0000b273057cb603c53ad9f6b8db58e0",
     year: "2026",
+    type: "Single",
+  },
+  {
+    id: "same-street",
+    title: "Same Street",
+    url: "https://www.youtube.com/watch?v=UJjSybBxtZs",
+    cover: "https://cdn-images.dzcdn.net/images/cover/9faa0906d476cf5c2ebdc6f670e5c23a/500x500-000000-80-0-0.jpg",
+    year: "2026",
+    type: "Single",
+  },
+  {
+    id: "mamma-youre-my-sunshine",
+    title: "Mamma You're My Sunshine",
+    url: "https://www.youtube.com/watch?v=Ds9vadF5EK4",
+    cover: "https://img.youtube.com/vi/Ds9vadF5EK4/hqdefault.jpg",
+    year: "2024",
     type: "Single",
   },
   {
@@ -80,6 +97,13 @@ const releases = [
 ];
 
 export default function MusicPage() {
+  const { data: syncedData } = useQuery<{ releases: typeof releases | null }>({
+    queryKey: ["/api/content/releases"],
+    staleTime: 60 * 60 * 1000,
+  });
+
+  const activeReleases = syncedData?.releases ?? releases;
+
   return (
     <>
       <SEO
@@ -100,7 +124,7 @@ export default function MusicPage() {
 
           {/* Releases Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
-            {releases.map((release) => (
+            {activeReleases.map((release) => (
               <a
                 key={release.id}
                 href={release.url}

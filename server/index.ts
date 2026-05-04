@@ -4,6 +4,7 @@ import { serveStatic } from "./static";
 import { createServer } from "http";
 import { seedDatabase } from "./seed";
 import { WebhookHandlers } from "./webhookHandlers";
+import { startContentScheduler } from "./content-sync";
 
 const app = express();
 const httpServer = createServer(app);
@@ -90,6 +91,8 @@ app.use((req, res, next) => {
   await seedDatabase().catch((err) => {
     console.error("Failed to seed database:", err);
   });
+
+  startContentScheduler();
 
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
