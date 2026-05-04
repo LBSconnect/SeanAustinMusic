@@ -16,27 +16,31 @@ export default function FeaturedRelease() {
         {/* Stream embeds — equal height, side-by-side on sm+ screens */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Apple Music — Island Breeze */}
-          <iframe
-            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-            frameBorder="0"
-            height="175"
-            style={{ width: "100%", overflow: "hidden", borderRadius: "10px" }}
-            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-            src="https://embed.music.apple.com/us/album/island-breeze-single/1891567464"
-            title="Island Breeze on Apple Music"
-          />
+          <div style={{ background: "#fc3c44", borderRadius: "12px", padding: "8px" }}>
+            <iframe
+              allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+              frameBorder="0"
+              height="175"
+              style={{ width: "100%", overflow: "hidden", borderRadius: "8px", display: "block" }}
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+              src="https://embed.music.apple.com/us/album/island-breeze-single/1891567464"
+              title="Island Breeze on Apple Music"
+            />
+          </div>
 
-          {/* Spotify — Ready Mi Ready (compact track embed, same 175px height) */}
-          <iframe
-            style={{ borderRadius: "10px" }}
-            src="https://open.spotify.com/embed/track/1ZU4hR5PFxKqWGstKd15ho?utm_source=generator&theme=0"
-            width="100%"
-            height="175"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            title="Ready Mi Ready on Spotify"
-            data-testid="embed-spotify"
-          />
+          {/* Spotify — Ready Mi Ready */}
+          <div style={{ background: "#1db954", borderRadius: "12px", padding: "8px" }}>
+            <iframe
+              style={{ borderRadius: "8px", display: "block" }}
+              src="https://open.spotify.com/embed/track/1ZU4hR5PFxKqWGstKd15ho?utm_source=generator&theme=0"
+              width="100%"
+              height="175"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Ready Mi Ready on Spotify"
+              data-testid="embed-spotify"
+            />
+          </div>
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
