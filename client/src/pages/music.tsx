@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import SEO from "@/components/seo";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -96,6 +97,13 @@ const releases = [
 ];
 
 export default function MusicPage() {
+  const { data: syncedData } = useQuery<{ releases: typeof releases | null }>({
+    queryKey: ["/api/content/releases"],
+    staleTime: 60 * 60 * 1000,
+  });
+
+  const activeReleases = syncedData?.releases ?? releases;
+
   return (
     <>
       <SEO
@@ -116,7 +124,7 @@ export default function MusicPage() {
 
           {/* Releases Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
-            {releases.map((release) => (
+            {activeReleases.map((release) => (
               <a
                 key={release.id}
                 href={release.url}

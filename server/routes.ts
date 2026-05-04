@@ -8,6 +8,7 @@ import { insertContactSchema, insertSubscriberSchema, insertTourDateSchema, inse
 import { z } from "zod";
 import { getUncachableStripeClient, getStripePublishableKey } from "./stripeClient";
 import { db } from "./db";
+import { syncContent, getContentCache } from "./content-sync";
 
 declare module "express-session" {
   interface SessionData {
@@ -102,6 +103,26 @@ export async function registerRoutes(
       res.json(quotes);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch press quotes" });
+    }
+  });
+
+  // Content sync endpoints
+  app.get("/api/content/videos", (_req, res) => {
+    const { videos, lastSynced } = getContentCache();
+    res.json({ videos, lastSynced });
+  });
+
+  app.get("/api/content/releases", (_req, res) => {
+    const { releases, lastSynced } = getContentCache();
+    res.json({ releases, lastSynced });
+  });
+
+  app.post("/api/content/sync", requireAdmin, async (_req, res) => {
+    try {
+      await syncContent();
+      res.json({ ok: true, lastSynced: getContentCache().lastSynced });
+    } catch (error) {
+      res.status(500).json({ error: "Sync failed" });
     }
   });
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import videoBg from "@assets/Sean-Austin-reggae-artist-Houston-1.jpg";
 import SEO from "@/components/seo";
 import { Card } from "@/components/ui/card";
@@ -267,13 +268,20 @@ function VideoCard({ video, onClick }: { video: typeof videos[0]; onClick: () =>
 
 export default function VideosPage() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedVideo, setSelectedVideo] = useState<typeof videos[0] | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<(typeof videos)[0] | null>(null);
+
+  const { data: syncedData } = useQuery<{ videos: typeof videos | null }>({
+    queryKey: ["/api/content/videos"],
+    staleTime: 60 * 60 * 1000,
+  });
+
+  const activeVideos = syncedData?.videos ?? videos;
 
   const filteredVideos = activeCategory === "All"
-    ? videos
-    : videos.filter(v => v.category === activeCategory);
+    ? activeVideos
+    : activeVideos.filter(v => v.category === activeCategory);
 
-  const featuredVideo = videos.find(v => v.featured);
+  const featuredVideo = activeVideos.find(v => v.featured);
 
   return (
     <>
