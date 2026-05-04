@@ -23,7 +23,7 @@ const videos = [
     featured: true,
   },
   {
-    id: "UJjSybBxtZs",
+    id: "Ds9vadF5EK4",
     title: "Same Street",
     subtitle: "Official Music Video",
     category: "Music Videos",
@@ -31,7 +31,7 @@ const videos = [
     featured: false,
   },
   {
-    id: "Ds9vadF5EK4",
+    id: "UJjSybBxtZs",
     title: "Mamma You're My Sunshine",
     subtitle: "Official Music Video",
     category: "Music Videos",
