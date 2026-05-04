@@ -22,6 +22,22 @@ const videos = [
     featured: true,
   },
   {
+    id: "UJjSybBxtZs",
+    title: "Same Street",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2024",
+    featured: false,
+  },
+  {
+    id: "Ds9vadF5EK4",
+    title: "Mamma You're My Sunshine",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2024",
+    featured: false,
+  },
+  {
     id: "GvuL-CSqDkU",
     title: "The Same Girl",
     subtitle: "feat. Lion Heights | Official Music Video",
