@@ -13,13 +13,13 @@ export default function Hero() {
           a defined, clearly visible block above the text on every device.  */}
       <div
         className="relative w-full flex-shrink-0 pt-16"
-        style={{ height: "calc(58svh + 4rem)" }}
+        style={{ height: "calc(43svh + 3rem)" }}
       >
         <img
           src="/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg"
           alt="Sean Austin"
           className="w-full h-full object-cover"
-          style={{ objectPosition: "center 20%" }}
+          style={{ objectPosition: "center 40%" }}
           fetchPriority="high"
         />
         {/* Soft fade at bottom edge blending into the dark content area */}
