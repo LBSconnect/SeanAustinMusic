@@ -115,9 +115,12 @@ function classifyVideo(title: string): { category: string; subtitle: string } {
     return { category: "Live Performances", subtitle: "Live Performance" };
   }
 
+  if (lower.includes("karaoke")) {
+    return { category: "Karaoke", subtitle: "Karaoke with Sean Austin" };
+  }
+
   if (
     lower.includes("#shorts") ||
-    lower.includes("karaoke") ||
     lower.includes("bts ") ||
     lower.includes("bts:") ||
     lower.startsWith("bts") ||
