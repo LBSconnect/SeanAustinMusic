@@ -10,7 +10,7 @@ import { FaYoutube } from "react-icons/fa6";
 const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@SeanAustinReggae";
 
 // Video categories
-const categories = ["All", "Music Videos", "Live Performances", "Shorts", "Interviews"];
+const categories = ["Music Videos", "Live Performances", "Shorts", "Interviews"];
 
 // Video data sourced from @SeanAustinReggae YouTube channel
 const videos = [
@@ -195,7 +195,7 @@ function VideoCard({ video, onClick }: { video: typeof videos[0]; onClick: () =>
 }
 
 export default function VideosPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Music Videos");
   const [selectedVideo, setSelectedVideo] = useState<(typeof videos)[0] | null>(null);
 
   const { data: syncedData } = useQuery<{ videos: typeof videos | null }>({
