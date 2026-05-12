@@ -1,81 +1,49 @@
 import { Helmet } from "react-helmet-async";
 import SEO from "@/components/seo";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, Clock, Radio } from "lucide-react";
 
 const tourDates = [
   {
-    id: "6",
-    date: "Apr 11, 2026",
-    isoDate: "2026-04-11",
-    venue: "The House of Blues Foundation Room",
-    city: "Houston",
-    state: "TX",
-    country: "US",
-    countryLabel: "USA",
-    isSoldOut: true,
+    id: "1",
+    date: "Tuesday, May 19, 2026",
+    isoDate: "2026-05-19",
+    time: "5:00 PM – 6:00 PM",
+    venue: "Suncity 104.9 FM",
+    subtitle: "Live Interview",
+    type: "interview",
   },
   {
-    id: "4",
-    date: "May 2, 2026",
-    isoDate: "2026-05-02",
-    venue: "Rototom Sunsplash",
-    city: "Benicassim",
-    state: "",
-    country: "ES",
-    countryLabel: "Spain",
-    isSoldOut: true,
-  },
-  {
-    id: "5",
-    date: "May 20, 2026",
+    id: "2",
+    date: "Wednesday, May 20, 2026",
     isoDate: "2026-05-20",
-    venue: "The Shrine Auditorium",
-    city: "Lagos",
-    state: "",
-    country: "NG",
-    countryLabel: "Nigeria",
-    isSoldOut: true,
+    time: "8:00 PM – 9:00 PM",
+    venue: "Irie FM",
+    subtitle: "EBuzz Interview",
+    type: "interview",
   },
 ];
 
 const eventSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Sean Austin Live Tour Dates 2026",
+  "name": "Sean Austin Upcoming Events 2026",
   "itemListElement": tourDates.map((show, i) => ({
     "@type": "ListItem",
     "position": i + 1,
     "item": {
-      "@type": "MusicEvent",
-      "name": `Sean Austin Live at ${show.venue}`,
+      "@type": "Event",
+      "name": `Sean Austin — ${show.subtitle} on ${show.venue}`,
       "performer": {
         "@type": "MusicGroup",
         "name": "Sean Austin",
         "url": "https://www.seanaustinmusic.com",
       },
       "startDate": show.isoDate,
-      "eventStatus": "https://schema.org/EventSoldOut",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": {
-        "@type": "MusicVenue",
-        "name": show.venue,
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": show.city,
-          ...(show.state ? { "addressRegion": show.state } : {}),
-          "addressCountry": show.country,
-        },
-      },
-      "image": "https://www.seanaustinmusic.com/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
       "url": "https://www.seanaustinmusic.com/tour",
-      "description": `Sean Austin performs live reggae at ${show.venue} in ${show.city}${show.state ? `, ${show.state}` : ""}, ${show.countryLabel}. Authentic Caribbean roots reggae and dancehall.`,
-      "organizer": {
-        "@type": "Organization",
-        "name": "Sean Austin Music",
-        "url": "https://www.seanaustinmusic.com",
-      },
+      "description": `Sean Austin joins ${show.venue} for a ${show.subtitle} on ${show.date}, ${show.time}.`,
     },
   })),
 };
@@ -121,22 +89,23 @@ export default function TourPage() {
           <div className="space-y-4">
             {tourDates.map((show) => (
               <Card key={show.id} className="bg-card/50 hover:bg-card/70 transition-colors">
-                <CardContent className="p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 text-primary mb-2">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 text-primary mb-3">
+                    <Radio className="w-4 h-4" />
+                    <span className="font-display text-lg font-bold">{show.venue}</span>
+                    <span className="text-sm text-muted-foreground font-normal">— {show.subtitle}</span>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-muted-foreground">
+                    <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
-                      <span className="font-semibold">{show.date}</span>
+                      <span>{show.date}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <MapPin className="w-4 h-4" />
-                      <span>
-                        {show.venue} — {show.city}{show.state ? `, ${show.state}` : ""}, {show.countryLabel}
-                      </span>
+                    <span className="hidden sm:inline text-border">·</span>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      <span>{show.time}</span>
                     </div>
                   </div>
-                  <Button variant="outline" disabled className="opacity-60">
-                    Sold Out
-                  </Button>
                 </CardContent>
               </Card>
             ))}
