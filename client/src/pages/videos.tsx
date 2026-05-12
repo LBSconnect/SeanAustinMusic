@@ -112,6 +112,23 @@ const videos = [
     date: "2026",
     featured: false,
   },
+  // Interviews
+  {
+    id: "MZkS176ok_I",
+    title: "Island Heat Exclusive",
+    subtitle: "St. Thomas Carnival Secrets Interview",
+    category: "Interviews",
+    date: "2026",
+    featured: false,
+  },
+  {
+    id: "zGawXcpCS0c",
+    title: "The Jamaican Entrepreneur Dominating Houston Reggae",
+    subtitle: "Sean Austin Interview",
+    category: "Interviews",
+    date: "2026",
+    featured: false,
+  },
   // Karaoke
   {
     id: "mExYukRHtZ0",
