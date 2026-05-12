@@ -10,7 +10,7 @@ import { FaYoutube } from "react-icons/fa6";
 const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@SeanAustinReggae";
 
 // Video categories
-const categories = ["Music Videos", "Live Performances", "Shorts", "Interviews"];
+const categories = ["Music Videos", "Live Performances", "Karaoke", "Shorts", "Interviews"];
 
 // Video data sourced from @SeanAustinReggae YouTube channel
 const videos = [
@@ -112,27 +112,28 @@ const videos = [
     date: "2026",
     featured: false,
   },
+  // Karaoke
   {
     id: "mExYukRHtZ0",
     title: "Same Street — Karaoke",
-    subtitle: "Karaoke",
-    category: "Shorts",
+    subtitle: "Karaoke with Sean Austin",
+    category: "Karaoke",
     date: "2026",
     featured: false,
   },
   {
     id: "BDMY3QBUIuI",
     title: "Daddy You a Leader — Karaoke",
-    subtitle: "Karaoke",
-    category: "Shorts",
+    subtitle: "Karaoke with Sean Austin",
+    category: "Karaoke",
     date: "2026",
     featured: false,
   },
   {
     id: "2ZJYMl44GtI",
     title: "Mamma You're My Sunshine — Karaoke",
-    subtitle: "Karaoke",
-    category: "Shorts",
+    subtitle: "Karaoke with Sean Austin",
+    category: "Karaoke",
     date: "2026",
     featured: false,
   },
@@ -203,11 +204,15 @@ export default function VideosPage() {
     staleTime: 60 * 60 * 1000,
   });
 
-  const activeVideos = syncedData?.videos ?? videos;
+  // Hardcoded entries take precedence over auto-synced data so categories
+  // set here are never overridden by the YouTube API classifier.
+  const activeVideos = (() => {
+    const synced = syncedData?.videos;
+    if (!synced) return videos;
+    return synced.map(sv => videos.find(v => v.id === sv.id) ?? sv);
+  })();
 
-  const filteredVideos = activeCategory === "All"
-    ? activeVideos
-    : activeVideos.filter(v => v.category === activeCategory);
+  const filteredVideos = activeVideos.filter(v => v.category === activeCategory);
 
   const featuredVideo = activeVideos.find(v => v.featured);
 
