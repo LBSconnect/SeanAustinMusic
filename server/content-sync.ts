@@ -108,13 +108,26 @@ function classifyVideo(title: string): { category: string; subtitle: string } {
     lower.includes("live performance") ||
     lower.includes("house of blues") ||
     lower.includes("foundation room") ||
+    lower.includes("foundationroom") ||
     lower.includes("opening for") ||
     lower.includes("concert")
   ) {
     return { category: "Live Performances", subtitle: "Live Performance" };
   }
 
-  if (lower.includes("#shorts") || lower.includes("preview") || lower.includes("snippet")) {
+  if (
+    lower.includes("#shorts") ||
+    lower.includes("karaoke") ||
+    lower.includes("bts ") ||
+    lower.includes("bts:") ||
+    lower.startsWith("bts") ||
+    lower.includes("behind the scenes") ||
+    lower.includes("new drop") ||
+    lower.includes("new music for") ||
+    lower.includes("coming soon") ||
+    lower.includes("preview") ||
+    lower.includes("snippet")
+  ) {
     return { category: "Shorts", subtitle: "Short" };
   }
 
@@ -122,7 +135,13 @@ function classifyVideo(title: string): { category: string; subtitle: string } {
     return { category: "Interviews", subtitle: "Interview" };
   }
 
-  if (lower.includes("official music video") || lower.includes("feat.") || lower.includes("ft.")) {
+  if (
+    lower.includes("official music video") ||
+    lower.includes("official video") ||
+    lower.includes("official audio") ||
+    lower.includes("feat.") ||
+    lower.includes("ft.")
+  ) {
     return { category: "Music Videos", subtitle: "Official Music Video" };
   }
 

@@ -5,55 +5,95 @@ import { ShoppingBag, ExternalLink } from "lucide-react";
 
 const STORE_URL = "https://direct.distrokid.com/seanaustin3/";
 
-// Featured merchandise items with actual product images and direct links
+// Merchandise items synced from the official store
 const featuredItems = [
   {
-    id: "tshirt-after-midnight",
-    name: "After Midnight T-Shirt",
+    id: "tshirt-daddy-you-a-leader",
+    name: "Daddy You a Leader",
     price: "$25.00",
     category: "Unisex T-Shirt",
-    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/c1cedf62a19bfa5158d43acb4de6042954fc61f1/original/5fb7801c-e525-4ddc-87b4-a2071f624b11.png",
-    url: "https://direct.distrokid.com/seanaustin3/product/1216562-after-midnight-unisex-t-shirt",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/5365f426e2d60691857780a40f2181ece26a3b3f/original/5ff24fc4-fbce-4d18-b7fe-a3259e3dc091.png",
+    url: "https://direct.distrokid.com/seanaustin3/product/1274735-daddy-you-a-leader-unisex-t-shirt",
+  },
+  {
+    id: "tshirt-birthday-shellings",
+    name: "Birthday Shellings",
+    price: "$25.00",
+    category: "Unisex T-Shirt",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/75699eab5cd848b35f24eb9b0ebb1e6e999ab3b7/original/9ae7115a-e9f3-4310-8d1b-4b296daf745f.png",
+    url: "https://direct.distrokid.com/seanaustin3/product/1274734-birthday-shellings-unisex-t-shirt",
+  },
+  {
+    id: "tshirt-mamma-youre-my-sunshine",
+    name: "Mamma You're My Sunshine",
+    price: "$25.00",
+    category: "Unisex T-Shirt",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/c7c8021b815ffac00b8279a798b447301ca070a0/original/c5f69e8a-3dc2-4172-9ada-37696f66ecaa.png",
+    url: "https://direct.distrokid.com/seanaustin3/product/1274733-mamma-you-re-my-sunshine-unisex-t-shirt",
+  },
+  {
+    id: "tshirt-the-essentials",
+    name: "The Essentials",
+    price: "$25.00",
+    category: "Unisex T-Shirt",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/04888eb30728d7df8eca4add41dd596b128c4eb3/original/d3ac3db0-323e-44ef-ab4b-9a59e40e46e7.png",
+    url: "https://direct.distrokid.com/seanaustin3/product/1274732-the-essentials-unisex-t-shirt",
+  },
+  {
+    id: "tshirt-2020-pt1",
+    name: "Sean Austin 2020 Pt. 1",
+    price: "$25.00",
+    category: "Unisex T-Shirt",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/b85fe4b19f4233d91dc65831b75121cbc713965c/original/3dc8a2f3-7b0d-4ad4-afda-a7753be07f39.png",
+    url: "https://direct.distrokid.com/seanaustin3/product/1216579-sean-austin-2020-pt-1-unisex-t-shirt",
+  },
+  {
+    id: "tshirt-2020-pt2",
+    name: "2020, Pt. 2: Reloaded",
+    price: "$25.00",
+    category: "Unisex T-Shirt",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/bd160e1012146e03120b0eaea4219a593702479e/original/7d0c8e74-7f3d-4947-a778-0d18d0763035.png",
+    url: "https://direct.distrokid.com/seanaustin3/product/1216580-2020-pt-2-reloaded-unisex-t-shirt",
+  },
+  {
+    id: "tshirt-eyes-dont-lie",
+    name: "Eyes Don't Lie",
+    price: "$25.00",
+    category: "Unisex T-Shirt",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/d96a2f21a856f07341682fc3edcf41e54e12942b/original/10d5b394-2347-43c6-b3d1-5af156333caa.png",
+    url: "https://direct.distrokid.com/seanaustin3/product/1216581-eyes-don-t-lie-unisex-t-shirt",
+  },
+  {
+    id: "tshirt-teddy-2-the-future",
+    name: "Teddy 2 the Future",
+    price: "$25.00",
+    category: "Unisex T-Shirt",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/f32092f96669673dd907bea2b02bc5c95f983e34/original/455648bf-8144-44df-bb33-53d4154c0705.png",
+    url: "https://direct.distrokid.com/seanaustin3/product/1216577-teddy-2-the-future-unisex-t-shirt",
   },
   {
     id: "tshirt-afronomixx",
-    name: "AFRONOMIXX T-Shirt",
+    name: "AFRONOMIXX",
     price: "$25.00",
     category: "Unisex T-Shirt",
-    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/e54b1957e19c988fbc3ad4615e8d41a307532e40/original/6291500a-2f26-4f93-8d05-5991a33fd8bd.png",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/54438aaf1fafa7ce69ddc2a4bf5af2c50f9f5b2b/original/4f45bc69-ff53-4f6d-9965-339129c3a80a.png",
     url: "https://direct.distrokid.com/seanaustin3/product/1216576-afronomixx-unisex-t-shirt",
   },
   {
-    id: "tshirt-purple-hearts",
-    name: "Purple Hearts T-Shirt",
+    id: "tshirt-how-deep-is-your-love",
+    name: "How Deep Is Your Love",
     price: "$25.00",
     category: "Unisex T-Shirt",
-    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/fdb248ead60e0ac7f343c841d8594f742bb31cbf/original/0f43e36a-afaf-41f6-8afc-8060fb8fe085.png",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/1cd5c3c250590f37bc55446e9d2b8ab10b1c0a71/original/84749979-8aa4-4c3f-844a-67a40653b50b.png",
+    url: "https://direct.distrokid.com/seanaustin3/product/1216569-how-deep-is-your-love-unisex-t-shirt",
+  },
+  {
+    id: "tshirt-purple-hearts",
+    name: "Purple Hearts",
+    price: "$25.00",
+    category: "Unisex T-Shirt",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/052069057f59ba3109b0ac6d7d6847c8f89bf3da/original/22aff42e-df12-477d-8782-5e4681e25f11.png",
     url: "https://direct.distrokid.com/seanaustin3/product/1216567-purple-hearts-unisex-t-shirt",
-  },
-  {
-    id: "mug-after-midnight",
-    name: "After Midnight Mug",
-    price: "$13.00",
-    category: "Ceramic Mug",
-    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/25a8ca6bc060f4c513e935121899a9d1fb484c68/original/90056f4a-8b0f-4d43-b0e0-742181f55f90.png",
-    url: "https://direct.distrokid.com/seanaustin3/product/1216563-after-midnight-ceramic-mug",
-  },
-  {
-    id: "mug-teddy",
-    name: "Teddy 2 The Future Mug",
-    price: "$13.00",
-    category: "Ceramic Mug",
-    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/aedcc545bebb118c02f0636b107876b796f44907/original/ac776715-ecaf-4116-9574-0bbe552dbcbc.png",
-    url: "https://direct.distrokid.com/seanaustin3/product/1216584-teddy-2-the-future-ceramic-mug",
-  },
-  {
-    id: "tote-after-midnight",
-    name: "After Midnight Tote Bag",
-    price: "$26.00",
-    category: "Tote Bag",
-    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/da39cf1ef5e5f0540d8176c971b86271ff49b8d5/original/8803a50d-b911-4d11-92cb-2ddb2fc1d2c9.png",
-    url: "https://direct.distrokid.com/seanaustin3/product/1216565-after-midnight-tote-bag",
   },
 ];
 
@@ -78,9 +118,9 @@ export default function MerchPage() {
           {/* Featured Items Grid */}
           <div className="mb-12">
             <h2 className="font-display text-2xl font-bold text-primary text-center mb-8">
-              Featured Items
+              Official T-Shirts
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
               {featuredItems.map((item) => (
                 <a
                   key={item.id}
@@ -127,7 +167,7 @@ export default function MerchPage() {
                   View Full Collection
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Browse the complete store for all merchandise including T-shirts (S-5XL), women's cuts, mugs, tote bags, and more.
+                  Browse the complete store for all official Sean Austin T-shirts. Available in sizes S–5XL.
                 </p>
                 <a
                   href={STORE_URL}
