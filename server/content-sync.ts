@@ -29,7 +29,7 @@ const cache: ContentCache = {
 };
 
 const SPOTIFY_ARTIST_ID = "0ZTUFRHKN1R7Se9eq5QTAT";
-const YOUTUBE_CHANNEL_HANDLE = "SeanAustinMusic";
+const YOUTUBE_CHANNEL_HANDLE = "SeanAustinReggae";
 
 async function getSpotifyToken(): Promise<string | null> {
   const clientId = process.env.SPOTIFY_CLIENT_ID;

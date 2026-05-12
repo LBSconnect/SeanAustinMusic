@@ -7,7 +7,7 @@ import { Play, ExternalLink } from "lucide-react";
 import { FaYoutube } from "react-icons/fa6";
 
 // YouTube Channel
-const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@SeanAustinMusic";
+const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@SeanAustinReggae";
 
 // Video categories
 const categories = ["All", "Music Videos", "Live Performances", "Shorts", "Interviews"];
