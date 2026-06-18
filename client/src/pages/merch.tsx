@@ -40,6 +40,14 @@ const featuredItems = [
     url: "https://direct.distrokid.com/seanaustin3/product/1274732-the-essentials-unisex-t-shirt",
   },
   {
+    id: "tshirt-greatest-pain-in-life",
+    name: "Greatest Pain in Life",
+    price: "$25.00",
+    category: "Unisex T-Shirt",
+    image: "https://images.zoogletools.com/s:bzglfiles/u/1262585/e1270775513ee9d2751567b2da565cbf62630f5f/original/e1151c5b-5a6e-4395-9c39-471a1049c55c.png",
+    url: "https://direct.distrokid.com/seanaustin3/product/1274756-greatest-pain-in-life-unisex-t-shirt",
+  },
+  {
     id: "tshirt-2020-pt1",
     name: "Sean Austin 2020 Pt. 1",
     price: "$25.00",

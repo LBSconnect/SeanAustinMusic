@@ -7,6 +7,14 @@ import { Music, ExternalLink } from "lucide-react";
 // Releases sourced from Spotify and Apple Music only
 const releases = [
   {
+    id: "daddy-you-a-leader",
+    title: "Daddy You a Leader",
+    url: "https://open.spotify.com/album/7HaBbBg2YpdZtJkvkLuTnb",
+    cover: "https://cdn-images.dzcdn.net/images/cover/48136b0196b3a94c468d9b3f83cf323b/500x500-000000-80-0-0.jpg",
+    year: "2026",
+    type: "Single",
+  },
+  {
     id: "birthday-shellings",
     title: "Birthday Shellings",
     url: "https://open.spotify.com/album/1W25sy1K1yiUp6lVPjzJJK",
