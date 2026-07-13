@@ -7,6 +7,14 @@ import { Music, ExternalLink } from "lucide-react";
 // Album releases with artwork (using Spotify cover art URLs)
 const releases = [
   {
+    id: "the-essentials",
+    title: "The Essentials",
+    url: "https://open.spotify.com/album/0ZkV4SpzAppY7ZbMDp2tl0",
+    cover: "https://i.scdn.co/image/ab67616d0000b2736b4836f0b595e0b13f2318f3",
+    year: "2026",
+    type: "Album",
+  },
+  {
     id: "island-breeze",
     title: "Island Breeze (feat. Dameon Gayle)",
     url: "https://open.spotify.com/album/4YPqkhdYa0H94H9msaB9xx",
@@ -23,11 +31,27 @@ const releases = [
     type: "Single",
   },
   {
+    id: "birthday-shellings",
+    title: "Birthday Shellings",
+    url: "https://open.spotify.com/album/1W25sy1K1yiUp6lVPjzJJK",
+    cover: "https://i.scdn.co/image/ab67616d0000b273a3c67222bcac92b31d6bbc69",
+    year: "2026",
+    type: "Single",
+  },
+  {
+    id: "daddy-you-a-leader",
+    title: "Daddy You A Leader",
+    url: "https://open.spotify.com/album/7HaBbBg2YpdZtJkvkLuTnb",
+    cover: "https://i.scdn.co/image/ab67616d0000b273acc2d91b1f9f6ca7154d3e57",
+    year: "2026",
+    type: "Single",
+  },
+  {
     id: "same-street",
     title: "Same Street",
     url: "https://open.spotify.com/album/45Zj6j4EsWRnNuPXCBjzo3",
     cover: "https://cdn-images.dzcdn.net/images/cover/9faa0906d476cf5c2ebdc6f670e5c23a/500x500-000000-80-0-0.jpg",
-    year: "2024",
+    year: "2026",
     type: "Single",
   },
   {
@@ -35,7 +59,7 @@ const releases = [
     title: "Mamma You're My Sunshine",
     url: "https://open.spotify.com/album/3PHU0VjHSkatJDcipQpJOi",
     cover: "https://img.youtube.com/vi/Ds9vadF5EK4/hqdefault.jpg",
-    year: "2024",
+    year: "2026",
     type: "Single",
   },
   {
@@ -63,6 +87,14 @@ const releases = [
     type: "Single",
   },
   {
+    id: "lemonade",
+    title: "Lemonade",
+    url: "https://open.spotify.com/album/3TTf1IgFAFNkYCxTH0u8WX",
+    cover: "https://i.scdn.co/image/ab67616d0000b2739cab6b387fc15cff42a8b5fd",
+    year: "2021",
+    type: "Single",
+  },
+  {
     id: "purple-hearts",
     title: "Purple Hearts",
     url: "https://open.spotify.com/album/1Z67dCz0fc2VZlOqnGQqJD",
@@ -73,7 +105,7 @@ const releases = [
   {
     id: "confessions",
     title: "Confessions",
-    url: "https://www.youtube.com/watch?v=ViNfJ5HTJfM",
+    url: "https://www.youtube.com/watch?v=IlzEXnEYWYU",
     cover: "https://i.scdn.co/image/ab67616d0000b2736cb7bb182efd62cf4581d18c",
     year: "2021",
     type: "Single",

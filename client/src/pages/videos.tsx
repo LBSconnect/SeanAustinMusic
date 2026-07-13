@@ -47,11 +47,11 @@ const videos = [
     featured: false,
   },
   {
-    id: "ViNfJ5HTJfM",
+    id: "IlzEXnEYWYU",
     title: "Confessions",
     subtitle: "Official Music Video",
     category: "Music Videos",
-    date: "2023",
+    date: "2021",
     featured: false,
   },
   {
