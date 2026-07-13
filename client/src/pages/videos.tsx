@@ -129,6 +129,14 @@ const videos = [
     date: "2026",
     featured: false,
   },
+  {
+    id: "NOd200imxuA",
+    title: "Sean Austin LIVE on Germany Radio",
+    subtitle: "Reggae International | @nightnurse_berlin",
+    category: "Shorts",
+    date: "2024",
+    featured: false,
+  },
   // Karaoke
   {
     id: "mExYukRHtZ0",
