@@ -10,148 +10,202 @@ import { FaYoutube } from "react-icons/fa6";
 const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@SeanAustinReggae";
 
 // Video categories
-const categories = ["Music Videos", "Live Performances", "Karaoke", "Shorts", "Interviews"];
+const categories = ["All", "Music Videos", "Live Performances", "Shorts", "Karaoke", "Interviews"];
 
-// Video data sourced from @SeanAustinReggae YouTube channel
+// Video data from Sean Austin's YouTube channel
 const videos = [
-  // Music Videos
   {
-    id: "ffzcrhIHzLE",
-    title: "Daddy You a Leader",
-    subtitle: "Official Father's Day Anthem",
+    id: "swz5sJINEn0",
+    title: "Ready Mi Ready",
+    subtitle: "feat. Troyton | Official Music Video",
     category: "Music Videos",
     date: "2026",
     featured: true,
   },
   {
-    id: "Ln8C1mW5znY",
-    title: "Birthday Shellings",
-    subtitle: "Official Music Video",
-    category: "Music Videos",
-    date: "2026",
-    featured: false,
-  },
-  {
-    id: "1YyW8xjrAhQ",
+    id: "UJjSybBxtZs",
     title: "Same Street",
     subtitle: "Official Music Video",
     category: "Music Videos",
-    date: "2026",
+    date: "2024",
     featured: false,
   },
   {
-    id: "rAgk6n34-w4",
+    id: "Ds9vadF5EK4",
+    title: "Mamma You're My Sunshine",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2024",
+    featured: false,
+  },
+  {
+    id: "GvuL-CSqDkU",
+    title: "The Same Girl",
+    subtitle: "feat. Lion Heights | Official Music Video",
+    category: "Music Videos",
+    date: "2023",
+    featured: false,
+  },
+  {
+    id: "IlzEXnEYWYU",
+    title: "Confessions",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2021",
+    featured: false,
+  },
+  {
+    id: "fjte4utXa-w",
+    title: "Smoke vs Fire",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2024",
+    featured: false,
+  },
+  {
+    id: "NG84wpFztB0",
+    title: "Lemonade",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2024",
+    featured: false,
+  },
+  {
+    id: "rdHkejzglRs",
+    title: "My Reality",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2024",
+    featured: false,
+  },
+  {
+    id: "o6sy7x1TZN0",
+    title: "Cause & Effect",
+    subtitle: "feat. Izaris Capetillo",
+    category: "Music Videos",
+    date: "2024",
+    featured: false,
+  },
+  {
+    id: "UfZtWAvtLUE",
+    title: "I'm Not Ready",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2023",
+    featured: false,
+  },
+  {
+    id: "ylpHrCKskgs",
+    title: "Dream",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2023",
+    featured: false,
+  },
+  {
+    id: "gIzrA5xIr5s",
+    title: "I Love You Mamma",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2023",
+    featured: false,
+  },
+  {
+    id: "g83vcZgiRQ8",
+    title: "Don't Do Me Like 2020",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2020",
+    featured: false,
+  },
+  {
+    id: "IY9wgAdXaPw",
+    title: "Bring It Back",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2024",
+    featured: false,
+  },
+  {
+    id: "_bHwEJ4S5-w",
     title: "Sunflower",
     subtitle: "Official Music Video",
     category: "Music Videos",
-    date: "2026",
+    date: "2024",
     featured: false,
   },
   // Shorts
   {
-    id: "9xMB1LQJ1YY",
-    title: "Live at Foundation Room Houston",
-    subtitle: "Live Clip",
+    id: "zYgUfRP7BSM",
+    title: "AFRONOMIXX",
+    subtitle: "New Album Preview",
     category: "Shorts",
-    date: "2026",
+    date: "2024",
+    featured: false,
+  },
+  // Live Performances
+  {
+    id: "JK8lARL3SlU",
+    title: "Live at Foundation Room",
+    subtitle: "Houston Performance",
+    category: "Live Performances",
+    date: "2024",
     featured: false,
   },
   {
-    id: "VUVFVw7KjCY",
-    title: "BTS: Ready Mi Ready",
-    subtitle: "Behind the Scenes",
-    category: "Shorts",
-    date: "2026",
+    id: "R6_pYRCGcFo",
+    title: "Opening for Kristine Alicia",
+    subtitle: "Foundation Room, Houston",
+    category: "Live Performances",
+    date: "2024",
     featured: false,
   },
   {
-    id: "JEdH1VKpDnA",
-    title: "Ready Mi Ready",
-    subtitle: "Short",
-    category: "Shorts",
-    date: "2026",
+    id: "MWmk0Y0Aktc",
+    title: "Live at Foundation Room",
+    subtitle: "Houston Show",
+    category: "Live Performances",
+    date: "2024",
     featured: false,
   },
   {
-    id: "Y1PINvYXffw",
-    title: "New Drop for Mothers",
-    subtitle: "Mamma You're My Sunshine Preview",
-    category: "Shorts",
-    date: "2026",
+    id: "o8s6k_B6m8g",
+    title: "House of Blues Houston",
+    subtitle: "Live Performance",
+    category: "Live Performances",
+    date: "2024",
     featured: false,
   },
   {
-    id: "S3E6T9QcL0Y",
-    title: "BTS: Ready Me Ready",
-    subtitle: "Behind the Scenes",
-    category: "Shorts",
-    date: "2026",
+    id: "SElBvgtBc2U",
+    title: "With Reggie Singer",
+    subtitle: "House of Blues Houston",
+    category: "Live Performances",
+    date: "2024",
     featured: false,
   },
   {
-    id: "iz3AC-4YhHA",
-    title: "Ready Me Ready",
-    subtitle: "Short",
-    category: "Shorts",
-    date: "2026",
+    id: "senrUVjHBb8",
+    title: "House of Blues",
+    subtitle: "Houston Live",
+    category: "Live Performances",
+    date: "2024",
     featured: false,
   },
   {
-    id: "nRBMsTgIqZw",
-    title: "New Music for 2026",
-    subtitle: "Short",
-    category: "Shorts",
-    date: "2026",
+    id: "RlYCrwYhGME",
+    title: "House of Blues Set",
+    subtitle: "Live Performance",
+    category: "Live Performances",
+    date: "2024",
     featured: false,
   },
   {
-    id: "qEdwtVO0dk8",
-    title: "Ready We Ready",
-    subtitle: "Short",
-    category: "Shorts",
-    date: "2026",
-    featured: false,
-  },
-  // Interviews
-  {
-    id: "MZkS176ok_I",
-    title: "Island Heat Exclusive",
-    subtitle: "St. Thomas Carnival Secrets Interview",
-    category: "Interviews",
-    date: "2026",
-    featured: false,
-  },
-  {
-    id: "zGawXcpCS0c",
-    title: "The Jamaican Entrepreneur Dominating Houston Reggae",
-    subtitle: "Sean Austin Interview",
-    category: "Interviews",
-    date: "2026",
-    featured: false,
-  },
-  // Karaoke
-  {
-    id: "mExYukRHtZ0",
-    title: "Same Street — Karaoke",
-    subtitle: "Karaoke with Sean Austin",
-    category: "Karaoke",
-    date: "2026",
-    featured: false,
-  },
-  {
-    id: "BDMY3QBUIuI",
-    title: "Daddy You a Leader — Karaoke",
-    subtitle: "Karaoke with Sean Austin",
-    category: "Karaoke",
-    date: "2026",
-    featured: false,
-  },
-  {
-    id: "2ZJYMl44GtI",
-    title: "Mamma You're My Sunshine — Karaoke",
-    subtitle: "Karaoke with Sean Austin",
-    category: "Karaoke",
-    date: "2026",
+    id: "ZInUFvk4GuE",
+    title: "House of Blues Houston",
+    subtitle: "Live Performance",
+    category: "Live Performances",
+    date: "2024",
     featured: false,
   },
 ];
@@ -213,7 +267,7 @@ function VideoCard({ video, onClick }: { video: typeof videos[0]; onClick: () =>
 }
 
 export default function VideosPage() {
-  const [activeCategory, setActiveCategory] = useState("Music Videos");
+  const [activeCategory, setActiveCategory] = useState("All");
   const [selectedVideo, setSelectedVideo] = useState<(typeof videos)[0] | null>(null);
 
   const { data: syncedData } = useQuery<{ videos: typeof videos | null }>({
@@ -221,15 +275,11 @@ export default function VideosPage() {
     staleTime: 60 * 60 * 1000,
   });
 
-  // Hardcoded entries take precedence over auto-synced data so categories
-  // set here are never overridden by the YouTube API classifier.
-  const activeVideos = (() => {
-    const synced = syncedData?.videos;
-    if (!synced) return videos;
-    return synced.map(sv => videos.find(v => v.id === sv.id) ?? sv);
-  })();
+  const activeVideos = syncedData?.videos ?? videos;
 
-  const filteredVideos = activeVideos.filter(v => v.category === activeCategory);
+  const filteredVideos = activeCategory === "All"
+    ? activeVideos
+    : activeVideos.filter(v => v.category === activeCategory);
 
   const featuredVideo = activeVideos.find(v => v.featured);
 
@@ -242,7 +292,7 @@ export default function VideosPage() {
 
       <div className="min-h-screen">
         {/* Hero Banner */}
-        <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+        <div className="relative h-[35vh] min-h-[260px] flex items-center justify-center overflow-hidden">
           {/* Background with gradient */}
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -255,15 +305,15 @@ export default function VideosPage() {
 
           {/* Hero content */}
           <div className="relative z-10 text-center px-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600/20 border border-red-600/30 mb-6">
-              <FaYoutube className="w-5 h-5 text-red-500" />
-              <span className="text-sm font-medium text-red-400">SEAN AUSTIN MEDIA</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-600/20 border border-red-600/30 mb-3">
+              <FaYoutube className="w-4 h-4 text-red-500" />
+              <span className="text-xs font-medium text-red-400">SEAN AUSTIN MEDIA</span>
             </div>
 
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-2 tracking-tight">
               Videos
             </h1>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8">
+            <p className="text-base text-white/70 max-w-2xl mx-auto mb-4">
               Music videos, live performances, and behind-the-scenes content
             </p>
 
@@ -281,8 +331,8 @@ export default function VideosPage() {
 
         {/* Featured Video Section */}
         {featuredVideo && (
-          <div className="max-w-7xl mx-auto px-6 pt-12 pb-0">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="max-w-7xl mx-auto px-6 pt-8 pb-0">
+            <div className="flex items-center gap-3 mb-4">
               <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded uppercase tracking-wider">
                 New Release
               </span>
@@ -309,9 +359,9 @@ export default function VideosPage() {
         )}
 
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="max-w-7xl mx-auto px-6 py-8">
           {/* Category Filters */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
             {categories.map((category) => (
               <button
                 key={category}
@@ -346,9 +396,9 @@ export default function VideosPage() {
           )}
 
           {/* YouTube CTA */}
-          <div className="mt-16 text-center">
-            <div className="inline-flex flex-col items-center p-8 rounded-2xl bg-gradient-to-b from-card/50 to-card/30 border border-border/30">
-              <div className="w-16 h-16 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
+          <div className="mt-10 text-center">
+            <div className="inline-flex flex-col items-center p-6 rounded-2xl bg-gradient-to-b from-card/50 to-card/30 border border-border/30">
+              <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-3">
                 <FaYoutube className="w-8 h-8 text-red-500" />
               </div>
               <h3 className="font-display text-xl font-bold text-primary mb-2">

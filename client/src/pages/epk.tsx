@@ -8,8 +8,8 @@ import type { PressQuote } from "@shared/schema";
 // Press photo for download
 const PRESS_PHOTO_URL = "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg";
 
-// YouTube video ID for "Sunflower" music video
-const FEATURED_VIDEO_ID = "_bHwEJ4S5-w";
+// YouTube video ID for "Ready Mi Ready" music video
+const FEATURED_VIDEO_ID = "swz5sJINEn0";
 
 export default function EPKPage() {
   const { data: pressQuotes } = useQuery<PressQuote[]>({
@@ -31,9 +31,9 @@ export default function EPKPage() {
         title="Electronic Press Kit - Sean Austin"
         description="Sean Austin's Electronic Press Kit. Bio, press photos, music, videos, and booking information."
       />
-      <div className="min-h-screen py-20 px-6">
+      <div className="min-h-screen py-12 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
               Electronic Press Kit
             </h1>
@@ -167,7 +167,7 @@ export default function EPKPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Video className="w-5 h-5" />
-                  Featured Video - "Sunflower"
+                  Featured Video - "Ready Mi Ready"
                 </CardTitle>
               </CardHeader>
               <CardContent>

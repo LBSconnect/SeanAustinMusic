@@ -4,20 +4,20 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Music, ExternalLink } from "lucide-react";
 
-// Releases sourced from Spotify and Apple Music only
+// Album releases with artwork (using Spotify cover art URLs)
 const releases = [
   {
-    id: "birthday-shellings",
-    title: "Birthday Shellings",
-    url: "https://open.spotify.com/album/1W25sy1K1yiUp6lVPjzJJK",
-    cover: "https://cdn-images.dzcdn.net/images/cover/0c6316daeee1ee7332417840d555b598/500x500-000000-80-0-0.jpg",
+    id: "the-essentials",
+    title: "The Essentials",
+    url: "https://open.spotify.com/album/0ZkV4SpzAppY7ZbMDp2tl0",
+    cover: "https://i.scdn.co/image/ab67616d0000b2736b4836f0b595e0b13f2318f3",
     year: "2026",
-    type: "Single",
+    type: "Album",
   },
   {
     id: "island-breeze",
     title: "Island Breeze (feat. Dameon Gayle)",
-    url: "https://music.apple.com/us/album/island-breeze-single/1891567464",
+    url: "https://open.spotify.com/album/4YPqkhdYa0H94H9msaB9xx",
     cover: "https://cdn-images.dzcdn.net/images/cover/6281c828592241ac7ff25cbf3b3654e6/500x500-000000-80-0-0.jpg",
     year: "2026",
     type: "Single",
@@ -26,7 +26,23 @@ const releases = [
     id: "ready-mi-ready",
     title: "Ready Mi Ready (feat. Troyton)",
     url: "https://open.spotify.com/album/5BEF6vPHCnjdvDNWw0PspF",
-    cover: "https://cdn-images.dzcdn.net/images/cover/395769ecc8973b2f237795c4bbcf7e2d/500x500-000000-80-0-0.jpg",
+    cover: "https://i.scdn.co/image/ab67616d0000b273057cb603c53ad9f6b8db58e0",
+    year: "2026",
+    type: "Single",
+  },
+  {
+    id: "birthday-shellings",
+    title: "Birthday Shellings",
+    url: "https://open.spotify.com/album/1W25sy1K1yiUp6lVPjzJJK",
+    cover: "https://i.scdn.co/image/ab67616d0000b273a3c67222bcac92b31d6bbc69",
+    year: "2026",
+    type: "Single",
+  },
+  {
+    id: "daddy-you-a-leader",
+    title: "Daddy You A Leader",
+    url: "https://open.spotify.com/album/7HaBbBg2YpdZtJkvkLuTnb",
+    cover: "https://i.scdn.co/image/ab67616d0000b273acc2d91b1f9f6ca7154d3e57",
     year: "2026",
     type: "Single",
   },
@@ -42,7 +58,7 @@ const releases = [
     id: "mamma-youre-my-sunshine",
     title: "Mamma You're My Sunshine",
     url: "https://open.spotify.com/album/3PHU0VjHSkatJDcipQpJOi",
-    cover: "https://cdn-images.dzcdn.net/images/cover/b7c58ef3dc330ebd98ea59a8e8f00b2b/500x500-000000-80-0-0.jpg",
+    cover: "https://img.youtube.com/vi/Ds9vadF5EK4/hqdefault.jpg",
     year: "2026",
     type: "Single",
   },
@@ -50,7 +66,7 @@ const releases = [
     id: "afronomixx",
     title: "AFRONOMIXX",
     url: "https://open.spotify.com/album/7jvc3J4O8FBlokmrWXGwdg",
-    cover: "https://cdn-images.dzcdn.net/images/cover/99e8b78043b6986836dd420763dc925d/500x500-000000-80-0-0.jpg",
+    cover: "https://i.scdn.co/image/ab67616d0000b273676f9071e296fc06e4430328",
     year: "2023",
     type: "Album",
   },
@@ -58,17 +74,17 @@ const releases = [
     id: "nice-thing",
     title: "Nice Thing (feat. Dela Dee)",
     url: "https://open.spotify.com/album/3d274ImVTM6voehn2N5akE",
-    cover: "https://cdn-images.dzcdn.net/images/cover/8067862a1a6bd5d99ec218f4b69b7820/500x500-000000-80-0-0.jpg",
+    cover: "https://i.scdn.co/image/ab67616d0000b27337fe80de3a5f9aece1b1247e",
     year: "2023",
     type: "Single",
   },
   {
-    id: "purple-hearts",
-    title: "Purple Hearts",
-    url: "https://open.spotify.com/album/1Z67dCz0fc2VZlOqnGQqJD",
-    cover: "https://cdn-images.dzcdn.net/images/cover/981233c3b723cd49f3a3d7a7663747df/500x500-000000-80-0-0.jpg",
-    year: "2021",
-    type: "Album",
+    id: "how-deep-is-your-love",
+    title: "How Deep Is Your Love",
+    url: "https://open.spotify.com/album/7jvc3J4O8FBlokmrWXGwdg",
+    cover: "https://i.scdn.co/image/ab67616d0000b2732924938dd6190736743dfe7d",
+    year: "2023",
+    type: "Single",
   },
   {
     id: "lemonade",
@@ -79,18 +95,26 @@ const releases = [
     type: "Single",
   },
   {
-    id: "smoke-vs-fire",
-    title: "Smoke vs Fire",
-    url: "https://open.spotify.com/album/57arD0PlmzuEGThKqA4GqF",
-    cover: "https://i.scdn.co/image/ab67616d0000b273f930235fe525c01eda8fec2a",
+    id: "purple-hearts",
+    title: "Purple Hearts",
+    url: "https://open.spotify.com/album/1Z67dCz0fc2VZlOqnGQqJD",
+    cover: "https://i.scdn.co/image/ab67616d0000b273afa69c6a7435138b3ad328f0",
     year: "2021",
-    type: "EP",
+    type: "Album",
+  },
+  {
+    id: "confessions",
+    title: "Confessions",
+    url: "https://www.youtube.com/watch?v=IlzEXnEYWYU",
+    cover: "https://i.scdn.co/image/ab67616d0000b2736cb7bb182efd62cf4581d18c",
+    year: "2021",
+    type: "Single",
   },
   {
     id: "2020-pt-2-reloaded",
     title: "2020, Pt. 2: Reloaded",
     url: "https://open.spotify.com/album/3yPtBeXuOxbzC6uCVnmnLp",
-    cover: "https://cdn-images.dzcdn.net/images/cover/5deadff32d059d5d74a5ce20ef4628ea/500x500-000000-80-0-0.jpg",
+    cover: "https://i.scdn.co/image/ab67616d0000b273bb43407853b3f3ebc3857b0d",
     year: "2020",
     type: "Album",
   },
@@ -98,7 +122,7 @@ const releases = [
     id: "2020-pt-1",
     title: "2020, Pt. 1",
     url: "https://open.spotify.com/album/6LmilslOHuK3Vq4h2quiJv",
-    cover: "https://cdn-images.dzcdn.net/images/cover/878dff154da09ed174fe9c0a5b151d22/500x500-000000-80-0-0.jpg",
+    cover: "https://i.scdn.co/image/ab67616d0000b2734b511a1471b3866dc0d98b61",
     year: "2020",
     type: "Album",
   },
@@ -119,9 +143,9 @@ export default function MusicPage() {
         description="Listen to Sean Austin's music catalog. Houston reggae songs, albums, singles, and live performances on all platforms."
         noSuffix
       />
-      <div className="min-h-screen py-20 px-6">
+      <div className="min-h-screen py-12 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
               Music
             </h1>
@@ -131,7 +155,7 @@ export default function MusicPage() {
           </div>
 
           {/* Releases Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
             {activeReleases.map((release) => (
               <a
                 key={release.id}

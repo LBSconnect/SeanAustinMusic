@@ -3,7 +3,7 @@ import { FaInstagram, FaFacebook, FaYoutube, FaTiktok, FaXTwitter } from "react-
 const links = [
   { href: "https://instagram.com/iamseanaustin", icon: FaInstagram, label: "Instagram" },
   { href: "https://x.com/iamseanaustin", icon: FaXTwitter, label: "X" },
-  { href: "https://youtube.com/@SeanAustinReggae", icon: FaYoutube, label: "YouTube" },
+  { href: "https://www.youtube.com/@SeanAustinReggae", icon: FaYoutube, label: "YouTube" },
   { href: "https://facebook.com/iamseanaustin", icon: FaFacebook, label: "Facebook" },
   { href: "https://tiktok.com/@iamseanaustin", icon: FaTiktok, label: "TikTok" },
 ];

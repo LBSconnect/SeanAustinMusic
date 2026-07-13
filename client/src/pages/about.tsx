@@ -15,7 +15,7 @@ const socialPlatforms = [
   {
     name: "YouTube",
     handle: "@SeanAustinReggae",
-    url: "https://youtube.com/@SeanAustinReggae",
+    url: "https://www.youtube.com/@SeanAustinReggae",
     icon: FaYoutube,
     color: "hover:text-red-500",
     description: "Music videos & live performances",
