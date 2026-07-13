@@ -103,6 +103,24 @@ async function getYouTubeChannelId(): Promise<string | null> {
 function classifyVideo(title: string): { category: string; subtitle: string } {
   const lower = title.toLowerCase();
 
+  // Karaoke — check before Music Videos
+  if (lower.includes("karaoke") || lower.includes("instrumental") || lower.includes("sing along")) {
+    return { category: "Karaoke", subtitle: "Karaoke Version" };
+  }
+
+  // Shorts — check before Music Videos; YouTube marks these with #shorts or short duration
+  if (
+    lower.includes("#shorts") ||
+    lower.includes("#short") ||
+    lower.endsWith(" shorts") ||
+    lower.includes("preview") ||
+    lower.includes("snippet") ||
+    lower.includes("clip")
+  ) {
+    return { category: "Shorts", subtitle: "Short" };
+  }
+
+  // Live Performances
   if (
     lower.includes("live at") ||
     lower.includes("live performance") ||
@@ -114,16 +132,9 @@ function classifyVideo(title: string): { category: string; subtitle: string } {
     return { category: "Live Performances", subtitle: "Live Performance" };
   }
 
-  if (lower.includes("#shorts") || lower.includes("preview") || lower.includes("snippet")) {
-    return { category: "Shorts", subtitle: "Short" };
-  }
-
-  if (lower.includes("interview") || lower.includes("chat") || lower.includes("talk")) {
+  // Interviews
+  if (lower.includes("interview") || lower.includes("chat with") || lower.includes("speaks on")) {
     return { category: "Interviews", subtitle: "Interview" };
-  }
-
-  if (lower.includes("official music video") || lower.includes("feat.") || lower.includes("ft.")) {
-    return { category: "Music Videos", subtitle: "Official Music Video" };
   }
 
   return { category: "Music Videos", subtitle: "Official Music Video" };
@@ -154,12 +165,48 @@ async function fetchYouTubeVideos(): Promise<VideoItem[] | null> {
     );
     if (!playlistRes.ok) return null;
     const playlistData = (await playlistRes.json()) as { items?: any[] };
+    const items = playlistData.items ?? [];
 
-    return (playlistData.items ?? []).map((item: any, index: number) => {
+    // Fetch video durations so we can classify Shorts (≤60s) accurately
+    const videoIds = items.map((item: any) => item.snippet.resourceId.videoId as string).join(",");
+    let durationMap: Record<string, number> = {};
+    if (videoIds) {
+      try {
+        const detailRes = await fetch(
+          `https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=${videoIds}&key=${apiKey}`
+        );
+        if (detailRes.ok) {
+          const detailData = (await detailRes.json()) as { items?: { id: string; contentDetails: { duration: string } }[] };
+          for (const v of detailData.items ?? []) {
+            // Parse ISO 8601 duration (e.g. PT1M30S) to seconds
+            const m = v.contentDetails.duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+            if (m) {
+              durationMap[v.id] = (parseInt(m[1] || "0") * 3600) + (parseInt(m[2] || "0") * 60) + parseInt(m[3] || "0");
+            }
+          }
+        }
+      } catch {
+        // Duration fetch failed; fall back to title-only classification
+      }
+    }
+
+    let featuredSet = false;
+    return items.map((item: any) => {
       const title = item.snippet.title as string;
       const year = (item.snippet.publishedAt as string)?.slice(0, 4) ?? "";
       const videoId = item.snippet.resourceId.videoId as string;
-      const { category, subtitle } = classifyVideo(title);
+      let { category, subtitle } = classifyVideo(title);
+
+      // Override to Shorts if duration ≤ 60 seconds
+      const duration = durationMap[videoId];
+      if (duration !== undefined && duration <= 60 && category !== "Karaoke") {
+        category = "Shorts";
+        subtitle = "Short";
+      }
+
+      // Only full Music Videos are featured
+      const isFeatured = !featuredSet && category === "Music Videos";
+      if (isFeatured) featuredSet = true;
 
       return {
         id: videoId,
@@ -167,7 +214,7 @@ async function fetchYouTubeVideos(): Promise<VideoItem[] | null> {
         subtitle,
         category,
         date: year,
-        featured: index === 0,
+        featured: isFeatured,
       };
     });
   } catch {

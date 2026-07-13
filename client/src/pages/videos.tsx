@@ -10,7 +10,7 @@ import { FaYoutube } from "react-icons/fa6";
 const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@SeanAustinMusic";
 
 // Video categories
-const categories = ["All", "Music Videos", "Live Performances", "Shorts", "Interviews"];
+const categories = ["All", "Music Videos", "Live Performances", "Shorts", "Karaoke", "Interviews"];
 
 // Video data from Sean Austin's YouTube channel
 const videos = [
