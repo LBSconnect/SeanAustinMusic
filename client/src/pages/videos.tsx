@@ -292,7 +292,7 @@ export default function VideosPage() {
 
       <div className="min-h-screen">
         {/* Hero Banner */}
-        <div className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+        <div className="relative h-[35vh] min-h-[260px] flex items-center justify-center overflow-hidden">
           {/* Background with gradient */}
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -305,15 +305,15 @@ export default function VideosPage() {
 
           {/* Hero content */}
           <div className="relative z-10 text-center px-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-600/20 border border-red-600/30 mb-6">
-              <FaYoutube className="w-5 h-5 text-red-500" />
-              <span className="text-sm font-medium text-red-400">SEAN AUSTIN MEDIA</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-600/20 border border-red-600/30 mb-3">
+              <FaYoutube className="w-4 h-4 text-red-500" />
+              <span className="text-xs font-medium text-red-400">SEAN AUSTIN MEDIA</span>
             </div>
 
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-2 tracking-tight">
               Videos
             </h1>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto mb-8">
+            <p className="text-base text-white/70 max-w-2xl mx-auto mb-4">
               Music videos, live performances, and behind-the-scenes content
             </p>
 
@@ -331,8 +331,8 @@ export default function VideosPage() {
 
         {/* Featured Video Section */}
         {featuredVideo && (
-          <div className="max-w-7xl mx-auto px-6 pt-12 pb-0">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="max-w-7xl mx-auto px-6 pt-8 pb-0">
+            <div className="flex items-center gap-3 mb-4">
               <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded uppercase tracking-wider">
                 New Release
               </span>
@@ -359,9 +359,9 @@ export default function VideosPage() {
         )}
 
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="max-w-7xl mx-auto px-6 py-8">
           {/* Category Filters */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
             {categories.map((category) => (
               <button
                 key={category}
@@ -396,9 +396,9 @@ export default function VideosPage() {
           )}
 
           {/* YouTube CTA */}
-          <div className="mt-16 text-center">
-            <div className="inline-flex flex-col items-center p-8 rounded-2xl bg-gradient-to-b from-card/50 to-card/30 border border-border/30">
-              <div className="w-16 h-16 rounded-full bg-red-600/20 flex items-center justify-center mb-4">
+          <div className="mt-10 text-center">
+            <div className="inline-flex flex-col items-center p-6 rounded-2xl bg-gradient-to-b from-card/50 to-card/30 border border-border/30">
+              <div className="w-12 h-12 rounded-full bg-red-600/20 flex items-center justify-center mb-3">
                 <FaYoutube className="w-8 h-8 text-red-500" />
               </div>
               <h3 className="font-display text-xl font-bold text-primary mb-2">

@@ -9,7 +9,7 @@ const releases = [
   {
     id: "island-breeze",
     title: "Island Breeze (feat. Dameon Gayle)",
-    url: "https://music.apple.com/us/album/island-breeze-single/1891567464",
+    url: "https://open.spotify.com/album/4YPqkhdYa0H94H9msaB9xx",
     cover: "https://cdn-images.dzcdn.net/images/cover/6281c828592241ac7ff25cbf3b3654e6/500x500-000000-80-0-0.jpg",
     year: "2026",
     type: "Single",
@@ -17,7 +17,7 @@ const releases = [
   {
     id: "ready-mi-ready",
     title: "Ready Mi Ready (feat. Troyton)",
-    url: "https://open.spotify.com/track/1ZU4hR5PFxKqWGstKd15ho",
+    url: "https://open.spotify.com/album/5BEF6vPHCnjdvDNWw0PspF",
     cover: "https://i.scdn.co/image/ab67616d0000b273057cb603c53ad9f6b8db58e0",
     year: "2026",
     type: "Single",
@@ -25,15 +25,15 @@ const releases = [
   {
     id: "same-street",
     title: "Same Street",
-    url: "https://www.youtube.com/watch?v=UJjSybBxtZs",
+    url: "https://open.spotify.com/album/45Zj6j4EsWRnNuPXCBjzo3",
     cover: "https://cdn-images.dzcdn.net/images/cover/9faa0906d476cf5c2ebdc6f670e5c23a/500x500-000000-80-0-0.jpg",
-    year: "2026",
+    year: "2024",
     type: "Single",
   },
   {
     id: "mamma-youre-my-sunshine",
     title: "Mamma You're My Sunshine",
-    url: "https://www.youtube.com/watch?v=Ds9vadF5EK4",
+    url: "https://open.spotify.com/album/3PHU0VjHSkatJDcipQpJOi",
     cover: "https://img.youtube.com/vi/Ds9vadF5EK4/hqdefault.jpg",
     year: "2024",
     type: "Single",
@@ -57,7 +57,7 @@ const releases = [
   {
     id: "how-deep-is-your-love",
     title: "How Deep Is Your Love",
-    url: "https://open.spotify.com/album/4PnNvsSztrcF5J0xRsNggN",
+    url: "https://open.spotify.com/album/7jvc3J4O8FBlokmrWXGwdg",
     cover: "https://i.scdn.co/image/ab67616d0000b2732924938dd6190736743dfe7d",
     year: "2023",
     type: "Single",
@@ -73,7 +73,7 @@ const releases = [
   {
     id: "confessions",
     title: "Confessions",
-    url: "https://open.spotify.com/album/5dFZAtVtZHrU0f3qFGgXsE",
+    url: "https://www.youtube.com/watch?v=ViNfJ5HTJfM",
     cover: "https://i.scdn.co/image/ab67616d0000b2736cb7bb182efd62cf4581d18c",
     year: "2021",
     type: "Single",
@@ -111,9 +111,9 @@ export default function MusicPage() {
         description="Listen to Sean Austin's music catalog. Houston reggae songs, albums, singles, and live performances on all platforms."
         noSuffix
       />
-      <div className="min-h-screen py-20 px-6">
+      <div className="min-h-screen py-12 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
               Music
             </h1>
@@ -123,7 +123,7 @@ export default function MusicPage() {
           </div>
 
           {/* Releases Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
             {activeReleases.map((release) => (
               <a
                 key={release.id}

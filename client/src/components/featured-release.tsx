@@ -3,18 +3,18 @@ import { Music, ShoppingBag } from "lucide-react";
 
 export default function FeaturedRelease() {
   return (
-    <section className="py-20 px-6 text-center" data-testid="section-featured-release">
+    <section className="py-10 px-6 text-center" data-testid="section-featured-release">
       <div className="max-w-3xl mx-auto">
         <p className="text-sm uppercase tracking-wider text-muted-foreground mb-2">New Release</p>
         <h2 className="font-display text-3xl font-bold text-primary" data-testid="text-featured-release-title">
           Island Breeze
         </h2>
-        <p className="mt-4 text-muted-foreground">
+        <p className="mt-3 text-muted-foreground">
           The latest single from Sean Austin, a smooth island groove featuring Dameon Gayle. Stream now on all platforms.
         </p>
 
         {/* Stream embeds — equal height, side-by-side on sm+ screens */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Apple Music — Island Breeze */}
           <iframe
             allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
@@ -39,7 +39,7 @@ export default function FeaturedRelease() {
           />
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
           <a href="/music">
             <Button variant="outline" size="lg">
               <Music className="w-4 h-4 mr-2" />

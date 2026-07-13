@@ -64,9 +64,9 @@ export default function MerchPage() {
         title="Merch - Sean Austin"
         description="Official Sean Austin merchandise. Shop music, apparel, and more."
       />
-      <div className="min-h-screen py-20 px-6">
+      <div className="min-h-screen py-12 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
               Official Store
             </h1>
@@ -76,8 +76,8 @@ export default function MerchPage() {
           </div>
 
           {/* Featured Items Grid */}
-          <div className="mb-12">
-            <h2 className="font-display text-2xl font-bold text-primary text-center mb-8">
+          <div className="mb-8">
+            <h2 className="font-display text-2xl font-bold text-primary text-center mb-6">
               Featured Items
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

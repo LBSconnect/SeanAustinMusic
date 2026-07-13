@@ -31,9 +31,9 @@ export default function EPKPage() {
         title="Electronic Press Kit - Sean Austin"
         description="Sean Austin's Electronic Press Kit. Bio, press photos, music, videos, and booking information."
       />
-      <div className="min-h-screen py-20 px-6">
+      <div className="min-h-screen py-12 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
               Electronic Press Kit
             </h1>

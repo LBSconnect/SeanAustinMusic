@@ -29,7 +29,7 @@ export default function Hero() {
       {/* ── CONTENT ZONE ─────────────────────────────────────────────────
           flex-1 fills the remaining viewport height. Content is centred
           vertically within this zone.                                     */}
-      <div className="flex-1 bg-background flex flex-col items-center justify-center text-center px-4 sm:px-6 pb-14 sm:pb-20">
+      <div className="flex-1 bg-background flex flex-col items-center justify-center text-center px-4 sm:px-6 pb-8 sm:pb-12">
         <div className="max-w-5xl mx-auto w-full">
           <h1
             className="font-display text-3xl sm:text-5xl md:text-6xl font-bold leading-tight"
@@ -39,7 +39,7 @@ export default function Hero() {
             <span style={{ color: "#FFD700" }}>ROCK.</span>{" "}
             <span style={{ color: "#1A6B1A" }}>REGGAE.</span>
           </h1>
-          <p className="mt-4 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto text-gray-300 leading-relaxed px-2">
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg max-w-2xl mx-auto text-gray-300 leading-relaxed px-2">
             Houston based Reggae Artist Sean Austin blends Jamaican roots with modern global sound
             music that moves your spirit and your body.
           </p>

@@ -51,9 +51,9 @@ export default function ContactPage() {
         title="Booking & Contact - Sean Austin"
         description="Book Sean Austin for your event. Submit booking inquiries for concerts, festivals, private events, and corporate shows."
       />
-      <div className="min-h-screen py-20 px-6">
+      <div className="min-h-screen py-12 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
               Booking & Contact
             </h1>
@@ -62,7 +62,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
             <Card className="bg-card/30 text-center">
               <CardContent className="p-6">
                 <Calendar className="w-8 h-8 text-primary mx-auto mb-3" />
