@@ -81,7 +81,7 @@ const releases = [
   {
     id: "how-deep-is-your-love",
     title: "How Deep Is Your Love",
-    url: "https://open.spotify.com/album/7jvc3J4O8FBlokmrWXGwdg",
+    url: "https://open.spotify.com/search/Sean%20Austin%20How%20Deep%20Is%20Your%20Love",
     cover: "https://i.scdn.co/image/ab67616d0000b2732924938dd6190736743dfe7d",
     year: "2023",
     type: "Single",
