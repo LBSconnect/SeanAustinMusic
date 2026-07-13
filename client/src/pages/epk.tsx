@@ -8,8 +8,8 @@ import type { PressQuote } from "@shared/schema";
 // Press photo for download
 const PRESS_PHOTO_URL = "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg";
 
-// YouTube video ID for "Ready Mi Ready" music video
-const FEATURED_VIDEO_ID = "swz5sJINEn0";
+// YouTube video ID for "Daddy You A Leader" music video
+const FEATURED_VIDEO_ID = "ffzcrhIHzLE";
 
 export default function EPKPage() {
   const { data: pressQuotes } = useQuery<PressQuote[]>({
@@ -167,7 +167,7 @@ export default function EPKPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Video className="w-5 h-5" />
-                  Featured Video - "Ready Mi Ready"
+                  Featured Video - "Daddy You A Leader"
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -176,7 +176,7 @@ export default function EPKPage() {
                     width="100%"
                     height="100%"
                     src={`https://www.youtube.com/embed/${FEATURED_VIDEO_ID}`}
-                    title="Sean Austin - Ready Mi Ready (Official Video)"
+                    title="Sean Austin - Daddy You A Leader (Official Video)"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="rounded-lg"
