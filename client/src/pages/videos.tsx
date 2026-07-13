@@ -325,7 +325,15 @@ export default function VideosPage() {
     staleTime: 60 * 60 * 1000,
   });
 
-  const activeVideos = syncedData?.videos ?? videos;
+  // Hardcoded entries are the source of truth for category (manually verified).
+  // API data may add new videos not yet in the hardcoded list, but never overrides
+  // the category of a known video — preventing Shorts from leaking into Music Videos
+  // when the YouTube duration API call fails.
+  const knownIds = new Set(videos.map((v) => v.id));
+  const apiOnlyVideos = (syncedData?.videos ?? []).filter(
+    (v) => !knownIds.has(v.id)
+  );
+  const activeVideos = [...videos, ...apiOnlyVideos];
 
   const filteredVideos = activeCategory === "All"
     ? activeVideos

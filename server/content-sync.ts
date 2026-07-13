@@ -113,9 +113,12 @@ function classifyVideo(title: string): { category: string; subtitle: string } {
     lower.includes("#shorts") ||
     lower.includes("#short") ||
     lower.endsWith(" shorts") ||
+    lower.startsWith("shorts") ||
     lower.includes("preview") ||
     lower.includes("snippet") ||
-    lower.includes("clip")
+    lower.includes("clip") ||
+    lower.includes("teaser") ||
+    lower.includes("reel")
   ) {
     return { category: "Shorts", subtitle: "Short" };
   }
