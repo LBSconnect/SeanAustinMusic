@@ -8,8 +8,8 @@ import type { PressQuote } from "@shared/schema";
 // Press photo for download
 const PRESS_PHOTO_URL = "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg";
 
-// YouTube video ID for "Sunflower" music video
-const FEATURED_VIDEO_ID = "_bHwEJ4S5-w";
+// YouTube video ID for "Ready Mi Ready" music video
+const FEATURED_VIDEO_ID = "swz5sJINEn0";
 
 export default function EPKPage() {
   const { data: pressQuotes } = useQuery<PressQuote[]>({
@@ -167,7 +167,7 @@ export default function EPKPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Video className="w-5 h-5" />
-                  Featured Video - "Sunflower"
+                  Featured Video - "Ready Mi Ready"
                 </CardTitle>
               </CardHeader>
               <CardContent>
