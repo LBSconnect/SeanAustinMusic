@@ -37,9 +37,8 @@ export default function Hero() {
             className="font-display text-5xl sm:text-7xl md:text-8xl font-bold text-white leading-none mb-4 tracking-tight"
             data-testid="text-hero-headline"
           >
-            <span style={{ color: "#cc2200" }}>ROOTS.</span>{" "}
-            <span style={{ color: "#FFD700" }}>ROCK.</span>{" "}
-            <span style={{ color: "#22aa22" }}>REGGAE.</span>
+            <span style={{ color: "#cc2200" }}>S</span><span style={{ color: "#FFD700" }}>E</span><span style={{ color: "#22aa22" }}>A</span><span style={{ color: "#cc2200" }}>N</span>{" "}
+            <span style={{ color: "#FFD700" }}>A</span><span style={{ color: "#22aa22" }}>U</span><span style={{ color: "#cc2200" }}>S</span><span style={{ color: "#FFD700" }}>T</span><span style={{ color: "#22aa22" }}>I</span><span style={{ color: "#cc2200" }}>N</span>
           </h1>
 
           <p className="text-base sm:text-lg text-white/65 max-w-lg mx-auto mb-8 leading-relaxed">
