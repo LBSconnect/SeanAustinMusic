@@ -97,7 +97,7 @@ export default function Hero() {
               <FaApple className="w-5 h-5" />
             </a>
             <a
-              href="https://www.youtube.com/@SeanAustinMusic"
+              href="https://www.youtube.com/@SeanAustinReggae"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
