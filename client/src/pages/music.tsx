@@ -58,7 +58,7 @@ const releases = [
     id: "mamma-youre-my-sunshine",
     title: "Mamma You're My Sunshine",
     url: "https://open.spotify.com/album/3PHU0VjHSkatJDcipQpJOi",
-    cover: "https://img.youtube.com/vi/Ds9vadF5EK4/hqdefault.jpg",
+    cover: "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02d19147a0c63ad3b641e14902",
     year: "2026",
     type: "Single",
   },
