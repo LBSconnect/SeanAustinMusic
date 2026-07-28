@@ -102,7 +102,7 @@ export default function EPKPage() {
                           <ExternalLink className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 group-hover:text-primary" />
                           <span>
                             <span className="font-medium text-foreground group-hover:text-primary">{article.title}</span>
-                            <span className="text-muted-foreground/70"> — {article.source}, {article.date}</span>
+                            <span className="text-muted-foreground/70">, {article.source}, {article.date}</span>
                           </span>
                         </a>
                       </li>
@@ -200,7 +200,7 @@ export default function EPKPage() {
                       <blockquote key={quote.id} className="border-l-2 border-primary pl-4">
                         <p className="text-muted-foreground italic">"{quote.quote}"</p>
                         <cite className="block mt-2 text-sm text-primary not-italic">
-                          — {quote.source}
+                          {quote.source}
                         </cite>
                       </blockquote>
                     ))}

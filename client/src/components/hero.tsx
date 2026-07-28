@@ -18,8 +18,8 @@ export default function Hero() {
       />
 
       {/* Gradient overlays — heavy bottom fade for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-black/25" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/5" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/15 via-transparent to-black/15" />
 
       {/* Content pinned to bottom */}
       <div className="relative z-10 px-6 pb-10 pt-20 text-center">
@@ -34,15 +34,14 @@ export default function Hero() {
           </div>
 
           <h1
-            className="font-display text-5xl sm:text-7xl md:text-8xl font-bold text-white leading-none mb-4 tracking-tight"
+            className="font-display text-5xl sm:text-7xl md:text-8xl font-bold leading-none mb-4 tracking-tight bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent"
             data-testid="text-hero-headline"
           >
-            <span style={{ color: "#cc2200" }}>S</span><span style={{ color: "#FFD700" }}>E</span><span style={{ color: "#22aa22" }}>A</span><span style={{ color: "#cc2200" }}>N</span>{" "}
-            <span style={{ color: "#FFD700" }}>A</span><span style={{ color: "#22aa22" }}>U</span><span style={{ color: "#cc2200" }}>S</span><span style={{ color: "#FFD700" }}>T</span><span style={{ color: "#22aa22" }}>I</span><span style={{ color: "#cc2200" }}>N</span>
+            SEAN AUSTIN
           </h1>
 
           <p className="text-base sm:text-lg text-white/65 max-w-lg mx-auto mb-8 leading-relaxed">
-            Sean Austin blends Jamaican roots with a modern global sound — music that moves your spirit and your body.
+            Sean Austin blends Jamaican roots with a modern global sound, music that moves your spirit and your body.
           </p>
 
           {/* Primary CTAs */}

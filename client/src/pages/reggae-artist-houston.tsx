@@ -15,7 +15,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "EntertainmentBusiness"],
   "@id": "https://www.seanaustinmusic.com/reggae-artist-houston-texas#business",
-  "name": "Sean Austin — Reggae Artist Houston Texas",
+  "name": "Sean Austin: Reggae Artist Houston Texas",
   "description": "Sean Austin is a Reggae Artist based in Houston Texas, performing authentic Caribbean roots reggae, dancehall, and live music for concerts, festivals, corporate events, weddings, and private parties in Houston TX and worldwide.",
   "url": "https://www.seanaustinmusic.com/reggae-artist-houston-texas",
   "email": "iamseanaustin@icloud.com",
@@ -220,7 +220,7 @@ export default function ReggaeArtistHoustonPage() {
               <div className="rounded-xl overflow-hidden">
                 <img
                   src="/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg"
-                  alt="Sean Austin — Reggae Artist based in Houston Texas"
+                  alt="Sean Austin, Reggae Artist based in Houston Texas"
                   className="w-full h-auto object-cover rounded-xl"
                   fetchPriority="high"
                   loading="eager"
@@ -381,7 +381,7 @@ export default function ReggaeArtistHoustonPage() {
               Stream Houston Reggae Music
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Listen to Sean Austin's full catalog — Houston's authentic Caribbean reggae and dancehall — on all major platforms.
+              Listen to Sean Austin's full catalog, Houston's authentic Caribbean reggae and dancehall, on all major platforms.
             </p>
             <div className="max-w-md mx-auto">
               <iframe
@@ -391,7 +391,7 @@ export default function ReggaeArtistHoustonPage() {
                 height="200"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
-                title="Sean Austin — Houston Reggae Artist on Spotify"
+                title="Sean Austin: Houston Reggae Artist on Spotify"
               />
             </div>
           </section>
@@ -413,11 +413,11 @@ export default function ReggaeArtistHoustonPage() {
                 },
                 {
                   q: "How do I book Sean Austin for a Houston event?",
-                  a: "Fill out the booking form above or email iamseanaustin@icloud.com directly. Sean Austin is available for Houston concerts, corporate events, festivals, weddings, and private parties — with a response within 48 hours.",
+                  a: "Fill out the booking form above or email iamseanaustin@icloud.com directly. Sean Austin is available for Houston concerts, corporate events, festivals, weddings, and private parties, with a response within 48 hours.",
                 },
                 {
                   q: "What type of music does Sean Austin play?",
-                  a: "Sean Austin performs reggae, roots reggae, dancehall, and Caribbean music — blending authentic Jamaican reggae with modern production. Fans of Bob Marley, Sean Paul, Shaggy, and Vybz Kartel will love his sound.",
+                  a: "Sean Austin performs reggae, roots reggae, dancehall, and Caribbean music, blending authentic Jamaican reggae with modern production. Fans of Bob Marley, Sean Paul, Shaggy, and Vybz Kartel will love his sound.",
                 },
                 {
                   q: "Is Sean Austin available for private events and weddings in Houston?",

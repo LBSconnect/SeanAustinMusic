@@ -29,7 +29,7 @@ export default function TourPreview() {
           ) : upcomingDates.length > 0 ? (
             upcomingDates.map((show) => (
               <p key={show.id} className="text-muted-foreground" data-testid={`text-tour-date-${show.id}`}>
-                {show.city}, {show.country} — {show.date}
+                {show.city}, {show.country}, {show.date}
               </p>
             ))
           ) : (

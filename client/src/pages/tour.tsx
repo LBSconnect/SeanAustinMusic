@@ -33,7 +33,7 @@ const eventSchema = {
     "position": i + 1,
     "item": {
       "@type": "Event",
-      "name": `Sean Austin — ${show.subtitle} on ${show.venue}`,
+      "name": `Sean Austin: ${show.subtitle} on ${show.venue}`,
       "performer": {
         "@type": "MusicGroup",
         "name": "Sean Austin",
@@ -53,7 +53,7 @@ export default function TourPage() {
     <>
       <SEO
         title="Sean Austin Live Tour Dates 2026 | Reggae Concerts Houston TX"
-        description="See Sean Austin live — Houston Texas reggae artist performing at venues worldwide. Upcoming tour dates 2026 including Houston TX, Spain, and Nigeria. Book Sean Austin for your event."
+        description="See Sean Austin live, Houston Texas reggae artist performing at venues worldwide. Upcoming tour dates 2026 including Houston TX, Spain, and Nigeria. Book Sean Austin for your event."
         path="/tour"
         noSuffix
       />
@@ -93,7 +93,7 @@ export default function TourPage() {
                   <div className="flex items-center gap-2 text-primary mb-3">
                     <Radio className="w-4 h-4" />
                     <span className="font-display text-lg font-bold">{show.venue}</span>
-                    <span className="text-sm text-muted-foreground font-normal">— {show.subtitle}</span>
+                    <span className="text-sm text-muted-foreground font-normal">({show.subtitle})</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-muted-foreground">
                     <div className="flex items-center gap-2">

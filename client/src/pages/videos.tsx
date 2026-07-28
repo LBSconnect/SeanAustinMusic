@@ -91,7 +91,7 @@ const videos = [
   },
   {
     id: "S3E6T9QcL0Y",
-    title: "Ready Mi Ready — Behind the Scenes",
+    title: "Ready Mi Ready: Behind the Scenes",
     subtitle: "BTS Short",
     category: "Shorts",
     date: "2026",
@@ -99,7 +99,7 @@ const videos = [
   },
   {
     id: "VUVFVw7KjCY",
-    title: "Ready Mi Ready — BTS",
+    title: "Ready Mi Ready: BTS",
     subtitle: "Behind the Scenes",
     category: "Shorts",
     date: "2026",
@@ -107,7 +107,7 @@ const videos = [
   },
   {
     id: "iz3AC-4YhHA",
-    title: "Ready Mi Ready — Behind the Scenes",
+    title: "Ready Mi Ready: Behind the Scenes",
     subtitle: "Official Short",
     category: "Shorts",
     date: "2026",

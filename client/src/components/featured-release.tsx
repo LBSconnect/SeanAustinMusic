@@ -33,7 +33,7 @@ export default function FeaturedRelease() {
               The<br />Essentials
             </h2>
             <p className="text-white/55 text-sm leading-relaxed mb-7 max-w-sm">
-              12 essential tracks spanning roots reggae, dancehall and contemporary sounds — Sean Austin's most complete body of work to date.
+              12 essential tracks spanning roots reggae, dancehall and contemporary sounds, Sean Austin's most complete body of work to date.
             </p>
 
             {/* Platform badges */}

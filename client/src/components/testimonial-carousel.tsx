@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
     location: "Kingston, Jamaica",
   },
   {
-    quote: "His music got me through some of the hardest times. 'Rise Up' is more than a song — it's a movement.",
+    quote: "His music got me through some of the hardest times. 'Rise Up' is more than a song, it's a movement.",
     name: "Sophia R.",
     location: "Toronto, Canada",
   },
