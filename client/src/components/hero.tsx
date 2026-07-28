@@ -18,7 +18,7 @@ export default function Hero() {
       />
 
       {/* Gradient overlays — heavy bottom fade for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/5" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#2b2b30] via-black/35 to-black/5" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/15 via-transparent to-black/15" />
 
       {/* Content pinned to bottom */}
