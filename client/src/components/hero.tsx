@@ -25,20 +25,20 @@ export default function Hero() {
       <div className="relative z-10 px-6 pb-10 pt-20 text-center">
         <div className="max-w-4xl mx-auto">
 
+          <h1
+            className="font-display text-5xl sm:text-7xl md:text-8xl font-bold leading-none mb-5 tracking-tight bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent"
+            data-testid="text-hero-headline"
+          >
+            SEAN AUSTIN
+          </h1>
+
           {/* Location tag */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-xs font-semibold uppercase tracking-widest text-white/75">
               Houston, Texas
             </span>
           </div>
-
-          <h1
-            className="font-display text-5xl sm:text-7xl md:text-8xl font-bold leading-none mb-4 tracking-tight bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent"
-            data-testid="text-hero-headline"
-          >
-            SEAN AUSTIN
-          </h1>
 
           <p className="text-base sm:text-lg text-white/65 max-w-lg mx-auto mb-8 leading-relaxed">
             Sean Austin blends Jamaican roots with a modern global sound, music that moves your spirit and your body.
