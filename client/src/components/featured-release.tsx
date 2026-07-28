@@ -5,7 +5,7 @@ import { FaSpotify, FaApple } from "react-icons/fa6";
 export default function FeaturedRelease() {
   return (
     <section
-      className="relative overflow-hidden border-y border-white/5 bg-black/30"
+      className="relative overflow-hidden border-y border-white/5 bg-[#2b2b30]"
       data-testid="section-featured-release"
     >
       <div className="max-w-5xl mx-auto px-6 py-12">
