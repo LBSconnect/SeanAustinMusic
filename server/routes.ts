@@ -503,7 +503,7 @@ ${pages
     <loc>${baseUrl}/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg</loc>
     <image:image>
       <image:loc>${baseUrl}/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg</image:loc>
-      <image:title>Sean Austin — Reggae Artist Houston Texas</image:title>
+      <image:title>Sean Austin: Reggae Artist Houston Texas</image:title>
       <image:caption>Sean Austin is a Reggae Artist based in Houston Texas performing Caribbean roots reggae and dancehall</image:caption>
     </image:image>
   </url>

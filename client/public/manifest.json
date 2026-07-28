@@ -1,5 +1,5 @@
 {
-  "name": "Sean Austin — Reggae Artist Houston Texas",
+  "name": "Sean Austin: Reggae Artist Houston Texas",
   "short_name": "Sean Austin",
   "description": "Sean Austin is a Reggae Artist based in Houston Texas. Stream authentic Caribbean music, watch videos, and book live performances.",
   "start_url": "/",
@@ -22,7 +22,7 @@
     {
       "src": "/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg",
       "type": "image/jpeg",
-      "label": "Sean Austin — Houston Texas Reggae Artist"
+      "label": "Sean Austin: Houston Texas Reggae Artist"
     }
   ],
   "shortcuts": [

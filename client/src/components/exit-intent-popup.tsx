@@ -95,7 +95,7 @@ export default function ExitIntentPopup() {
             <Music className="w-7 h-7 text-primary" />
           </div>
           <h3 className="font-display text-2xl font-bold mb-2" data-testid="text-popup-title">
-            Wait — Don't Miss Out
+            Wait, Don't Miss Out
           </h3>
           <p className="text-muted-foreground text-sm leading-relaxed mb-6">
             Get exclusive access to new music, tour announcements, and behind-the-scenes content before anyone else.
