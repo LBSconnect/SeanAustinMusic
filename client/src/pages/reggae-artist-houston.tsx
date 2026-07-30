@@ -55,7 +55,7 @@ const faqSchema = {
       "name": "Who is Sean Austin the reggae artist in Houston Texas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sean Austin is a Jamaican-born reggae artist based in Houston, Texas. He performs authentic roots reggae, dancehall, and Caribbean music at Houston venues, festivals, and private events. He is known for hits like 'Confessions' (produced by Grammy-nominated Troyton Hinds), 'Same Girl', 'Purple Hearts', and 'AFRONOMIXX'.",
+        "text": "Sean Austin is a Jamaican-born reggae artist based in Houston, Texas. He performs authentic roots reggae, dancehall, and Caribbean music at Houston venues, festivals, and private events. He is known for hits like \"Confessions\" (produced by Grammy-nominated Troyton Hinds), \"Same Girl\", \"Purple Hearts\", and \"AFRONOMIXX\".",
       },
     },
     {
@@ -96,7 +96,6 @@ const faqSchema = {
 const photos = [
   "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg",
   "/attached_assets/Sean-Austin-reggae-artist-Houston-11.jpeg",
-
   "/attached_assets/Sean-Austin-reggae-artist-Houston-4.jpg",
 ];
 
@@ -207,7 +206,7 @@ export default function ReggaeArtistHoustonPage() {
                   From intimate Houston venues to international festival stages, Sean Austin delivers performances
                   that leave lasting impressions. His catalog includes acclaimed releases such as <em>"Same Girl"</em>,
                   the album <em>"Purple Hearts"</em>, <em>"AFRONOMIXX"</em>, and his latest single
-                  <em>"Ready Mi Ready"</em> (feat. Troyton) cementing his status as a rising force in
+                  <em>"Ready Mi Ready"</em> (feat. Troyton), cementing his status as a rising force in
                   the global reggae movement rooted right here in Houston, Texas.
                 </p>
                 <div className="pt-2 space-y-1 text-sm">
@@ -276,7 +275,7 @@ export default function ReggaeArtistHoustonPage() {
                 <CardContent className="p-6">
                   <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
                   <h3 className="font-semibold text-primary">Houston & Worldwide</h3>
-                  <p className="text-sm text-muted-foreground mt-1">Local Houston bookings & international tours</p>
+                  <p className="text-sm text-muted-foreground mt-1">Local Houston Bookings & International Tours</p>
                 </CardContent>
               </Card>
             </div>
@@ -327,7 +326,7 @@ export default function ReggaeArtistHoustonPage() {
                       <option value="Private Event">Private Event</option>
                       <option value="Corporate Event">Corporate Event</option>
                       <option value="Wedding">Wedding</option>
-                      <option value="Press/Media">Press / Media</option>
+                      <option value="Press/Media">Press/Media</option>
                       <option value="Collaboration">Collaboration</option>
                       <option value="Other">Other</option>
                     </select>

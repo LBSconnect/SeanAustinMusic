@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <>
       <SEO
-        title="404 - Page Not Found - Sean Austin"
+        title="404 - Page Not Found"
         description="The page you're looking for doesn't exist."
       />
       <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">

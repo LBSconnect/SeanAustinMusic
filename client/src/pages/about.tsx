@@ -10,7 +10,7 @@ const socialPlatforms = [
     url: "https://instagram.com/iamseanaustin",
     icon: FaInstagram,
     color: "hover:text-pink-500",
-    description: "Behind the scenes & daily vibes",
+    description: "Behind-the-scenes & daily vibes",
   },
   {
     name: "YouTube",
@@ -67,7 +67,7 @@ export default function SocialPage() {
     <>
       <SEO
         title="About Sean Austin | Houston Top Reggae Artist"
-        description="Connect with Sean Austin on social media. Follow for music updates, behind the scenes content, and more."
+        description="Connect with Sean Austin on social media. Follow for music updates, behind-the-scenes content, and more."
         noSuffix
       />
       <div
@@ -90,7 +90,7 @@ export default function SocialPage() {
               Connect With Sean Austin
             </h1>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-              Follow along for music updates, behind the scenes content, tour announcements, and more.
+              Follow along for music updates, behind-the-scenes content, tour announcements, and more.
             </p>
           </div>
 

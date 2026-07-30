@@ -263,7 +263,7 @@ export default function VideosPage() {
   return (
     <>
       <SEO
-        title="Videos - Sean Austin"
+        title="Videos"
         description="Watch Sean Austin's music videos, live performances, and exclusive interviews. Experience authentic reggae vibes."
       />
 
