@@ -48,7 +48,7 @@ export default function ContactPage() {
   return (
     <>
       <SEO
-        title="Booking & Contact - Sean Austin"
+        title="Booking & Contact"
         description="Book Sean Austin for your event. Submit booking inquiries for concerts, festivals, private events, and corporate shows."
       />
       <div className="min-h-screen py-12 px-6">

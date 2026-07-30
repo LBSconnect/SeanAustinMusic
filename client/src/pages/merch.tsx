@@ -61,7 +61,7 @@ export default function MerchPage() {
   return (
     <>
       <SEO
-        title="Merch - Sean Austin"
+        title="Merch"
         description="Official Sean Austin merchandise. Shop music, apparel, and more."
       />
       <div className="min-h-screen py-12 px-6">

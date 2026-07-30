@@ -19,9 +19,6 @@
 
 .dark {
   /* Typography inherits from :root — no override needed */
-}
-
-.dark {
   --background: 0 0% 7%;
   --foreground: 0 0% 95%;
   --primary: 211 85% 55%;

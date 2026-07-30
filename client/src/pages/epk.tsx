@@ -28,7 +28,7 @@ export default function EPKPage() {
   return (
     <>
       <SEO
-        title="Electronic Press Kit - Sean Austin"
+        title="Electronic Press Kit"
         description="Sean Austin's Electronic Press Kit. Bio, press photos, music, videos, and booking information."
       />
       <div className="min-h-screen py-12 px-6">
@@ -167,7 +167,7 @@ export default function EPKPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Video className="w-5 h-5" />
-                  Featured Video - "Daddy You A Leader"
+                  Featured Video: "Daddy You A Leader"
                 </CardTitle>
               </CardHeader>
               <CardContent>

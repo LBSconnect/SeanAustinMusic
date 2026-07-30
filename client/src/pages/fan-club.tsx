@@ -73,7 +73,7 @@ export default function FanClubPage() {
   return (
     <>
       <SEO
-        title="Fan Club - Sean Austin"
+        title="Fan Club"
         description="Join Sean Austin's Fan Club for exclusive content, early access, and more."
       />
       <div className="min-h-screen py-20 px-6">
