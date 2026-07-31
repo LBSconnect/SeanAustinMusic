@@ -6,7 +6,7 @@ export default function Story() {
     <section className="py-16 px-6 bg-card/30 text-center" data-testid="section-story">
       <div className="max-w-3xl mx-auto">
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <a href="/about">
+          <a href="/social">
             <Button variant="outline" size="lg">
               <User className="w-4 h-4 mr-2" />
               Learn More

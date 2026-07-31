@@ -22,7 +22,7 @@ const socialLinks = [
   { href: "https://facebook.com/iamseanaustin", icon: FaFacebook, label: "Facebook" },
   { href: "https://tiktok.com/@iamseanaustin", icon: FaTiktok, label: "TikTok" },
   { href: "https://open.spotify.com/artist/0ZTUFRHKN1R7Se9eq5QTAT", icon: SiSpotify, label: "Spotify" },
-  { href: "https://itunes.apple.com/us/artist/1496526691", icon: SiApplemusic, label: "Apple Music" },
+  { href: "https://music.apple.com/us/artist/sean-austin/1496526691", icon: SiApplemusic, label: "Apple Music" },
   { href: "https://www.reverbnation.com/iamseanaustin", icon: SiReverbnation, label: "ReverbNation" },
 ];
 
