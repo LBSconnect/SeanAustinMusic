@@ -137,6 +137,14 @@ const videos = [
     date: "2024",
     featured: false,
   },
+  {
+    id: "ltOk3SNxllI",
+    title: "Fi Yu Forever",
+    subtitle: "Official Short",
+    category: "Shorts",
+    date: "2026",
+    featured: false,
+  },
   // Karaoke
   {
     id: "mExYukRHtZ0",
