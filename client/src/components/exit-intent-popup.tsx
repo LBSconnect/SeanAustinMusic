@@ -86,8 +86,9 @@ export default function ExitIntentPopup() {
           className="absolute top-3 right-3"
           onClick={dismiss}
           data-testid="button-close-popup"
+          aria-label="Close"
         >
-          <X className="w-4 h-4" />
+          <X className="w-4 h-4" aria-hidden="true" />
         </Button>
 
         <div className="text-center">

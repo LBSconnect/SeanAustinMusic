@@ -6,8 +6,45 @@ import { seedDatabase } from "./seed";
 import { WebhookHandlers } from "./webhookHandlers";
 import { startContentScheduler } from "./content-sync";
 
+// Fail fast (with a clear message) instead of limping along with an
+// undefined DB connection string or session secret.
+const REQUIRED_ENV_VARS = ["DATABASE_URL", "SESSION_SECRET"] as const;
+const missingEnvVars = REQUIRED_ENV_VARS.filter((name) => !process.env[name]);
+if (missingEnvVars.length > 0) {
+  console.error(
+    `Missing required environment variable(s): ${missingEnvVars.join(", ")}. ` +
+      "Set them before starting the server."
+  );
+  process.exit(1);
+}
+
 const app = express();
 const httpServer = createServer(app);
+
+// Production runs behind Render's proxy (itself behind Cloudflare), which
+// terminates TLS and forwards to this app over plain HTTP. Without trusting
+// the first proxy hop, Express's req.secure is always false, which makes
+// express-session silently refuse to set the session cookie whenever
+// cookie.secure is true (NODE_ENV === "production") — i.e. admin login
+// would appear to succeed but no session cookie would ever reach the
+// browser. This must be set before the session middleware is registered.
+if (process.env.NODE_ENV === "production") {
+  app.set("trust proxy", 1);
+}
+
+// Baseline security headers. Intentionally conservative: this does not set a
+// Content-Security-Policy, since the site embeds Spotify/YouTube iframes and
+// loads GTM/GA4/Meta/TikTok scripts, and a CSP tight enough to matter risks
+// breaking one of those without a way to verify against production here.
+app.disable("x-powered-by");
+app.use((_req, res, next) => {
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("X-Frame-Options", "SAMEORIGIN");
+  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  res.setHeader("Strict-Transport-Security", "max-age=63072000; includeSubDomains");
+  res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
+  next();
+});
 
 declare module "http" {
   interface IncomingMessage {

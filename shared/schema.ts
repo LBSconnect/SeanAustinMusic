@@ -12,7 +12,11 @@ export const contacts = pgTable("contacts", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const insertContactSchema = createInsertSchema(contacts).omit({
+export const insertContactSchema = createInsertSchema(contacts, {
+  name: (schema) => schema.min(1, "Name is required"),
+  email: (schema) => schema.email("Please enter a valid email address"),
+  message: (schema) => schema.min(1, "Message is required"),
+}).omit({
   id: true,
   createdAt: true,
 });
@@ -27,7 +31,9 @@ export const subscribers = pgTable("subscribers", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const insertSubscriberSchema = createInsertSchema(subscribers).omit({
+export const insertSubscriberSchema = createInsertSchema(subscribers, {
+  email: (schema) => schema.email("Please enter a valid email address"),
+}).omit({
   id: true,
   createdAt: true,
 });
