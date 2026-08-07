@@ -83,7 +83,7 @@ export default function Hero() {
               aria-label="Spotify"
               className="text-white/40 hover:text-white transition-colors duration-200"
             >
-              <FaSpotify className="w-5 h-5" />
+              <FaSpotify className="w-5 h-5" aria-hidden="true" />
             </a>
             <a
               href="https://music.apple.com/us/artist/sean-austin/1496526691"
@@ -92,7 +92,7 @@ export default function Hero() {
               aria-label="Apple Music"
               className="text-white/40 hover:text-white transition-colors duration-200"
             >
-              <FaApple className="w-5 h-5" />
+              <FaApple className="w-5 h-5" aria-hidden="true" />
             </a>
             <a
               href="https://www.youtube.com/@SeanAustinReggae"
@@ -101,7 +101,7 @@ export default function Hero() {
               aria-label="YouTube"
               className="text-white/40 hover:text-white transition-colors duration-200"
             >
-              <FaYoutube className="w-5 h-5" />
+              <FaYoutube className="w-5 h-5" aria-hidden="true" />
             </a>
             <a
               href="https://instagram.com/iamseanaustin"
@@ -110,7 +110,7 @@ export default function Hero() {
               aria-label="Instagram"
               className="text-white/40 hover:text-white transition-colors duration-200"
             >
-              <FaInstagram className="w-5 h-5" />
+              <FaInstagram className="w-5 h-5" aria-hidden="true" />
             </a>
           </div>
         </div>

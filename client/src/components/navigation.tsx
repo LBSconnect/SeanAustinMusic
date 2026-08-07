@@ -73,7 +73,7 @@ export default function Navigation() {
                 data-testid={`link-social-${social.label.toLowerCase()}`}
                 className="text-muted-foreground hover:text-primary transition-colors p-1"
               >
-                <social.icon className="w-4 h-4" />
+                <social.icon className="w-4 h-4" aria-hidden="true" />
               </a>
             ))}
           </div>
@@ -84,8 +84,10 @@ export default function Navigation() {
             className="lg:hidden h-11 w-11"
             onClick={() => setMobileOpen(!mobileOpen)}
             data-testid="button-mobile-menu"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
           </Button>
         </div>
       </div>
@@ -118,7 +120,7 @@ export default function Navigation() {
                   aria-label={social.label}
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-5 h-5" aria-hidden="true" />
                 </a>
               ))}
             </div>

@@ -72,7 +72,7 @@ export default function Footer() {
                   data-testid={`link-footer-social-${social.label.toLowerCase().replace(/\s/g, '-')}`}
                   className="w-10 h-10 rounded-md bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                 >
-                  <social.icon className="w-4 h-4" />
+                  <social.icon className="w-4 h-4" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -85,7 +85,7 @@ export default function Footer() {
                   className="text-primary hover:text-primary/80 inline-flex items-center"
                   aria-label="Email booking"
                 >
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-5 h-5" aria-hidden="true" />
                 </a>
               </p>
             </div>

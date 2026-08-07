@@ -1,0 +1,113 @@
+name: Weekly Site Health Check
+
+# Runs every Friday at 00:00 America/Chicago and opens a PR with a dated
+# report under reports/site-health/. This workflow is READ-ONLY against
+# production and NEVER modifies code automatically — it only audits and
+# reports. Any fix suggested by a report goes through a normal, human-
+# reviewed PR.
+#
+# GitHub Actions cron is UTC-only and has no concept of America/Chicago or
+# daylight saving. To stay correct across the CDT/CST transition without a
+# separate scheduler, this workflow fires on BOTH possible UTC times for
+# Friday 00:00 Central and then immediately checks the real local time in
+# America/Chicago; the run that fires at the "wrong" offset for the current
+# time of year no-ops instead of silently running an hour early or late.
+on:
+  schedule:
+    - cron: "0 5 * * 5" # Friday 00:00 CDT (UTC-5, roughly mid-Mar to early-Nov)
+    - cron: "0 6 * * 5" # Friday 00:00 CST (UTC-6, roughly early-Nov to mid-Mar)
+  workflow_dispatch: {} # manual "Run workflow" button for testing
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Guard against the non-DST-matching cron firing
+        id: guard
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          hour=$(TZ=America/Chicago date +%H)
+          if [ "$hour" = "00" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Current America/Chicago hour is $hour, not 00 — this cron fired for the wrong DST offset, skipping."
+          fi
+
+      - name: Checkout
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        if: steps.guard.outputs.run == 'true'
+        run: npm ci
+
+      - name: Install Playwright browser
+        if: steps.guard.outputs.run == 'true'
+        run: npx playwright install --with-deps chromium
+
+      - name: Type check
+        if: steps.guard.outputs.run == 'true'
+        run: npm run check
+
+      - name: Build
+        if: steps.guard.outputs.run == 'true'
+        run: npm run build
+
+      - name: Dependency audit (non-blocking, informational)
+        if: steps.guard.outputs.run == 'true'
+        run: npm audit --omit=dev || true
+
+      - name: Run weekly site health check
+        if: steps.guard.outputs.run == 'true'
+        env:
+          SITE_URL: https://www.seanaustinmusic.com
+        run: node scripts/weekly-site-health.mjs
+
+      - name: Upload report artifact
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-health-report
+          path: reports/site-health/
+          retention-days: 90
+
+      - name: Open a PR with the report
+        if: steps.guard.outputs.run == 'true' && always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain reports/site-health/)" ]; then
+            echo "No new report to commit."
+            exit 0
+          fi
+          DATE=$(date +%Y-%m-%d)
+          BRANCH="site-health/${DATE}"
+          git config user.name "site-health-bot"
+          git config user.email "actions@github.com"
+          git checkout -b "$BRANCH"
+          git add reports/site-health/
+          git commit -m "Weekly site health report — ${DATE}"
+          git push origin "$BRANCH"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Weekly site health report — ${DATE}" \
+            --body "Automated, read-only weekly audit of https://www.seanaustinmusic.com. This PR only adds a report file — it does not change any application code. See \`reports/site-health/${DATE}/report.md\` for details. This PR is never auto-merged; review and merge (or close) manually." \
+            --draft

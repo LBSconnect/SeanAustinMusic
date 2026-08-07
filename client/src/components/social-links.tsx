@@ -21,7 +21,7 @@ export default function SocialLinks() {
           data-testid={`link-social-${social.label.toLowerCase()}`}
           className="hover:text-primary transition-colors"
         >
-          <social.icon />
+          <social.icon aria-hidden="true" />
         </a>
       ))}
     </div>

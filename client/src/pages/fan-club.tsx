@@ -118,14 +118,14 @@ export default function FanClubPage() {
                 onClick={closeLightbox}
                 aria-label="Close"
               >
-                <X className="w-7 h-7" />
+                <X className="w-7 h-7" aria-hidden="true" />
               </button>
               <button
                 className="absolute left-4 text-white/80 hover:text-white p-2"
                 onClick={(e) => { e.stopPropagation(); prevPhoto(); }}
                 aria-label="Previous"
               >
-                <ChevronLeft className="w-9 h-9" />
+                <ChevronLeft className="w-9 h-9" aria-hidden="true" />
               </button>
               <img
                 src={galleryPhotos[lightboxIndex]}
@@ -138,7 +138,7 @@ export default function FanClubPage() {
                 onClick={(e) => { e.stopPropagation(); nextPhoto(); }}
                 aria-label="Next"
               >
-                <ChevronRight className="w-9 h-9" />
+                <ChevronRight className="w-9 h-9" aria-hidden="true" />
               </button>
               <span className="absolute bottom-4 text-white/50 text-sm">
                 {lightboxIndex + 1} / {galleryPhotos.length}

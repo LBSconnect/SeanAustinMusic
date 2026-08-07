@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
 import bcrypt from "bcryptjs";
+import crypto from "crypto";
 import { storage } from "./storage";
 import { insertContactSchema, insertSubscriberSchema, insertTourDateSchema, insertMusicReleaseSchema, insertPressQuoteSchema } from "@shared/schema";
 import { z } from "zod";
@@ -178,7 +179,7 @@ export async function registerRoutes(
     try {
       const parsed = insertTourDateSchema.partial().safeParse(req.body);
       if (!parsed.success) return res.status(400).json({ error: "Invalid data" });
-      const result = await storage.updateTourDate(req.params.id, parsed.data);
+      const result = await storage.updateTourDate(String(req.params.id), parsed.data);
       if (!result) return res.status(404).json({ error: "Not found" });
       res.json(result);
     } catch (error) {
@@ -188,7 +189,7 @@ export async function registerRoutes(
 
   app.delete("/api/admin/tour-dates/:id", requireAdmin, async (req, res) => {
     try {
-      await storage.deleteTourDate(req.params.id);
+      await storage.deleteTourDate(String(req.params.id));
       res.json({ ok: true });
     } catch (error) {
       res.status(500).json({ error: "Failed to delete tour date" });
@@ -211,7 +212,7 @@ export async function registerRoutes(
     try {
       const parsed = insertMusicReleaseSchema.partial().safeParse(req.body);
       if (!parsed.success) return res.status(400).json({ error: "Invalid data" });
-      const result = await storage.updateMusicRelease(req.params.id, parsed.data);
+      const result = await storage.updateMusicRelease(String(req.params.id), parsed.data);
       if (!result) return res.status(404).json({ error: "Not found" });
       res.json(result);
     } catch (error) {
@@ -221,7 +222,7 @@ export async function registerRoutes(
 
   app.delete("/api/admin/music-releases/:id", requireAdmin, async (req, res) => {
     try {
-      await storage.deleteMusicRelease(req.params.id);
+      await storage.deleteMusicRelease(String(req.params.id));
       res.json({ ok: true });
     } catch (error) {
       res.status(500).json({ error: "Failed to delete" });
@@ -244,7 +245,7 @@ export async function registerRoutes(
     try {
       const parsed = insertPressQuoteSchema.partial().safeParse(req.body);
       if (!parsed.success) return res.status(400).json({ error: "Invalid data" });
-      const result = await storage.updatePressQuote(req.params.id, parsed.data);
+      const result = await storage.updatePressQuote(String(req.params.id), parsed.data);
       if (!result) return res.status(404).json({ error: "Not found" });
       res.json(result);
     } catch (error) {
@@ -254,7 +255,7 @@ export async function registerRoutes(
 
   app.delete("/api/admin/press-quotes/:id", requireAdmin, async (req, res) => {
     try {
-      await storage.deletePressQuote(req.params.id);
+      await storage.deletePressQuote(String(req.params.id));
       res.json({ ok: true });
     } catch (error) {
       res.status(500).json({ error: "Failed to delete" });
@@ -459,7 +460,7 @@ export async function registerRoutes(
         return res.json({
           tier: "premium",
           active: true,
-          currentPeriodEnd: subscriptions.data[0].current_period_end,
+          currentPeriodEnd: subscriptions.data[0].items.data[0]?.current_period_end ?? null,
         });
       }
 
@@ -520,9 +521,20 @@ async function seedAdmin() {
   try {
     const count = await storage.getAdminCount();
     if (count > 0) return;
-    const hash = await bcrypt.hash("admin123", 10);
+    // No admin exists yet (fresh database). Use ADMIN_SEED_PASSWORD if the
+    // operator provided one; otherwise generate a random one-time password
+    // rather than falling back to a hardcoded, publicly-readable default.
+    const seedPassword = process.env.ADMIN_SEED_PASSWORD || crypto.randomBytes(12).toString("base64url");
+    const hash = await bcrypt.hash(seedPassword, 10);
     await storage.createAdmin("admin", hash);
-    console.log("Default admin created (username: admin, password: admin123)");
+    if (process.env.ADMIN_SEED_PASSWORD) {
+      console.log("Default admin created (username: admin) using ADMIN_SEED_PASSWORD.");
+    } else {
+      console.log(
+        `Default admin created (username: admin, password: ${seedPassword}). ` +
+          "This was auto-generated because ADMIN_SEED_PASSWORD was not set — log in and change it, or set ADMIN_SEED_PASSWORD before the next fresh deploy."
+      );
+    }
   } catch (err) {
     console.error("Failed to seed admin:", err);
   }
