@@ -10,10 +10,10 @@ export default function Hero() {
     >
       {/* Full-bleed background image */}
       <img
-        src="/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg"
-        alt="Sean Austin"
+        src="/attached_assets/Sean-Austin-Fi-Yu-Forever.jpeg"
+        alt="Sean Austin - Fi Yu Forever"
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: "center 35%" }}
+        style={{ objectPosition: "30% center" }}
         fetchPriority="high"
       />
 
