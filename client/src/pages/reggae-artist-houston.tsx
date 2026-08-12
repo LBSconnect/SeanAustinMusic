@@ -155,10 +155,7 @@ export default function ReggaeArtistHoustonPage() {
 
           {/* Page Header */}
           <div className="text-center mb-16">
-            <h1 className="font-display text-4xl md:text-6xl font-bold text-primary leading-tight">
-              Reggae Artist in Houston, Texas
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Sean Austin is a Reggae Artist based in Houston Texas bringing authentic Caribbean music,
               roots reggae, and electrifying live performances to the Houston music scene and beyond.
             </p>
