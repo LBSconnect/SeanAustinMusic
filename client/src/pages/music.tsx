@@ -214,13 +214,19 @@ export default function MusicPage() {
 
       <div className="min-h-screen bg-black">
         {/* Artist header — Spotify artist-page style: full-bleed photo,
-            bottom gradient fade to black, name, genres, Play + Follow. */}
-        <div className="relative h-[42vh] min-h-[340px] max-h-[520px] overflow-hidden">
+            bottom gradient fade to black, name, genres, Play + Follow.
+            A fixed aspect-ratio (rather than a vh-based height) keeps the
+            portrait photo's object-cover crop window a constant percentage
+            of its height at every viewport width — a vh-based height let
+            wide viewports "zoom in" so far that the subject's head was cut
+            off. The width cap prevents the same over-zoom on ultra-wide
+            monitors. */}
+        <div className="relative max-w-[1800px] mx-auto aspect-[2/1] min-h-[300px] max-h-[560px] overflow-hidden">
           <img
             src={ARTIST_PHOTO}
             alt="Sean Austin"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "center 25%" }}
+            style={{ objectPosition: "center 12%" }}
             fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/50" />
