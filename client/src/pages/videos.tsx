@@ -8,11 +8,6 @@ import { FaYoutube } from "react-icons/fa6";
 // YouTube Channel
 const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@SeanAustinReggae";
 const CHANNEL_AVATAR = "/favicon.png";
-// Note: this is a direct /attached_assets/... path (served from
-// client/public/), not a bundler "@assets" import — that alias resolves to
-// the repo-root attached_assets/ directory, which has a divergent, mismatched
-// set of files under the same names as the ones actually served in production.
-const VIDEO_BANNER = "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg";
 
 // Video categories
 const categories = ["Music Videos", "Live Performances", "Shorts", "Karaoke", "Interviews"];
@@ -425,24 +420,13 @@ export default function VideosPage() {
         ) : (
           /* ── Channel / browse page ──────────────────────────────── */
           <div className="max-w-[1800px] mx-auto">
-            {/* Banner. Darkened at both edges — the top so the fixed nav bar stays
-                legible over the (often bright/busy) banner art, the bottom so it
-                blends into the page background instead of a hard cut. */}
-            <div className="relative h-32 sm:h-44 md:h-56 overflow-hidden">
-              <div
-                className="absolute inset-0 bg-cover"
-                style={{ backgroundImage: `url(${VIDEO_BANNER})`, backgroundPosition: "center 35%" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/15 to-background" />
-            </div>
-
-            {/* Channel info row — only the avatar overlaps the banner, not the text */}
-            <div className="px-4 sm:px-6 pt-0">
+            {/* Channel info row */}
+            <div className="px-4 sm:px-6 pt-24 sm:pt-28">
               <div className="flex flex-col sm:flex-row sm:items-end gap-4">
                 <img
                   src={CHANNEL_AVATAR}
                   alt="Sean Austin"
-                  className="w-20 h-20 sm:w-28 sm:h-28 rounded-full object-cover border-4 border-background shadow-xl -mt-10 sm:-mt-14 flex-shrink-0"
+                  className="w-20 h-20 sm:w-28 sm:h-28 rounded-full object-cover border-4 border-background shadow-xl flex-shrink-0"
                 />
                 <div className="flex-1 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pb-1 pt-2 sm:pt-0">
                   <div>
