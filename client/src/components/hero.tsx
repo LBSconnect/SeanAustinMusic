@@ -4,24 +4,30 @@ import { FaSpotify, FaApple, FaYoutube, FaInstagram } from "react-icons/fa6";
 
 export default function Hero() {
   return (
-    <section
-      className="relative h-screen min-h-[600px] flex flex-col justify-end overflow-hidden"
-      data-testid="section-hero"
-    >
-      {/* Full-bleed background image */}
-      <img
-        src="/attached_assets/Sean-Austin-Fi-Yu-Forever-Solo.png"
-        alt="Sean Austin"
-        className="absolute inset-0 w-full h-full object-cover object-[70%_25%]"
-        fetchPriority="high"
-      />
+    <>
+      {/* Full-bleed image — no text overlay */}
+      <section
+        className="relative h-screen min-h-[600px] overflow-hidden"
+        data-testid="section-hero"
+      >
+        {/* The source artwork is a square promo graphic with "SEAN AUSTIN / FI YU FOREVER"
+            text baked into its left half and a photo on the right half. On narrow/tall
+            viewports object-cover has to crop most of the width away, so the position is
+            shifted per-breakpoint to keep the photo (not the baked-in text) in frame on
+            phones and tablets. */}
+        <img
+          src="/attached_assets/Sean-Austin-Fi-Yu-Forever.jpeg"
+          alt="Sean Austin - Fi Yu Forever"
+          className="absolute inset-0 w-full h-full object-cover object-[88%_center] sm:object-[68%_center] lg:object-[center_38%]"
+          fetchPriority="high"
+        />
 
-      {/* Gradient overlays — heavy bottom fade for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#2b2b30] via-black/35 to-black/5" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/15 via-transparent to-black/15" />
+        {/* Subtle bottom fade to blend into the content section below */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+      </section>
 
-      {/* Content pinned to bottom */}
-      <div className="relative z-10 px-6 pb-10 pt-20 text-center">
+      {/* Headline, tagline, and CTAs — its own section, not overlaid on the image */}
+      <section className="px-6 py-14 text-center bg-background" data-testid="section-hero-content">
         <div className="max-w-4xl mx-auto">
 
           <h1
@@ -64,7 +70,6 @@ export default function Hero() {
                 size="lg"
                 variant="outline"
                 className="gap-2 px-7 bg-white/10 border-white/30 text-white hover:bg-white/20"
-                style={{ backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)" }}
                 data-testid="button-watch-video"
               >
                 <Play className="w-4 h-4" fill="currentColor" />
@@ -113,12 +118,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-      </div>
-
-      {/* Scroll cue */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-1 opacity-40">
-        <div className="w-px h-8 bg-gradient-to-b from-white to-transparent" />
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

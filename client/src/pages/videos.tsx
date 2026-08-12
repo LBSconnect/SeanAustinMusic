@@ -16,12 +16,20 @@ const categories = ["Music Videos", "Live Performances", "Shorts", "Karaoke", "I
 const videos = [
   // Music Videos
   {
+    id: "bXUj-hX-YWc",
+    title: "Fi Yu Forever",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2026",
+    featured: true,
+  },
+  {
     id: "ffzcrhIHzLE",
     title: "Daddy You A Leader",
     subtitle: "Official Father's Day Anthem",
     category: "Music Videos",
     date: "2026",
-    featured: true,
+    featured: false,
   },
   {
     id: "GvuL-CSqDkU",
