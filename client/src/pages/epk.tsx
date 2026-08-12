@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Download, Music, Video, Quote, Mail, ExternalLink } from "lucide-react";
 import type { PressQuote } from "@shared/schema";
+import Container from "@/components/container";
 
 // Press photo for download
 const PRESS_PHOTO_URL = "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg";
@@ -31,8 +32,8 @@ export default function EPKPage() {
         title="Electronic Press Kit"
         description="Sean Austin's Electronic Press Kit. Bio, press photos, music, videos, and booking information."
       />
-      <div className="min-h-screen pt-20 pb-12 px-6">
-        <div className="max-w-6xl mx-auto">
+      <div className="min-h-screen pt-20 pb-12">
+        <Container>
           <div className="text-center mb-8">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
               Electronic Press Kit
@@ -49,7 +50,7 @@ export default function EPKPage() {
                 <CardTitle>Artist Bio</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <div className="space-y-4 text-white leading-relaxed">
                   <p>
                     <strong className="text-primary">
                       Sean Austin is a Jamaican-born reggae artist and songwriter bringing a fresh, mature voice
@@ -264,7 +265,7 @@ export default function EPKPage() {
               </CardContent>
             </Card>
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );
