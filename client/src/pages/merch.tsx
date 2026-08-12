@@ -1,6 +1,7 @@
 import SEO from "@/components/seo";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShoppingBag } from "lucide-react";
+import Container from "@/components/container";
 
 const STORE_URL = "https://direct.distrokid.com/seanaustin3/";
 const STORE_BANNER = "/attached_assets/Sean-Austin-reggae-artist-Houston-11.jpeg";
@@ -58,7 +59,7 @@ export default function MerchPage() {
         </div>
 
         {/* Product grid — clean, editorial, product-first */}
-        <div className="max-w-5xl mx-auto px-6 py-14">
+        <Container className="py-14">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-xl font-bold text-white uppercase tracking-wide">
               Featured
@@ -108,11 +109,11 @@ export default function MerchPage() {
               </a>
             ))}
           </div>
-        </div>
+        </Container>
 
         {/* Shop-all promo banner */}
         <div className="border-t border-white/10">
-          <div className="max-w-5xl mx-auto px-6 py-14 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <Container className="py-14 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="text-center sm:text-left">
               <h2 className="text-2xl font-bold text-white">The Full Collection</h2>
               <p className="text-white/60 mt-1">
@@ -129,14 +130,14 @@ export default function MerchPage() {
                 Shop All Items
               </Button>
             </a>
-          </div>
+          </Container>
         </div>
 
-        <div className="text-center pb-14">
+        <Container className="text-center pb-14">
           <p className="text-sm text-white/40">
             All purchases support the artist directly. Thank you for your support!
           </p>
-        </div>
+        </Container>
       </div>
     </>
   );

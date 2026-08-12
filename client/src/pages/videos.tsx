@@ -4,6 +4,7 @@ import SEO from "@/components/seo";
 import { Button } from "@/components/ui/button";
 import { Play, ExternalLink, ArrowLeft } from "lucide-react";
 import { FaYoutube } from "react-icons/fa6";
+import Container from "@/components/container";
 
 // YouTube Channel
 const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@SeanAustinReggae";
@@ -347,7 +348,7 @@ export default function VideosPage() {
       <div className="min-h-screen">
         {selectedVideo ? (
           /* ── Watch page ─────────────────────────────────────────── */
-          <div className="max-w-[1800px] mx-auto px-4 sm:px-6 pt-24 pb-6">
+          <Container className="pt-24 pb-6">
             <button
               onClick={() => setSelectedVideo(null)}
               className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-4"
@@ -416,12 +417,12 @@ export default function VideosPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </Container>
         ) : (
           /* ── Channel / browse page ──────────────────────────────── */
-          <div className="max-w-[1800px] mx-auto">
+          <>
             {/* Channel info row */}
-            <div className="px-4 sm:px-6 pt-24 sm:pt-28">
+            <Container className="pt-24 sm:pt-28">
               <div className="flex flex-col sm:flex-row sm:items-end gap-4">
                 <img
                   src={CHANNEL_AVATAR}
@@ -466,10 +467,10 @@ export default function VideosPage() {
                   </button>
                 ))}
               </div>
-            </div>
+            </Container>
 
             {/* Content */}
-            <div className="px-4 sm:px-6 py-6">
+            <Container className="py-6">
               {activeCategory === "Shorts" ? (
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-7 h-7 rounded-full bg-foreground flex items-center justify-center">
@@ -529,8 +530,8 @@ export default function VideosPage() {
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
+            </Container>
+          </>
         )}
       </div>
     </>

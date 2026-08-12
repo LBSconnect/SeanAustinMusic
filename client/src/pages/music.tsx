@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import SEO from "@/components/seo";
 import { Button } from "@/components/ui/button";
 import { Play, ExternalLink } from "lucide-react";
+import Container from "@/components/container";
 
 const ARTIST_PHOTO = "/attached_assets/Sean-Austin-reggae-artist-Houston-11.jpeg";
 const SPOTIFY_ARTIST_URL = "https://open.spotify.com/artist/0ZTUFRHKN1R7Se9eq5QTAT";
@@ -213,15 +214,22 @@ export default function MusicPage() {
       />
 
       <div className="min-h-screen bg-black">
-        {/* Artist header — Spotify artist-page style: full-bleed photo,
-            bottom gradient fade to black, name, genres, Play + Follow.
-            A fixed aspect-ratio (rather than a vh-based height) keeps the
-            portrait photo's object-cover crop window a constant percentage
-            of its height at every viewport width — a vh-based height let
-            wide viewports "zoom in" so far that the subject's head was cut
-            off. No max-height here: it would fight the aspect ratio at wide
-            widths the same way, so the width cap alone bounds the size. */}
-        <div className="relative max-w-[1800px] mx-auto aspect-[2/1] min-h-[300px] overflow-hidden">
+        {/* Artist header — Spotify artist-page style: full-bleed edge-to-edge
+            photo, bottom gradient fade to black, name, genres. The photo
+            itself is never width-capped; only the text on top of it is,
+            via <Container>, so its left edge lines up with the rest of the
+            site. A fixed aspect-ratio (rather than a vh-based height) keeps
+            the portrait photo's object-cover crop window a constant
+            percentage of its height at every viewport width — a vh-based
+            height let wide viewports "zoom in" so far that the subject's
+            head was cut off. No max-height here: it would fight the aspect
+            ratio at wide widths the same way. */}
+        {/* w-full is required here: without it, when min-h clamps the box
+            taller than the aspect-ratio would naturally make it (e.g. very
+            narrow viewports), some browsers derive the box's WIDTH from that
+            clamped height via the ratio instead of filling the container —
+            causing horizontal overflow. */}
+        <div className="relative w-full aspect-[2/1] min-h-[300px] overflow-hidden">
           <img
             src={ARTIST_PHOTO}
             alt="Sean Austin"
@@ -232,28 +240,30 @@ export default function MusicPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/50" />
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/60 to-transparent" />
 
-          <div className="relative z-10 h-full flex flex-col justify-end px-6 sm:px-10 pb-8 max-w-5xl mx-auto">
-            <p className="text-xs font-semibold uppercase tracking-widest text-white/70 mb-2">
-              Artist
-            </p>
-            <h1 className="text-5xl sm:text-7xl font-extrabold text-white tracking-tight leading-none">
-              Sean Austin
-            </h1>
-            <div className="flex items-center gap-2 mt-4">
-              {GENRES.map((g) => (
-                <span
-                  key={g}
-                  className="text-xs font-medium text-white/70 border border-white/20 rounded-full px-3 py-1"
-                >
-                  {g}
-                </span>
-              ))}
-            </div>
+          <div className="relative z-10 h-full flex flex-col justify-end pb-8">
+            <Container>
+              <p className="text-xs font-semibold uppercase tracking-widest text-white/70 mb-2">
+                Artist
+              </p>
+              <h1 className="text-5xl sm:text-7xl font-extrabold text-white tracking-tight leading-none">
+                Sean Austin
+              </h1>
+              <div className="flex items-center gap-2 mt-4">
+                {GENRES.map((g) => (
+                  <span
+                    key={g}
+                    className="text-xs font-medium text-white/70 border border-white/20 rounded-full px-3 py-1"
+                  >
+                    {g}
+                  </span>
+                ))}
+              </div>
+            </Container>
           </div>
         </div>
 
         {/* Action bar */}
-        <div className="max-w-5xl mx-auto px-6 sm:px-10 py-6 flex items-center gap-5">
+        <Container className="py-6 flex items-center gap-5">
           <a href={SPOTIFY_ARTIST_URL} target="_blank" rel="noopener noreferrer" aria-label="Play on Spotify">
             <div className="w-14 h-14 rounded-full bg-[#1db954] hover:bg-[#1ed760] hover:scale-105 transition-all flex items-center justify-center shadow-lg" data-testid="button-play">
               <Play className="w-6 h-6 text-black ml-0.5" fill="black" />
@@ -268,9 +278,9 @@ export default function MusicPage() {
               Follow
             </Button>
           </a>
-        </div>
+        </Container>
 
-        <div className="max-w-5xl mx-auto px-6 sm:px-10 pb-16">
+        <Container className="pb-16">
           {/* Popular */}
           <section className="mb-10">
             <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-4">Popular</h2>
@@ -350,7 +360,7 @@ export default function MusicPage() {
               />
             </div>
           </section>
-        </div>
+        </Container>
       </div>
     </>
   );
