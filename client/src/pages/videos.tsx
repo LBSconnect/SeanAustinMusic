@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import videoBg from "@assets/Sean-Austin-reggae-artist-Houston-1.jpg";
 import SEO from "@/components/seo";
 import { Button } from "@/components/ui/button";
 import { Play, ExternalLink, ArrowLeft } from "lucide-react";
@@ -9,6 +8,11 @@ import { FaYoutube } from "react-icons/fa6";
 // YouTube Channel
 const YOUTUBE_CHANNEL_URL = "https://www.youtube.com/@SeanAustinReggae";
 const CHANNEL_AVATAR = "/favicon.png";
+// Note: this is a direct /attached_assets/... path (served from
+// client/public/), not a bundler "@assets" import — that alias resolves to
+// the repo-root attached_assets/ directory, which has a divergent, mismatched
+// set of files under the same names as the ones actually served in production.
+const VIDEO_BANNER = "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg";
 
 // Video categories
 const categories = ["Music Videos", "Live Performances", "Shorts", "Karaoke", "Interviews"];
@@ -426,8 +430,8 @@ export default function VideosPage() {
                 blends into the page background instead of a hard cut. */}
             <div className="relative h-32 sm:h-44 md:h-56 overflow-hidden">
               <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${videoBg})` }}
+                className="absolute inset-0 bg-cover"
+                style={{ backgroundImage: `url(${VIDEO_BANNER})`, backgroundPosition: "center 35%" }}
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/15 to-background" />
             </div>

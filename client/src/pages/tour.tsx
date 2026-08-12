@@ -113,7 +113,7 @@ export default function TourPage() {
 
           <div className="text-center mt-12">
             <p className="text-muted-foreground mb-4">
-              More dates coming soon! Sign up for the fan club to be the first to know.
+              More dates coming soon! Follow along on social to be the first to know.
             </p>
             <p className="text-sm text-muted-foreground">
               Want to book Sean Austin for your Houston venue or event?{" "}

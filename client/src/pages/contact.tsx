@@ -51,7 +51,7 @@ export default function ContactPage() {
         title="Booking & Contact"
         description="Book Sean Austin for your event. Submit booking inquiries for concerts, festivals, private events, and corporate shows."
       />
-      <div className="min-h-screen py-12 px-6">
+      <div className="min-h-screen pt-20 pb-12 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
