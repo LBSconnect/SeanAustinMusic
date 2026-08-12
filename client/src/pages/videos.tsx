@@ -421,13 +421,15 @@ export default function VideosPage() {
         ) : (
           /* ── Channel / browse page ──────────────────────────────── */
           <div className="max-w-[1800px] mx-auto">
-            {/* Banner */}
+            {/* Banner. Darkened at both edges — the top so the fixed nav bar stays
+                legible over the (often bright/busy) banner art, the bottom so it
+                blends into the page background instead of a hard cut. */}
             <div className="relative h-32 sm:h-44 md:h-56 overflow-hidden">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${videoBg})` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/15 to-background" />
             </div>
 
             {/* Channel info row — only the avatar overlaps the banner, not the text */}
