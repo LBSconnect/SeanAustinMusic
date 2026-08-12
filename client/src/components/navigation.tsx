@@ -17,7 +17,6 @@ const navLinks = [
   { href: "/tour", label: "Tour" },
   { href: "/social", label: "Social" },
   { href: "/contact", label: "Contact" },
-  { href: "/fan-club", label: "Fan Club" },
   { href: "/epk", label: "EPK" },
 ];
 
@@ -38,12 +37,11 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 h-16 flex-wrap">
           <Link href="/" data-testid="link-home-logo">
-            {/* The logo's source file has a plain white background — shown on
-                its own white chip rather than fighting that against the dark
-                nav bar. */}
-            <div className="h-12 w-12 rounded-lg bg-white p-1 overflow-hidden flex items-center justify-center">
-              <img src={siteLogo} alt="Sean Austin" className="w-full h-full object-contain" />
-            </div>
+            <img
+              src={siteLogo}
+              alt="Sean Austin"
+              className="h-12 w-12 rounded-full object-cover border-2 border-white/20"
+            />
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
