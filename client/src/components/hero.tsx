@@ -5,9 +5,11 @@ import { FaSpotify, FaApple, FaYoutube, FaInstagram } from "react-icons/fa6";
 export default function Hero() {
   return (
     <>
-      {/* Full-bleed image — no text overlay */}
+      {/* Full-bleed image — no text overlay.
+          Capped shorter on large screens (lg:) — at full viewport height, a wide desktop
+          window made the image dominate the page before any content was visible. */}
       <section
-        className="relative h-screen min-h-[600px] overflow-hidden"
+        className="relative h-[80vh] min-h-[500px] lg:h-[65vh] lg:max-h-[640px] overflow-hidden"
         data-testid="section-hero"
       >
         {/* The source artwork is a square promo graphic with "SEAN AUSTIN / FI YU FOREVER"
