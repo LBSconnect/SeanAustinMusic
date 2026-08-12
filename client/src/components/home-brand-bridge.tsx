@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 // Configurable like the hero — swap the photo/crop here.
-const BRIDGE_IMAGE = "/attached_assets/Sean-Austin-reggae-artist-Houston-9.jpeg";
-const BRIDGE_POSITION = "center 20%";
+const BRIDGE_IMAGE = "/attached_assets/Sean-Austin-reggae-artist-Houston-5.jpg";
+const BRIDGE_POSITION = "center 10%";
 
 // One strong image + one short line + one CTA. Not a bio — the About page
 // (linked via /social) remains the full-story destination.

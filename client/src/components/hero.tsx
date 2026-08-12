@@ -41,7 +41,7 @@ function HeroCopy() {
       </p>
 
       <p className="mt-4 text-sm sm:text-base text-white/60 tracking-wide">
-        Real Music. Real Vibes. Real Life.
+        Real Love. Real Vibes. Real Life.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-3">
