@@ -219,14 +219,14 @@ export default function MusicPage() {
             portrait photo's object-cover crop window a constant percentage
             of its height at every viewport width — a vh-based height let
             wide viewports "zoom in" so far that the subject's head was cut
-            off. The width cap prevents the same over-zoom on ultra-wide
-            monitors. */}
-        <div className="relative max-w-[1800px] mx-auto aspect-[2/1] min-h-[300px] max-h-[560px] overflow-hidden">
+            off. No max-height here: it would fight the aspect ratio at wide
+            widths the same way, so the width cap alone bounds the size. */}
+        <div className="relative max-w-[1800px] mx-auto aspect-[2/1] min-h-[300px] overflow-hidden">
           <img
             src={ARTIST_PHOTO}
             alt="Sean Austin"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "center 12%" }}
+            style={{ objectPosition: "center top" }}
             fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/50" />
