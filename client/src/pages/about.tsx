@@ -1,7 +1,8 @@
 import SEO from "@/components/seo";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { FaInstagram, FaXTwitter, FaYoutube, FaFacebook, FaTiktok, FaSpotify } from "react-icons/fa6";
 import { SiApplemusic } from "react-icons/si";
+import { ArrowUpRight } from "lucide-react";
 
 const socialPlatforms = [
   {
@@ -9,56 +10,71 @@ const socialPlatforms = [
     handle: "@iamseanaustin",
     url: "https://instagram.com/iamseanaustin",
     icon: FaInstagram,
-    color: "hover:text-pink-500",
     description: "Behind-the-scenes & daily vibes",
+    cta: "Follow",
+    // Instagram's signature gradient
+    gradient: "from-[#feda75] via-[#d62976] to-[#4f5bd5]",
+    glow: "hover:shadow-[#d62976]/40",
   },
   {
     name: "YouTube",
     handle: "@SeanAustinReggae",
     url: "https://www.youtube.com/@SeanAustinReggae",
     icon: FaYoutube,
-    color: "hover:text-red-500",
     description: "Music videos & live performances",
+    cta: "Subscribe",
+    gradient: "from-[#ff4d4d] to-[#8b0000]",
+    glow: "hover:shadow-red-600/40",
   },
   {
     name: "TikTok",
     handle: "@iamseanaustin",
     url: "https://tiktok.com/@iamseanaustin",
     icon: FaTiktok,
-    color: "hover:text-white",
     description: "Short clips & trending sounds",
+    cta: "Follow",
+    gradient: "from-[#25f4ee] via-[#111111] to-[#fe2c55]",
+    glow: "hover:shadow-[#fe2c55]/40",
   },
   {
     name: "Facebook",
     handle: "iamseanaustin",
     url: "https://facebook.com/iamseanaustin",
     icon: FaFacebook,
-    color: "hover:text-blue-500",
     description: "Events & community updates",
+    cta: "Follow",
+    gradient: "from-[#3b82f6] to-[#1e3a8a]",
+    glow: "hover:shadow-blue-500/40",
   },
   {
     name: "X (Twitter)",
     handle: "@iamseanaustin",
     url: "https://x.com/iamseanaustin",
     icon: FaXTwitter,
-    color: "hover:text-white",
     description: "Thoughts & announcements",
+    cta: "Follow",
+    gradient: "from-[#3a3a3a] to-[#0a0a0a]",
+    glow: "hover:shadow-white/20",
   },
   {
     name: "Spotify",
     handle: "Sean Austin",
     url: "https://open.spotify.com/artist/0ZTUFRHKN1R7Se9eq5QTAT",
     icon: FaSpotify,
-    color: "hover:text-green-500",
     description: "Stream all music",
+    cta: "Follow",
+    gradient: "from-[#1ed760] to-[#0a5c28]",
+    glow: "hover:shadow-[#1ed760]/40",
   },
   {
     name: "Apple Music",
     handle: "Sean Austin",
     url: "https://music.apple.com/us/artist/sean-austin/1496526691",
     icon: SiApplemusic,
-    color: "hover:text-pink-400",
     description: "Stream on Apple Music",
+    cta: "Follow",
+    gradient: "from-[#fa5f7f] to-[#a1114f]",
+    glow: "hover:shadow-[#fa5f7f]/40",
   },
 ];
 
@@ -96,28 +112,50 @@ export default function SocialPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {socialPlatforms.map((platform) => (
-              <a
+              <div
                 key={platform.name}
-                href={platform.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group"
+                className={`group relative overflow-hidden rounded-xl bg-gradient-to-br ${platform.gradient} p-[1px] transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl ${platform.glow} motion-reduce:hover:scale-100 motion-reduce:transition-none`}
+                data-testid={`card-social-${platform.name.toLowerCase().replace(/\s|\(|\)/g, "")}`}
               >
-                <Card className="bg-card/50 hover:bg-card/70 transition-all hover:scale-105 h-full">
-                  <CardContent className="p-6 flex flex-col items-center text-center">
-                    <platform.icon className={`w-12 h-12 mb-4 text-muted-foreground transition-colors ${platform.color} group-hover:scale-110 transition-transform`} />
-                    <h3 className="font-display text-xl font-bold text-primary mb-1">
-                      {platform.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {platform.handle}
-                    </p>
-                    <p className="text-xs text-muted-foreground/70">
-                      {platform.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </a>
+                <div className="relative h-full rounded-[11px] bg-background/90 backdrop-blur-sm p-6 flex flex-col items-center text-center overflow-hidden">
+                  {/* Ambient brand-color glow behind the icon */}
+                  <div
+                    className={`absolute -top-10 left-1/2 -translate-x-1/2 w-40 h-40 rounded-full bg-gradient-to-br ${platform.gradient} opacity-20 blur-2xl transition-opacity duration-300 group-hover:opacity-40`}
+                    aria-hidden="true"
+                  />
+
+                  <div
+                    className={`relative w-16 h-16 mb-4 rounded-full bg-gradient-to-br ${platform.gradient} flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6`}
+                  >
+                    <platform.icon className="w-7 h-7 text-white" aria-hidden="true" />
+                  </div>
+
+                  <h3 className="relative font-display text-xl font-bold text-foreground mb-1">
+                    {platform.name}
+                  </h3>
+                  <p className="relative text-sm text-muted-foreground mb-2">
+                    {platform.handle}
+                  </p>
+                  <p className="relative text-xs text-muted-foreground/70 mb-5">
+                    {platform.description}
+                  </p>
+
+                  <a
+                    href={platform.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative mt-auto w-full"
+                    data-testid={`link-social-cta-${platform.name.toLowerCase().replace(/\s|\(|\)/g, "")}`}
+                  >
+                    <Button
+                      className={`w-full gap-1.5 bg-gradient-to-r ${platform.gradient} text-white border-0 hover:opacity-90 hover:text-white transition-opacity font-semibold`}
+                    >
+                      {platform.cta}
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
             ))}
           </div>
         </div>
