@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { FaSpotify } from "react-icons/fa6";
 import { ArrowRight } from "lucide-react";
+import Container from "@/components/container";
 
 const COVER_ART = "/attached_assets/Sean-Austin-Fi-Yu-Forever.jpeg";
 const SPOTIFY_URL = "https://open.spotify.com/search/Sean%20Austin%20Fi%20Yu%20Forever";
@@ -10,7 +11,7 @@ const SPOTIFY_URL = "https://open.spotify.com/search/Sean%20Austin%20Fi%20Yu%20F
 export default function HomeFeaturedRelease() {
   return (
     <section className="bg-black border-t border-white/10" data-testid="section-home-featured-release">
-      <div className="max-w-5xl mx-auto px-6 py-8 sm:py-10">
+      <Container className="py-8 sm:py-10">
         <div className="flex flex-col sm:flex-row items-center gap-6">
           <img
             src={COVER_ART}
@@ -50,7 +51,7 @@ export default function HomeFeaturedRelease() {
             </a>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

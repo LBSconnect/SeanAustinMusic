@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { FaSpotify } from "react-icons/fa6";
 import { Play } from "lucide-react";
+import Container from "@/components/container";
 
 // ─── Hero image configuration ────────────────────────────────────────────
 // Swap photos or crops here without touching the markup below.
@@ -73,42 +74,49 @@ function HeroCopy() {
 
 export default function Hero() {
   return (
-    // Outer section is full-bleed black; the inner frame is width-capped so the
-    // photo's object-cover scale (and therefore its crop) stays consistent on
-    // ultra-wide monitors instead of "zooming in" further as the viewport grows
-    // wider than it is tall — beyond the cap the extra width is just letterboxed.
-    <section className="relative bg-black overflow-hidden" data-testid="section-hero">
-      {/* A fixed aspect-ratio (rather than a vh-based height) keeps the photo's
-          object-cover crop window a constant percentage of its height at every
-          viewport width, so the framing doesn't drift as the window gets wider. */}
-      <div className="relative max-w-[1800px] mx-auto h-[86vh] min-h-[560px] max-h-[880px] md:h-auto md:aspect-[16/10] md:min-h-[560px] md:max-h-[900px]">
-        {/* Desktop photo */}
-        <img
-          src={HERO_IMAGE_DESKTOP}
-          alt="Sean Austin"
-          className="hidden md:block absolute inset-0 w-full h-full object-cover grayscale motion-reduce:transition-none"
-          style={{ objectPosition: HERO_POSITION_DESKTOP }}
-          fetchPriority="high"
-        />
-        {/* Mobile photo */}
-        <img
-          src={HERO_IMAGE_MOBILE}
-          alt="Sean Austin"
-          className="md:hidden absolute inset-0 w-full h-full object-cover grayscale"
-          style={{ objectPosition: HERO_POSITION_MOBILE }}
-          fetchPriority="high"
-        />
+    // The photo and its overlays are true edge-to-edge (100% viewport width,
+    // no max-width) — only the copy below is constrained to the site's
+    // shared Container so its left edge lines up with the nav/footer grid.
+    // A fixed aspect-ratio (rather than a vh-based height) keeps the photo's
+    // object-cover crop window a constant percentage of its height at every
+    // viewport width, so the framing doesn't drift as the window gets wider.
+    // w-full is required alongside md:aspect-[...] + md:min-h-[...]: without
+    // it, at widths where min-h clamps the box taller than the ratio would
+    // naturally make it (e.g. right around 768px here), some browsers derive
+    // the box's WIDTH from that clamped height via the ratio instead of
+    // filling the viewport — causing horizontal overflow.
+    <section
+      className="relative w-full bg-black overflow-hidden h-[86vh] min-h-[560px] max-h-[880px] md:h-auto md:aspect-[16/10] md:min-h-[560px] md:max-h-[900px]"
+      data-testid="section-hero"
+    >
+      {/* Desktop photo */}
+      <img
+        src={HERO_IMAGE_DESKTOP}
+        alt="Sean Austin"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover grayscale motion-reduce:transition-none"
+        style={{ objectPosition: HERO_POSITION_DESKTOP }}
+        fetchPriority="high"
+      />
+      {/* Mobile photo */}
+      <img
+        src={HERO_IMAGE_MOBILE}
+        alt="Sean Austin"
+        className="md:hidden absolute inset-0 w-full h-full object-cover grayscale"
+        style={{ objectPosition: HERO_POSITION_MOBILE }}
+        fetchPriority="high"
+      />
 
-        {/* Desktop: dark panel behind the copy so it reads over any photo */}
-        <div className="hidden md:block absolute inset-y-0 left-0 w-[62%] bg-gradient-to-r from-black via-black/85 to-transparent" />
-        {/* Mobile: bottom scrim so the copy block (stacked below the photo's midline) reads clearly */}
-        <div className="md:hidden absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-black via-black/70 to-transparent" />
-        {/* Faint top scrim on all sizes so the fixed nav stays legible */}
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent" />
+      {/* Desktop: dark panel behind the copy so it reads over any photo */}
+      <div className="hidden md:block absolute inset-y-0 left-0 w-[62%] bg-gradient-to-r from-black via-black/85 to-transparent" />
+      {/* Mobile: bottom scrim so the copy block (stacked below the photo's midline) reads clearly */}
+      <div className="md:hidden absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-black via-black/70 to-transparent" />
+      {/* Faint top scrim on all sizes so the fixed nav stays legible */}
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent" />
 
-        <div className="relative z-10 h-full flex flex-col justify-end md:justify-center px-6 sm:px-10 lg:px-16 pb-12 md:pb-0">
+      <div className="relative z-10 h-full flex flex-col justify-end md:justify-center pb-12 md:pb-0">
+        <Container>
           <HeroCopy />
-        </div>
+        </Container>
       </div>
     </section>
   );
