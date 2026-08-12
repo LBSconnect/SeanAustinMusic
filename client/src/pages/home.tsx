@@ -1,4 +1,7 @@
 import Hero from "@/components/hero";
+import HomeFeaturedRelease from "@/components/home-featured-release";
+import HomeBrandBridge from "@/components/home-brand-bridge";
+import HomeLiveTeaser from "@/components/home-live-teaser";
 import SEO from "@/components/seo";
 
 export default function Home() {
@@ -10,6 +13,9 @@ export default function Home() {
         noSuffix
       />
       <Hero />
+      <HomeFeaturedRelease />
+      <HomeBrandBridge />
+      <HomeLiveTeaser />
     </>
   );
 }
