@@ -1,5 +1,4 @@
 import Hero from "@/components/hero";
-import FeaturedRelease from "@/components/featured-release";
 import SEO from "@/components/seo";
 
 export default function Home() {
@@ -11,7 +10,6 @@ export default function Home() {
         noSuffix
       />
       <Hero />
-      <FeaturedRelease />
     </>
   );
 }

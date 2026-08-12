@@ -7,6 +7,7 @@ import siteLogo from "@assets/Sean-Austin-reggae-artist-Houston-1.jpg";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/latest-release", label: "Latest Release" },
   { href: "/music", label: "Music" },
   { href: "/videos", label: "Videos" },
   { href: "/merch", label: "Merch" },

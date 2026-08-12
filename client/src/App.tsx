@@ -10,6 +10,7 @@ import Footer from "@/components/footer";
 import ExitIntentPopup from "@/components/exit-intent-popup";
 import StickyMobileFooter from "@/components/sticky-mobile-footer";
 import Home from "@/pages/home";
+import LatestReleasePage from "@/pages/latest-release";
 import MusicPage from "@/pages/music";
 import VideosPage from "@/pages/videos";
 import TourPage from "@/pages/tour";
@@ -28,6 +29,7 @@ function PublicRouter() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/latest-release" component={LatestReleasePage} />
       <Route path="/music" component={MusicPage} />
       <Route path="/videos" component={VideosPage} />
       <Route path="/tour" component={TourPage} />

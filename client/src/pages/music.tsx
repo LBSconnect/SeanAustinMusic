@@ -7,6 +7,17 @@ import { Music, ExternalLink } from "lucide-react";
 // Album releases with artwork (using Spotify cover art URLs)
 const releases = [
   {
+    id: "fi-yu-forever",
+    title: "Fi Yu Forever",
+    // No dedicated Spotify link is live yet — falls back to a search deep-link,
+    // same pattern used below for "How Deep Is Your Love". Swap in the real
+    // link once it's available.
+    url: "https://open.spotify.com/search/Sean%20Austin%20Fi%20Yu%20Forever",
+    cover: "/attached_assets/Sean-Austin-Fi-Yu-Forever.jpeg",
+    year: "2026",
+    type: "Single",
+  },
+  {
     id: "the-essentials",
     title: "The Essentials",
     url: "https://open.spotify.com/album/0ZkV4SpzAppY7ZbMDp2tl0",
