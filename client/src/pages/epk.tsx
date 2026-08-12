@@ -51,21 +51,55 @@ export default function EPKPage() {
               <CardContent>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    <strong className="text-primary">Sean Austin</strong> is a Jamaican-born international reggae recording artist,
-                    singer, and songwriter whose soulful voice and dynamic performances have captivated audiences worldwide.
-                    With a distinctive blend of reggae, dancehall, and contemporary pop influences, Sean brings a fresh yet
-                    authentic sound that resonates across generations.
+                    <strong className="text-primary">
+                      Sean Austin is a Jamaican-born reggae artist and songwriter bringing a fresh, mature voice
+                      to contemporary reggae while remaining firmly connected to the music's Jamaican roots.
+                    </strong>{" "}
+                    Now based in Houston, Texas, Sean Austin blends reggae, dancehall, soul, and melodic
+                    storytelling into music centered on love, relationships, family, perseverance, and real-life
+                    experiences.
                   </p>
                   <p>
-                    His breakout hit <em>"Confessions"</em>, produced by Grammy-nominated producer Troyton Hinds,
-                    showcased his smooth vocal delivery and ability to seamlessly fuse reggae with catchy melodies, earning
-                    him recognition throughout the Caribbean and North America. Fans praise his music as "long overdue and
-                    needed in dancehall."
+                    His latest release, <strong className="text-foreground">"Fi Yu Forever," produced by
+                    Troyton Music</strong>, marks an important new chapter in Austin's career. Built around an
+                    infectious reggae groove and an enduring declaration of love, the single showcases the
+                    melodic songwriting, distinctive vocal delivery, and emotional authenticity that have become
+                    central to his evolving sound.
                   </p>
                   <p>
-                    From intimate venues to international festival stages, Sean Austin delivers electrifying live performances
-                    that leave lasting impressions. His catalog includes acclaimed releases such as "Same Girl" and the album
-                    "Purple Hearts," cementing his status as a rising force in the global reggae movement.
+                    "Fi Yu Forever" also sets the stage for Austin's forthcoming{" "}
+                    <strong className="text-foreground">12-track project, <em>The Essentials</em></strong>, a
+                    collection that explores multiple sides of the artist from romance and reflection to family,
+                    struggle, celebration, and classic Jamaican energy. The project includes songs such as{" "}
+                    <strong className="text-foreground">
+                      "Gimmie One More Chance," "Same Street," "We Neva Have Much," "Mama You're My Sunshine,"
+                      "Daddy's Girl," "Journey," "Birthday Shellings,"
+                    </strong>{" "}
+                    and <strong className="text-foreground">"No Weapon,"</strong> demonstrating a range that
+                    moves comfortably between contemporary reggae, dancehall influences, and deeply personal
+                    storytelling.
+                  </p>
+                  <p>
+                    Austin's recent momentum has extended beyond the studio. During promotional activity in
+                    Jamaica, he connected with audiences through radio and media appearances including{" "}
+                    <strong className="text-foreground">Irie FM, SunCity Radio, Fame 95 FM</strong>, and other
+                    Jamaican media platforms, strengthening the bridge between his Jamaican foundation and his
+                    growing international presence.
+                  </p>
+                  <p>
+                    Rather than chasing trends, Sean Austin's music is built around songs people can recognize
+                    themselves in. His approach combines the warmth and storytelling tradition of reggae with
+                    modern production and crossover-minded melodies, creating music capable of connecting with
+                    longtime reggae listeners as well as audiences discovering the genre through a new
+                    generation of artists. With new music, visual projects, expanded live-performance plans, and
+                    additional releases surrounding <em>The Essentials</em>, Sean Austin is entering one of the
+                    most active periods of his career.
+                  </p>
+                  <p>
+                    <strong className="text-primary">
+                      The mission is simple: authentic reggae, memorable songs, and music that still means
+                      something when the rhythm stops.
+                    </strong>
                   </p>
                 </div>
 
