@@ -1,126 +1,115 @@
-import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { FaSpotify, FaApple, FaYoutube, FaInstagram } from "react-icons/fa6";
+import { FaSpotify } from "react-icons/fa6";
+import { Play } from "lucide-react";
+
+// ─── Hero image configuration ────────────────────────────────────────────
+// Swap photos or crops here without touching the markup below.
+// Desktop and mobile can use entirely different photos if needed — the two
+// <img> tags are toggled by breakpoint (hidden md:block / md:hidden), not by
+// JS media queries, so there's no layout flash and it works with SSR.
+const HERO_IMAGE_DESKTOP = "/attached_assets/Sean-Austin-Fi-Yu-Forever-Solo.png";
+const HERO_IMAGE_MOBILE = "/attached_assets/Sean-Austin-Fi-Yu-Forever-Solo.png";
+// object-position as "horizontal% vertical%" — adjust to re-center the subject
+// after swapping in a different photo. Never stretches; always object-fit: cover.
+const HERO_POSITION_DESKTOP = "82% 8%";
+const HERO_POSITION_MOBILE = "50% 12%";
+
+const SPOTIFY_URL = "https://open.spotify.com/artist/0ZTUFRHKN1R7Se9eq5QTAT";
+
+function HeroCopy() {
+  return (
+    <div className="max-w-xl">
+      <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-white/50 mb-4">
+        Official Home of Sean Austin
+      </p>
+
+      <h1
+        className="font-display leading-[0.85] tracking-tight text-white"
+        data-testid="text-hero-headline"
+      >
+        <span className="block text-6xl sm:text-7xl lg:text-8xl">Reggae</span>
+        <span className="block text-6xl sm:text-7xl lg:text-8xl italic text-white/70">
+          Is Back
+        </span>
+      </h1>
+
+      <p
+        className="mt-5 text-2xl sm:text-3xl text-white/90"
+        style={{ fontFamily: "'Give You Glory', cursive" }}
+      >
+        Sean Austin
+      </p>
+
+      <p className="mt-4 text-sm sm:text-base text-white/60 tracking-wide">
+        Real Music. Real Vibes. Real Life.
+      </p>
+
+      <div className="mt-8 flex flex-wrap items-center gap-3">
+        <a href={SPOTIFY_URL} target="_blank" rel="noopener noreferrer">
+          <Button
+            size="lg"
+            className="gap-2 px-7 bg-white text-black hover:bg-white/90 rounded-none tracking-wide font-semibold"
+            data-testid="button-listen-now"
+          >
+            <FaSpotify className="w-4 h-4" />
+            Listen Now
+          </Button>
+        </a>
+        <a href="/videos">
+          <Button
+            size="lg"
+            variant="outline"
+            className="gap-2 px-7 bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white rounded-none tracking-wide font-semibold"
+            data-testid="button-watch-video"
+          >
+            <Play className="w-4 h-4" fill="currentColor" />
+            Watch Video
+          </Button>
+        </a>
+      </div>
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
-    <>
-      {/* Full-bleed image — no text overlay.
-          Capped shorter on large screens (lg:) — at full viewport height, a wide desktop
-          window made the image dominate the page before any content was visible. */}
-      <section
-        className="relative h-[80vh] min-h-[500px] lg:h-[65vh] lg:max-h-[640px] overflow-hidden"
-        data-testid="section-hero"
-      >
-        {/* The source artwork is a square promo graphic with "SEAN AUSTIN / FI YU FOREVER"
-            text baked into its left half and a photo on the right half. On narrow/tall
-            viewports object-cover has to crop most of the width away, so the position is
-            shifted per-breakpoint to keep the photo (not the baked-in text) in frame on
-            phones and tablets. */}
+    // Outer section is full-bleed black; the inner frame is width-capped so the
+    // photo's object-cover scale (and therefore its crop) stays consistent on
+    // ultra-wide monitors instead of "zooming in" further as the viewport grows
+    // wider than it is tall — beyond the cap the extra width is just letterboxed.
+    <section className="relative bg-black overflow-hidden" data-testid="section-hero">
+      {/* A fixed aspect-ratio (rather than a vh-based height) keeps the photo's
+          object-cover crop window a constant percentage of its height at every
+          viewport width, so the framing doesn't drift as the window gets wider. */}
+      <div className="relative max-w-[1800px] mx-auto h-[86vh] min-h-[560px] max-h-[880px] md:h-auto md:aspect-[16/10] md:min-h-[560px] md:max-h-[900px]">
+        {/* Desktop photo */}
         <img
-          src="/attached_assets/Sean-Austin-Fi-Yu-Forever.jpeg"
-          alt="Sean Austin - Fi Yu Forever"
-          className="absolute inset-0 w-full h-full object-cover object-[88%_center] sm:object-[68%_center] lg:object-[center_38%]"
+          src={HERO_IMAGE_DESKTOP}
+          alt="Sean Austin"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover grayscale motion-reduce:transition-none"
+          style={{ objectPosition: HERO_POSITION_DESKTOP }}
+          fetchPriority="high"
+        />
+        {/* Mobile photo */}
+        <img
+          src={HERO_IMAGE_MOBILE}
+          alt="Sean Austin"
+          className="md:hidden absolute inset-0 w-full h-full object-cover grayscale"
+          style={{ objectPosition: HERO_POSITION_MOBILE }}
           fetchPriority="high"
         />
 
-        {/* Subtle bottom fade to blend into the content section below */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
-      </section>
+        {/* Desktop: dark panel behind the copy so it reads over any photo */}
+        <div className="hidden md:block absolute inset-y-0 left-0 w-[62%] bg-gradient-to-r from-black via-black/85 to-transparent" />
+        {/* Mobile: bottom scrim so the copy block (stacked below the photo's midline) reads clearly */}
+        <div className="md:hidden absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-black via-black/70 to-transparent" />
+        {/* Faint top scrim on all sizes so the fixed nav stays legible */}
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/60 to-transparent" />
 
-      {/* Headline, tagline, and CTAs — its own section, not overlaid on the image */}
-      <section className="px-6 py-14 text-center bg-background" data-testid="section-hero-content">
-        <div className="max-w-4xl mx-auto">
-
-          <h1
-            className="font-display text-5xl sm:text-7xl md:text-8xl font-bold leading-none mb-5 tracking-tight bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent"
-            data-testid="text-hero-headline"
-          >
-            SEAN AUSTIN
-          </h1>
-
-          {/* Location tag */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-white/75">
-              Houston, Texas
-            </span>
-          </div>
-
-          <p className="text-base sm:text-lg text-white/65 max-w-lg mx-auto mb-8 leading-relaxed">
-            Sean Austin blends Jamaican roots with a modern global sound, music that moves your spirit and your body.
-          </p>
-
-          {/* Primary CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-            <a
-              href="https://open.spotify.com/artist/0ZTUFRHKN1R7Se9eq5QTAT"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                className="gap-2 px-7 bg-primary hover:bg-primary/90"
-                data-testid="button-stream-now"
-              >
-                <FaSpotify className="w-4 h-4" />
-                Stream Now
-              </Button>
-            </a>
-            <a href="/videos">
-              <Button
-                size="lg"
-                variant="outline"
-                className="gap-2 px-7 bg-white/10 border-white/30 text-white hover:bg-white/20"
-                data-testid="button-watch-video"
-              >
-                <Play className="w-4 h-4" fill="currentColor" />
-                Watch Videos
-              </Button>
-            </a>
-          </div>
-
-          {/* Platform icon row */}
-          <div className="flex items-center justify-center gap-6">
-            <a
-              href="https://open.spotify.com/artist/0ZTUFRHKN1R7Se9eq5QTAT"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Spotify"
-              className="text-white/40 hover:text-white transition-colors duration-200"
-            >
-              <FaSpotify className="w-5 h-5" aria-hidden="true" />
-            </a>
-            <a
-              href="https://music.apple.com/us/artist/sean-austin/1496526691"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Apple Music"
-              className="text-white/40 hover:text-white transition-colors duration-200"
-            >
-              <FaApple className="w-5 h-5" aria-hidden="true" />
-            </a>
-            <a
-              href="https://www.youtube.com/@SeanAustinReggae"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-              className="text-white/40 hover:text-white transition-colors duration-200"
-            >
-              <FaYoutube className="w-5 h-5" aria-hidden="true" />
-            </a>
-            <a
-              href="https://instagram.com/iamseanaustin"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-white/40 hover:text-white transition-colors duration-200"
-            >
-              <FaInstagram className="w-5 h-5" aria-hidden="true" />
-            </a>
-          </div>
+        <div className="relative z-10 h-full flex flex-col justify-end md:justify-center px-6 sm:px-10 lg:px-16 pb-12 md:pb-0">
+          <HeroCopy />
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
