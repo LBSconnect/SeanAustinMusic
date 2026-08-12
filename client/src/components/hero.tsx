@@ -11,8 +11,8 @@ const HERO_IMAGE_DESKTOP = "/attached_assets/Sean-Austin-Fi-Yu-Forever-Solo.png"
 const HERO_IMAGE_MOBILE = "/attached_assets/Sean-Austin-Fi-Yu-Forever-Solo.png";
 // object-position as "horizontal% vertical%" — adjust to re-center the subject
 // after swapping in a different photo. Never stretches; always object-fit: cover.
-const HERO_POSITION_DESKTOP = "82% 8%";
-const HERO_POSITION_MOBILE = "50% 12%";
+const HERO_POSITION_DESKTOP = "82% 24%";
+const HERO_POSITION_MOBILE = "50% center";
 
 const SPOTIFY_URL = "https://open.spotify.com/artist/0ZTUFRHKN1R7Se9eq5QTAT";
 
