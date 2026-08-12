@@ -3,7 +3,10 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { FaInstagram, FaXTwitter, FaYoutube, FaFacebook, FaTiktok } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
-import siteLogo from "@assets/Sean-Austin-reggae-artist-Houston-1.jpg";
+
+// The site's actual brand mark — same file used as the browser tab favicon,
+// so the logo in the nav always matches what's in the tab.
+const siteLogo = "/favicon.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -35,15 +38,12 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 h-16 flex-wrap">
           <Link href="/" data-testid="link-home-logo">
-            <img
-              src={siteLogo}
-              alt="Sean Austin"
-              className="h-20 w-auto"
-              style={{
-                WebkitMaskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 70%)",
-                maskImage: "radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 70%)"
-              }}
-            />
+            {/* The logo's source file has a plain white background — shown on
+                its own white chip rather than fighting that against the dark
+                nav bar. */}
+            <div className="h-12 w-12 rounded-lg bg-white p-1 overflow-hidden flex items-center justify-center">
+              <img src={siteLogo} alt="Sean Austin" className="w-full h-full object-contain" />
+            </div>
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">
