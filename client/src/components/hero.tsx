@@ -8,12 +8,16 @@ export default function Hero() {
       className="relative h-screen min-h-[600px] flex flex-col justify-end overflow-hidden"
       data-testid="section-hero"
     >
-      {/* Full-bleed background image */}
+      {/* Full-bleed background image.
+          The source artwork is a square promo graphic with "SEAN AUSTIN / FI YU FOREVER"
+          text baked into its left half and a photo on the right half. On narrow/tall
+          viewports object-cover has to crop most of the width away, so the position is
+          shifted per-breakpoint to keep the photo (not the baked-in text, which would
+          collide with the headline below) in frame on phones and tablets. */}
       <img
         src="/attached_assets/Sean-Austin-Fi-Yu-Forever.jpeg"
         alt="Sean Austin - Fi Yu Forever"
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ objectPosition: "30% center" }}
+        className="absolute inset-0 w-full h-full object-cover object-[88%_center] sm:object-[68%_center] lg:object-[center_38%]"
         fetchPriority="high"
       />
 
