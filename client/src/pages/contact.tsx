@@ -51,6 +51,7 @@ export default function ContactPage() {
       <SEO
         title="Booking & Contact"
         description="Book Sean Austin for your event. Submit booking inquiries for concerts, festivals, private events, and corporate shows."
+        path="/contact"
       />
       <div className="min-h-screen pt-20 pb-12">
         <Container>

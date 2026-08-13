@@ -31,6 +31,8 @@ export default function EPKPage() {
       <SEO
         title="Electronic Press Kit"
         description="Sean Austin's Electronic Press Kit. Bio, press photos, music, videos, and booking information."
+        path="/epk"
+        image={PRESS_PHOTO_URL}
       />
       <div className="min-h-screen pt-20 pb-12">
         <Container>
