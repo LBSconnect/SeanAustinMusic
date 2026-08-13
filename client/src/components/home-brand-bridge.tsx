@@ -3,15 +3,28 @@ import { ArrowRight } from "lucide-react";
 import Container from "@/components/container";
 
 // Configurable like the hero — swap the photo/crop here.
-const BRIDGE_IMAGE = "/attached_assets/Sean-Austin-reggae-artist-Houston-5.jpg";
-const BRIDGE_POSITION = "center 10%";
+const BRIDGE_IMAGE = "/attached_assets/Sean-Austin-reggae-artist-Houston-17.jpeg";
+// This photo is portrait (taller than it is wide), so object-cover always
+// shows its full width and crops top/bottom — object-position only needs a
+// vertical value tuned to the face's position in the source photo.
+const BRIDGE_POSITION = "center 29%";
 
 // One strong image + one short line + one CTA. Not a bio — the About page
 // (linked via /social) remains the full-story destination.
 export default function HomeBrandBridge() {
   return (
     <section className="relative bg-black" data-testid="section-home-brand-bridge">
-      <div className="relative h-[56vh] min-h-[420px] max-h-[620px] overflow-hidden">
+      {/* A fixed aspect-ratio (rather than a vh-based height) keeps the
+          portrait photo's object-cover crop window a constant percentage of
+          its height at every viewport width — a vh-based height let wide/
+          short viewports "zoom in" so far that the subject's face got cut
+          off, same bug already fixed on the hero and /music banner. No
+          max-height: it would fight the aspect ratio at wide widths the
+          same way. w-full is required alongside aspect-[...] + min-h-[...]:
+          without it, when min-h clamps the box taller than the ratio would
+          naturally make it, some browsers derive the box's WIDTH from that
+          clamped height instead of filling the viewport. */}
+      <div className="relative w-full aspect-[2/1] min-h-[320px] overflow-hidden">
         <img
           src={BRIDGE_IMAGE}
           alt="Sean Austin"
