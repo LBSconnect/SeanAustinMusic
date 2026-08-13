@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { FaInstagram, FaXTwitter, FaYoutube, FaFacebook, FaTiktok } from "react-icons/fa6";
 import { SiSpotify, SiApplemusic, SiReverbnation } from "react-icons/si";
 import { Mail } from "lucide-react";
+import Container from "@/components/container";
 
 const quickLinks = [
   { href: "/music", label: "Music" },
@@ -28,7 +29,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-card border-t border-border/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <Container className="py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <span className="font-display text-xl font-bold tracking-wider text-primary uppercase">
@@ -99,7 +100,7 @@ export default function Footer() {
             @iamseanaustin
           </p>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

@@ -2,6 +2,7 @@ import SEO from "@/components/seo";
 import { Button } from "@/components/ui/button";
 import { Music, Video as VideoIcon, ArrowRight } from "lucide-react";
 import { FaSpotify, FaApple, FaYoutube } from "react-icons/fa6";
+import Container from "@/components/container";
 
 const COVER_ART_URL = "/attached_assets/Sean-Austin-Fi-Yu-Forever.jpeg";
 
@@ -25,8 +26,8 @@ export default function LatestReleasePage() {
         type="music.song"
       />
 
-      <div className="min-h-screen pt-20 pb-12 px-6">
-        <div className="max-w-6xl mx-auto">
+      <div className="min-h-screen pt-20 pb-12">
+        <Container>
           <div className="text-center mb-10">
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-4">
               Latest Release
@@ -123,7 +124,7 @@ export default function LatestReleasePage() {
               />
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );

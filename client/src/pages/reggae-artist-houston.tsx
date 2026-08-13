@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { Mail, Send, Calendar, MapPin, Users, Music, ChevronDown } from "lucide-react";
+import Container from "@/components/container";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -150,8 +151,8 @@ export default function ReggaeArtistHoustonPage() {
           {JSON.stringify(faqSchema)}
         </script>
       </Helmet>
-      <div className="min-h-screen py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <div className="min-h-screen py-20">
+        <Container>
 
           {/* Page Header */}
           <div className="text-center mb-16">
@@ -431,7 +432,7 @@ export default function ReggaeArtistHoustonPage() {
             </div>
           </section>
 
-        </div>
+        </Container>
       </div>
     </>
   );

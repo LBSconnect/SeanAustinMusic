@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { FaInstagram, FaXTwitter, FaYoutube, FaFacebook, FaTiktok, FaSpotify } from "react-icons/fa6";
 import { SiApplemusic } from "react-icons/si";
 import { ArrowUpRight } from "lucide-react";
+import Container from "@/components/container";
 
 const socialPlatforms = [
   {
@@ -86,9 +87,7 @@ export default function SocialPage() {
         description="Connect with Sean Austin on social media. Follow for music updates, behind-the-scenes content, and more."
         noSuffix
       />
-      <div
-        className="relative min-h-screen py-20 px-6"
-      >
+      <div className="relative min-h-screen py-20">
         {/* Background photo */}
         <div className="absolute inset-0 overflow-hidden">
           <img
@@ -100,7 +99,7 @@ export default function SocialPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/90" />
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto">
+        <Container className="relative z-10">
           <div className="text-center mb-12">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
               Connect With Sean Austin
@@ -158,7 +157,7 @@ export default function SocialPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );

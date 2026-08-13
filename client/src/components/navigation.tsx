@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { FaInstagram, FaXTwitter, FaYoutube, FaFacebook, FaTiktok } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
+import Container from "@/components/container";
 
 // The site's actual brand mark — same file used as the browser tab favicon,
 // so the logo in the nav always matches what's in the tab.
@@ -34,7 +35,7 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
         <div className="flex items-center justify-between gap-4 h-16 flex-wrap">
           <Link href="/" data-testid="link-home-logo">
             <img
@@ -89,7 +90,7 @@ export default function Navigation() {
             {mobileOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
           </Button>
         </div>
-      </div>
+      </Container>
 
       {mobileOpen && (
         <div className="lg:hidden bg-background/95 backdrop-blur-md border-b border-border/50">

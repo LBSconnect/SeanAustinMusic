@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import SEO from "@/components/seo";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Clock, Radio } from "lucide-react";
+import Container from "@/components/container";
 
 const tourDates = [
   {
@@ -63,7 +64,7 @@ export default function TourPage() {
         </script>
       </Helmet>
 
-      <div className="relative min-h-screen py-20 px-6">
+      <div className="relative min-h-screen py-20">
         {/* Background photo */}
         <div className="absolute inset-0 overflow-hidden">
           <img
@@ -75,7 +76,7 @@ export default function TourPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/90" />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto">
+        <Container className="relative z-10">
           <div className="text-center mb-12">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-primary">
               Tour Dates 2026
@@ -122,7 +123,7 @@ export default function TourPage() {
               </a>
             </p>
           </div>
-        </div>
+        </Container>
       </div>
     </>
   );
