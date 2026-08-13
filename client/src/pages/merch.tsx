@@ -126,6 +126,8 @@ export default function MerchPage() {
       <SEO
         title="Merch"
         description="Official Sean Austin merchandise. Shop music, apparel, and more."
+        path="/merch"
+        image={STORE_BANNER}
       />
 
       <div className="min-h-screen bg-black">

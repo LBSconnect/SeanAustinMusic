@@ -327,6 +327,7 @@ export default function VideosPage() {
       <SEO
         title="Videos"
         description="Watch Sean Austin's music videos, live performances, and exclusive interviews. Experience authentic reggae vibes."
+        path="/videos"
       />
 
       <div className="min-h-screen">

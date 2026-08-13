@@ -7,6 +7,8 @@ interface SEOProps {
   image?: string;
   type?: string;
   noSuffix?: boolean;
+  /** Set on pages that should never appear in search results (404s, admin). */
+  noindex?: boolean;
 }
 
 const SITE_URL = "https://www.seanaustinmusic.com";
@@ -20,6 +22,7 @@ export default function SEO({
   image = "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg",
   type = "website",
   noSuffix = false,
+  noindex = false,
 }: SEOProps) {
   const fullTitle = noSuffix ? title : `${title} | ${SITE_NAME}`;
   const url = `${SITE_URL}${path}`;
@@ -30,6 +33,14 @@ export default function SEO({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
+      <meta
+        name="robots"
+        content={
+          noindex
+            ? "noindex, nofollow"
+            : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        }
+      />
 
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />

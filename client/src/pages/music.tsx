@@ -210,6 +210,8 @@ export default function MusicPage() {
       <SEO
         title="Sean Austin Music | Houston Reggae Songs and Performances"
         description="Listen to Sean Austin's music catalog. Houston reggae songs, albums, singles, and live performances on all platforms."
+        path="/music"
+        image={ARTIST_PHOTO}
         noSuffix
       />
 
