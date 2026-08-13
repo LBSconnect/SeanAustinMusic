@@ -9,6 +9,10 @@ import Container from "@/components/container";
 // Press photo for download
 const PRESS_PHOTO_URL = "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg";
 
+// Full downloadable Electronic Press Kit (PDF) — bio, press photo, press
+// coverage, streaming/social links, and booking contact in one file.
+const EPK_PDF_URL = "/attached_assets/Sean-Austin-EPK.pdf";
+
 // YouTube video ID for "Fi Yu Forever" music video
 const FEATURED_VIDEO_ID = "bXUj-hX-YWc";
 
@@ -43,6 +47,17 @@ export default function EPKPage() {
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
               Everything you need for press coverage and booking inquiries.
             </p>
+            <a
+              href={EPK_PDF_URL}
+              download="Sean-Austin-EPK.pdf"
+              className="inline-block mt-6"
+              data-testid="link-download-epk-pdf"
+            >
+              <Button size="lg">
+                <Download className="w-4 h-4 mr-2" />
+                Download Full EPK (PDF)
+              </Button>
+            </a>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
