@@ -7,7 +7,7 @@ import type { PressQuote } from "@shared/schema";
 import Container from "@/components/container";
 
 // Press photo for download
-const PRESS_PHOTO_URL = "/attached_assets/Sean-Austin-reggae-artist-Houston-16.jpeg";
+const PRESS_PHOTO_URL = "/attached_assets/Sean-Austin.png";
 
 // Full downloadable Electronic Press Kit (PDF) — bio, press photo, press
 // coverage, streaming/social links, and booking contact in one file.
@@ -24,7 +24,7 @@ export default function EPKPage() {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = PRESS_PHOTO_URL;
-    link.download = "Sean_Austin_Press_Photo.jpg";
+    link.download = "Sean_Austin_Press_Photo.png";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
