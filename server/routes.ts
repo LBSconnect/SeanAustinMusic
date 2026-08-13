@@ -17,6 +17,11 @@ declare module "express-session" {
   }
 }
 
+// Computed once at server start, not per-request — recomputing "now" on
+// every sitemap fetch told search engines every page changed every single
+// day forever, which is a false freshness signal that wastes crawl budget.
+const SITEMAP_LASTMOD = new Date().toISOString().split("T")[0];
+
 function requireAdmin(req: Request, res: Response, next: NextFunction) {
   if (!req.session.adminId) {
     return res.status(401).json({ error: "Unauthorized" });
@@ -473,16 +478,16 @@ export async function registerRoutes(
 
   app.get("/sitemap.xml", (_req, res) => {
     const baseUrl = "https://www.seanaustinmusic.com";
-    const now = new Date().toISOString().split("T")[0];
+    const now = SITEMAP_LASTMOD;
     const pages = [
       { path: "/", priority: "1.0", changefreq: "weekly", lastmod: now },
       { path: "/reggae-artist-houston-texas", priority: "0.95", changefreq: "monthly", lastmod: now },
       { path: "/music", priority: "0.9", changefreq: "weekly", lastmod: now },
       { path: "/tour", priority: "0.9", changefreq: "daily", lastmod: now },
+      { path: "/latest-release", priority: "0.85", changefreq: "weekly", lastmod: now },
       { path: "/videos", priority: "0.8", changefreq: "weekly", lastmod: now },
       { path: "/epk", priority: "0.8", changefreq: "monthly", lastmod: now },
       { path: "/merch", priority: "0.8", changefreq: "weekly", lastmod: now },
-      { path: "/fan-club", priority: "0.8", changefreq: "monthly", lastmod: now },
       { path: "/social", priority: "0.7", changefreq: "monthly", lastmod: now },
       { path: "/contact", priority: "0.6", changefreq: "monthly", lastmod: now },
     ];
