@@ -52,7 +52,7 @@ export default function EPKPage() {
               <CardContent>
                 <div className="space-y-4 text-white leading-relaxed">
                   <p>
-                    <strong className="text-primary">
+                    <strong>
                       Sean Austin is a Jamaican-born reggae artist and songwriter bringing a fresh, mature voice
                       to contemporary reggae while remaining firmly connected to the music's Jamaican roots.
                     </strong>{" "}
@@ -61,7 +61,7 @@ export default function EPKPage() {
                     experiences.
                   </p>
                   <p>
-                    His latest release, <strong className="text-foreground">"Fi Yu Forever," produced by
+                    His latest release, <strong>"Fi Yu Forever," produced by
                     Troyton Music</strong>, marks an important new chapter in Austin's career. Built around an
                     infectious reggae groove and an enduring declaration of love, the single showcases the
                     melodic songwriting, distinctive vocal delivery, and emotional authenticity that have become
@@ -69,21 +69,21 @@ export default function EPKPage() {
                   </p>
                   <p>
                     "Fi Yu Forever" also sets the stage for Austin's forthcoming{" "}
-                    <strong className="text-foreground">12-track project, <em>The Essentials</em></strong>, a
+                    <strong>12-track project, <em>The Essentials</em></strong>, a
                     collection that explores multiple sides of the artist from romance and reflection to family,
                     struggle, celebration, and classic Jamaican energy. The project includes songs such as{" "}
-                    <strong className="text-foreground">
+                    <strong>
                       "Gimmie One More Chance," "Same Street," "We Neva Have Much," "Mama You're My Sunshine,"
                       "Daddy's Girl," "Journey," "Birthday Shellings,"
                     </strong>{" "}
-                    and <strong className="text-foreground">"No Weapon,"</strong> demonstrating a range that
+                    and <strong>"No Weapon,"</strong> demonstrating a range that
                     moves comfortably between contemporary reggae, dancehall influences, and deeply personal
                     storytelling.
                   </p>
                   <p>
                     Austin's recent momentum has extended beyond the studio. During promotional activity in
                     Jamaica, he connected with audiences through radio and media appearances including{" "}
-                    <strong className="text-foreground">Irie FM, SunCity Radio, Fame 95 FM</strong>, and other
+                    <strong>Irie FM, SunCity Radio, Fame 95 FM</strong>, and other
                     Jamaican media platforms, strengthening the bridge between his Jamaican foundation and his
                     growing international presence.
                   </p>
@@ -97,7 +97,7 @@ export default function EPKPage() {
                     most active periods of his career.
                   </p>
                   <p>
-                    <strong className="text-primary">
+                    <strong>
                       The mission is simple: authentic reggae, memorable songs, and music that still means
                       something when the rhythm stops.
                     </strong>
