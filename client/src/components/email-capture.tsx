@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { trackEmailSignup } from "@/lib/tracking";
+import Container from "@/components/container";
 
 export default function EmailCapture() {
   const [email, setEmail] = useState("");
@@ -25,8 +26,8 @@ export default function EmailCapture() {
   });
 
   return (
-    <section className="py-20 px-6 bg-card/30 text-center" data-testid="section-email-capture">
-      <div className="max-w-3xl mx-auto">
+    <section className="py-20 bg-card/30 text-center" data-testid="section-email-capture">
+      <Container className="max-w-3xl">
         <h2 className="font-display text-3xl font-bold text-primary" data-testid="text-email-capture-title">
           Join The Global Reggae Movement
         </h2>
@@ -58,7 +59,7 @@ export default function EmailCapture() {
         {message && (
           <p className="mt-4 text-muted-foreground" data-testid="text-subscribe-message">{message}</p>
         )}
-      </div>
+      </Container>
     </section>
   );
 }
