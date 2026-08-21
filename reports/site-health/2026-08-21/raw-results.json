@@ -1,0 +1,150 @@
+{
+  "routeResults": [
+    {
+      "route": "/",
+      "status": 200,
+      "ok": true,
+      "ms": 531
+    },
+    {
+      "route": "/music",
+      "status": 200,
+      "ok": true,
+      "ms": 519
+    },
+    {
+      "route": "/videos",
+      "status": 200,
+      "ok": true,
+      "ms": 461
+    },
+    {
+      "route": "/tour",
+      "status": 200,
+      "ok": true,
+      "ms": 482
+    },
+    {
+      "route": "/social",
+      "status": 200,
+      "ok": true,
+      "ms": 475
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "ok": true,
+      "ms": 489
+    },
+    {
+      "route": "/epk",
+      "status": 200,
+      "ok": true,
+      "ms": 528
+    },
+    {
+      "route": "/fan-club",
+      "status": 200,
+      "ok": true,
+      "ms": 353
+    },
+    {
+      "route": "/merch",
+      "status": 200,
+      "ok": true,
+      "ms": 363
+    },
+    {
+      "route": "/reggae-artist-houston-texas",
+      "status": 200,
+      "ok": true,
+      "ms": 530
+    },
+    {
+      "route": "/this-route-should-not-exist-health-check",
+      "status": 200,
+      "ok": true,
+      "ms": 541
+    }
+  ],
+  "sitemap": {
+    "url": "https://www.seanaustinmusic.com/sitemap.xml",
+    "status": 200,
+    "ok": true,
+    "length": 2392
+  },
+  "robots": {
+    "url": "https://www.seanaustinmusic.com/robots.txt",
+    "status": 200,
+    "ok": true,
+    "length": 113
+  },
+  "a11yResults": [
+    {
+      "route": "/",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 2
+        }
+      ]
+    },
+    {
+      "route": "/music",
+      "violations": []
+    },
+    {
+      "route": "/videos",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 1
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "route": "/tour",
+      "violations": [
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "route": "/contact",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": 1
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "help": "Heading levels should only increase by one",
+          "nodes": 1
+        },
+        {
+          "id": "link-name",
+          "impact": "serious",
+          "help": "Links must have discernible text",
+          "nodes": 1
+        }
+      ]
+    }
+  ]
+}
