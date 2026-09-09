@@ -12,6 +12,17 @@ const GENRES = ["Reggae", "Dancehall"];
 // Album releases with artwork (using Spotify cover art URLs)
 const releases = [
   {
+    id: "one-more-chance",
+    title: "One More Chance",
+    // No dedicated Spotify link is live yet — falls back to a search deep-link,
+    // same pattern used below for "How Deep Is Your Love". Swap in the real
+    // link once it's available.
+    url: "https://open.spotify.com/search/Sean%20Austin%20One%20More%20Chance",
+    cover: "/attached_assets/Sean-Austin-One-More-Chance.jpg",
+    year: "2026",
+    type: "Single",
+  },
+  {
     id: "fi-yu-forever",
     title: "Fi Yu Forever",
     // No dedicated Spotify link is live yet — falls back to a search deep-link,

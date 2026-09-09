@@ -3,8 +3,8 @@ import { FaSpotify } from "react-icons/fa6";
 import { ArrowRight } from "lucide-react";
 import Container from "@/components/container";
 
-const COVER_ART = "/attached_assets/Sean-Austin-Fi-Yu-Forever.jpeg";
-const SPOTIFY_URL = "https://open.spotify.com/search/Sean%20Austin%20Fi%20Yu%20Forever";
+const COVER_ART = "/attached_assets/Sean-Austin-One-More-Chance.jpg";
+const SPOTIFY_URL = "https://open.spotify.com/search/Sean%20Austin%20One%20More%20Chance";
 
 // Compact teaser for the current priority release — not a discography section.
 // Full catalog lives on /music; this exists purely to promote and route there.
@@ -15,7 +15,7 @@ export default function HomeFeaturedRelease() {
         <div className="flex flex-col sm:flex-row items-center gap-6">
           <img
             src={COVER_ART}
-            alt="Fi Yu Forever — Sean Austin"
+            alt="One More Chance — Sean Austin"
             className="w-20 h-20 sm:w-24 sm:h-24 object-cover flex-shrink-0 grayscale"
           />
 
@@ -24,7 +24,7 @@ export default function HomeFeaturedRelease() {
               Currently Playing
             </p>
             <h2 className="font-display text-2xl sm:text-3xl text-white leading-none">
-              Fi Yu Forever
+              One More Chance
             </h2>
             <p className="text-sm text-white/50 mt-1">Sean Austin</p>
           </div>
