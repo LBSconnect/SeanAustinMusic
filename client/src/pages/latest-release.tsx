@@ -4,23 +4,25 @@ import { Music, Video as VideoIcon, ArrowRight } from "lucide-react";
 import { FaSpotify, FaApple, FaYoutube } from "react-icons/fa6";
 import Container from "@/components/container";
 
-const COVER_ART_URL = "/attached_assets/Sean-Austin-Fi-Yu-Forever.jpeg";
+const COVER_ART_URL = "/attached_assets/Sean-Austin-One-More-Chance.jpg";
 
-// YouTube video ID for the official "Fi Yu Forever" music video
-const VIDEO_ID = "bXUj-hX-YWc";
+// YouTube video ID for the official "One More Chance" visualizer
+const VIDEO_ID = "SdK9K9vhaMo";
 
-// No dedicated Spotify/Apple Music single link is available yet — falls back to a
-// search deep-link (same pattern used for other not-yet-linked tracks in music.tsx)
-// and the artist page. Swap in the real links as soon as they're live.
-const SPOTIFY_SEARCH_URL = "https://open.spotify.com/search/Sean%20Austin%20Fi%20Yu%20Forever";
-const APPLE_MUSIC_ARTIST_URL = "https://music.apple.com/us/artist/sean-austin/1496526691";
+// No dedicated Spotify single link is available yet — falls back to a search
+// deep-link (same pattern used for other not-yet-linked tracks in music.tsx).
+// The Apple Music link below is the real, direct single link (verified).
+const SPOTIFY_SEARCH_URL = "https://open.spotify.com/search/Sean%20Austin%20One%20More%20Chance";
+const APPLE_MUSIC_URL = "https://music.apple.com/us/album/one-more-chance/6807165166?i=6807165168";
+
+const RIDDIMS_WORLD_URL = "https://riddimsworld.com/singles/sean-austin-one-more-chance/";
 
 export default function LatestReleasePage() {
   return (
     <>
       <SEO
-        title="Fi Yu Forever — Latest Release"
-        description={`Sean Austin's latest single "Fi Yu Forever," produced by Troyton Music — an infectious reggae groove and an enduring declaration of love.`}
+        title="One More Chance — Latest Release"
+        description={`Sean Austin's latest single "One More Chance," produced by XO — a reggae reflection on accountability, forgiveness, and choosing to make things right.`}
         path="/latest-release"
         image={COVER_ART_URL}
         type="music.song"
@@ -33,10 +35,10 @@ export default function LatestReleasePage() {
               Latest Release
             </span>
             <h1 className="font-display text-4xl md:text-6xl font-bold text-white">
-              Fi Yu Forever
+              One More Chance
             </h1>
             <p className="mt-3 text-muted-foreground">
-              2026 · Single · Produced by Troyton Music
+              2026 · Single · Produced by XO
             </p>
           </div>
 
@@ -45,7 +47,7 @@ export default function LatestReleasePage() {
             <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-primary/10 aspect-square">
               <img
                 src={COVER_ART_URL}
-                alt="Sean Austin - Fi Yu Forever cover art"
+                alt="Sean Austin - One More Chance cover art"
                 className="w-full h-full object-cover"
                 fetchPriority="high"
               />
@@ -53,12 +55,24 @@ export default function LatestReleasePage() {
 
             {/* Info */}
             <div>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Built around an infectious reggae groove and an enduring declaration of love,
-                "Fi Yu Forever" showcases the melodic songwriting, distinctive vocal delivery, and
-                emotional authenticity that have become central to Sean Austin's evolving sound. It
-                marks an important new chapter in his career and sets the stage for his forthcoming
-                12-track project, <em>The Essentials</em>.
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                A reggae reflection on accountability, forgiveness, and relationship reconciliation,
+                "One More Chance" finds Sean Austin asking for a second chance after letting someone
+                down. Rooted in his Jamaican upbringing, the song carries themes that reach beyond
+                romance into questions of trust, pride, and personal growth.
+              </p>
+              <p className="text-sm text-muted-foreground/80 leading-relaxed mb-6">
+                As featured in{" "}
+                <a
+                  href={RIDDIMS_WORLD_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 underline"
+                >
+                  Riddims World
+                </a>
+                : "Reggae provides a connection to his Jamaican roots and a fitting setting for a
+                song concerned with love and reflection."
               </p>
 
               {/* Streaming links */}
@@ -69,7 +83,7 @@ export default function LatestReleasePage() {
                     Stream on Spotify
                   </Button>
                 </a>
-                <a href={APPLE_MUSIC_ARTIST_URL} target="_blank" rel="noopener noreferrer">
+                <a href={APPLE_MUSIC_URL} target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="gap-2">
                     <FaApple className="w-4 h-4" />
                     Apple Music
@@ -107,17 +121,17 @@ export default function LatestReleasePage() {
             </div>
           </div>
 
-          {/* Official video */}
+          {/* Official visualizer */}
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display text-2xl font-bold text-white mb-4 text-center">
-              Official Video
+              Official Visualizer
             </h2>
             <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
               <iframe
                 width="100%"
                 height="100%"
                 src={`https://www.youtube.com/embed/${VIDEO_ID}`}
-                title="Sean Austin - Fi Yu Forever (Official Video)"
+                title="Sean Austin - One More Chance (Official Visualizer)"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="rounded-2xl"

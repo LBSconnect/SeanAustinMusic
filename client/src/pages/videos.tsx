@@ -17,12 +17,28 @@ const categories = ["Music Videos", "Live Performances", "Shorts", "Karaoke", "I
 const videos = [
   // Music Videos
   {
+    id: "F-WSjsX9bnU",
+    title: "We Neva Have Much",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2026",
+    featured: false,
+  },
+  {
+    id: "Z-0tXThJJwY",
+    title: "Same Street",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2026",
+    featured: false,
+  },
+  {
     id: "bXUj-hX-YWc",
     title: "Fi Yu Forever",
     subtitle: "Official Music Video",
     category: "Music Videos",
     date: "2026",
-    featured: true,
+    featured: false,
   },
   {
     id: "ffzcrhIHzLE",
@@ -58,6 +74,14 @@ const videos = [
     featured: false,
   },
   // Shorts
+  {
+    id: "SdK9K9vhaMo",
+    title: "One More Chance",
+    subtitle: "Official Visualizer",
+    category: "Shorts",
+    date: "2026",
+    featured: true,
+  },
   {
     id: "JEdH1VKpDnA",
     title: "Ready Mi Ready",
@@ -250,6 +274,11 @@ function ShortCard({ video, onClick }: { video: Video; onClick: () => void }) {
             <Play className="w-4 h-4 text-white ml-0.5" fill="white" />
           </div>
         </div>
+        {video.featured && (
+          <span className="absolute top-2 left-2 px-1.5 py-0.5 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wide rounded">
+            New Upload
+          </span>
+        )}
         <p className="absolute bottom-2 left-2 right-2 text-xs font-semibold text-white line-clamp-2 leading-snug">
           {video.title}
         </p>
