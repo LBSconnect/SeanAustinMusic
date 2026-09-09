@@ -13,8 +13,8 @@ const PRESS_PHOTO_URL = "/attached_assets/Sean-Austin.png";
 // coverage, streaming/social links, and booking contact in one file.
 const EPK_PDF_URL = "/attached_assets/Sean-Austin-EPK.pdf";
 
-// YouTube video ID for "Fi Yu Forever" music video
-const FEATURED_VIDEO_ID = "bXUj-hX-YWc";
+// YouTube video ID for the "One More Chance" official visualizer
+const FEATURED_VIDEO_ID = "SdK9K9vhaMo";
 
 export default function EPKPage() {
   const { data: pressQuotes } = useQuery<PressQuote[]>({
@@ -78,14 +78,14 @@ export default function EPKPage() {
                     experiences.
                   </p>
                   <p>
-                    His latest release, <strong>"Fi Yu Forever," produced by
-                    Troyton Music</strong>, marks an important new chapter in Austin's career. Built around an
+                    His single <strong>"Fi Yu Forever," produced by
+                    Troyton Music</strong>, marked an important new chapter in Austin's career. Built around an
                     infectious reggae groove and an enduring declaration of love, the single showcases the
                     melodic songwriting, distinctive vocal delivery, and emotional authenticity that have become
                     central to his evolving sound.
                   </p>
                   <p>
-                    "Fi Yu Forever" also sets the stage for Austin's forthcoming{" "}
+                    "Fi Yu Forever" appears on Austin's{" "}
                     <strong>12-track project, <em>The Essentials</em></strong>, a
                     collection that explores multiple sides of the artist from romance and reflection to family,
                     struggle, celebration, and classic Jamaican energy. The project includes songs such as{" "}
@@ -96,6 +96,13 @@ export default function EPKPage() {
                     and <strong>"No Weapon,"</strong> demonstrating a range that
                     moves comfortably between contemporary reggae, dancehall influences, and deeply personal
                     storytelling.
+                  </p>
+                  <p>
+                    Austin's latest single, <strong>"One More Chance," produced by XO</strong>, released
+                    June 2026, is a reggae reflection on accountability, forgiveness, and relationship
+                    reconciliation. It earned coverage from Riddims World, which described reggae as
+                    providing "a connection to his Jamaican roots and a fitting setting for a song
+                    concerned with love and reflection."
                   </p>
                   <p>
                     Austin's recent momentum has extended beyond the studio. During promotional activity in
@@ -125,6 +132,12 @@ export default function EPKPage() {
                   <p className="text-sm font-semibold text-primary mb-3 uppercase tracking-wider">Press Coverage</p>
                   <ul className="space-y-2">
                     {[
+                      {
+                        title: "Sean Austin — \"One More Chance\"",
+                        source: "Riddims World",
+                        date: "2026",
+                        url: "https://riddimsworld.com/singles/sean-austin-one-more-chance/",
+                      },
                       {
                         title: "Sean Austin is ready to scale new heights",
                         source: "Jamaica Star",
@@ -219,7 +232,7 @@ export default function EPKPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Video className="w-5 h-5" />
-                  Featured Video: "Fi Yu Forever"
+                  Featured Video: "One More Chance"
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -228,7 +241,7 @@ export default function EPKPage() {
                     width="100%"
                     height="100%"
                     src={`https://www.youtube.com/embed/${FEATURED_VIDEO_ID}`}
-                    title="Sean Austin - Fi Yu Forever (Official Video)"
+                    title="Sean Austin - One More Chance (Official Visualizer)"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="rounded-lg"
