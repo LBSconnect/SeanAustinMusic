@@ -6,8 +6,10 @@ import Container from "@/components/container";
 
 const COVER_ART_URL = "/attached_assets/Sean-Austin-One-More-Chance.jpg";
 
-// YouTube video ID for the official "One More Chance" visualizer
-const VIDEO_ID = "SdK9K9vhaMo";
+// Temporary featured video requested by Sean until a replacement is supplied.
+// Update the ID and title together when replacing the featured video.
+const FEATURED_VIDEO_ID = "bXUj-hX-YWc";
+const FEATURED_VIDEO_TITLE = "Fi Yu Forever";
 
 // No dedicated Spotify single link is available yet — falls back to a search
 // deep-link (same pattern used for other not-yet-linked tracks in music.tsx).
@@ -89,10 +91,10 @@ export default function LatestReleasePage() {
                     Apple Music
                   </Button>
                 </a>
-                <a href={`https://www.youtube.com/watch?v=${VIDEO_ID}`} target="_blank" rel="noopener noreferrer">
+                <a href={`https://www.youtube.com/watch?v=${FEATURED_VIDEO_ID}`} target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="gap-2">
                     <FaYoutube className="w-4 h-4" />
-                    Watch on YouTube
+                    Watch {FEATURED_VIDEO_TITLE}
                   </Button>
                 </a>
               </div>
@@ -121,17 +123,17 @@ export default function LatestReleasePage() {
             </div>
           </div>
 
-          {/* Official visualizer */}
+          {/* Featured official video; separate from the latest-release details above. */}
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display text-2xl font-bold text-white mb-4 text-center">
-              Official Visualizer
+              Featured Video: {FEATURED_VIDEO_TITLE}
             </h2>
             <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
               <iframe
                 width="100%"
                 height="100%"
-                src={`https://www.youtube.com/embed/${VIDEO_ID}`}
-                title="Sean Austin - One More Chance (Official Visualizer)"
+                src={`https://www.youtube.com/embed/${FEATURED_VIDEO_ID}`}
+                title={`Sean Austin - ${FEATURED_VIDEO_TITLE} (Official Video)`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="rounded-2xl"
