@@ -397,6 +397,67 @@ export async function registerRoutes(
     }
   });
 
+  // Stripe: Create one-time checkout session for a Dub Plate/Audio Drop request
+  app.post("/api/dub-plate/checkout", async (req, res) => {
+    try {
+      const schema = z.object({
+        name: z.string().min(1),
+        email: z.string().email(),
+        djName: z.string().min(1),
+        stationName: z.string().min(1),
+        location: z.string().min(1),
+        specialMessage: z.string().optional().default(""),
+        source: z.enum(["contact", "reggae-artist-houston"]),
+      });
+      const parsed = schema.safeParse(req.body);
+      if (!parsed.success) {
+        return res.status(400).json({ error: "Invalid form data" });
+      }
+      const { name, email, djName, stationName, location, specialMessage, source } = parsed.data;
+
+      const returnBase = source === "reggae-artist-houston" ? "/reggae-artist-houston-texas" : "/contact";
+      const returnHash = source === "reggae-artist-houston" ? "#booking" : "";
+
+      const stripe = await getUncachableStripeClient();
+      const baseUrl = `${req.protocol}://${req.get("host")}`;
+
+      const session = await stripe.checkout.sessions.create({
+        mode: "payment",
+        payment_method_types: ["card"],
+        customer_email: email,
+        line_items: [
+          {
+            price_data: {
+              currency: "usd",
+              product_data: {
+                name: "Dub Plate / Audio Drop",
+                description: `Custom dub plate/audio drop for ${djName} — ${stationName}`,
+              },
+              unit_amount: 15000,
+            },
+            quantity: 1,
+          },
+        ],
+        success_url: `${baseUrl}${returnBase}?dub_plate=success${returnHash}`,
+        cancel_url: `${baseUrl}${returnBase}?dub_plate=canceled${returnHash}`,
+        metadata: {
+          type: "dub_plate_audio_drop",
+          name,
+          email,
+          djName,
+          stationName,
+          location,
+          specialMessage: specialMessage.slice(0, 490),
+        },
+      });
+
+      res.json({ url: session.url });
+    } catch (error: any) {
+      console.error("Dub plate checkout error:", error.message);
+      res.status(500).json({ error: "Failed to create checkout session" });
+    }
+  });
+
   // Stripe: Customer portal for managing subscription
   // Requires email match with an active subscription for verification
   app.post("/api/fan-club/portal", async (req, res) => {

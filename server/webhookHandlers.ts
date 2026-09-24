@@ -1,4 +1,5 @@
 import Stripe from 'stripe';
+import { sendDubPlateOrderEmails } from './notifications';
 
 export class WebhookHandlers {
   static async processWebhook(payload: Buffer, signature: string): Promise<void> {
@@ -12,9 +13,14 @@ export class WebhookHandlers {
     const event = stripe.webhooks.constructEvent(payload, signature, webhookSecret);
 
     switch (event.type) {
-      case 'checkout.session.completed':
-        // Payment successful — extend here to grant fan club access, send email, etc.
+      case 'checkout.session.completed': {
+        const session = event.data.object as Stripe.Checkout.Session;
+        if (session.metadata?.type === 'dub_plate_audio_drop') {
+          await sendDubPlateOrderEmails(session);
+        }
+        // Otherwise a fan club subscription checkout — extend here to grant access, etc.
         break;
+      }
       case 'customer.subscription.updated':
       case 'customer.subscription.deleted':
         // Subscription changed — extend here to revoke/update fan club access.
