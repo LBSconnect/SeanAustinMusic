@@ -6,10 +6,10 @@ import Container from "@/components/container";
 
 const COVER_ART_URL = "/attached_assets/Sean-Austin-One-More-Chance.jpg";
 
-// Temporary featured video requested by Sean until a replacement is supplied.
+// Official visualizer for this single — same video already used on the EPK page.
 // Update the ID and title together when replacing the featured video.
-const FEATURED_VIDEO_ID = "bXUj-hX-YWc";
-const FEATURED_VIDEO_TITLE = "Fi Yu Forever";
+const FEATURED_VIDEO_ID = "SdK9K9vhaMo";
+const FEATURED_VIDEO_TITLE = "One More Chance";
 
 // No dedicated Spotify single link is available yet — falls back to a search
 // deep-link (same pattern used for other not-yet-linked tracks in music.tsx).
