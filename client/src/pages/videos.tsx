@@ -17,6 +17,14 @@ const categories = ["Music Videos", "Live Performances", "Shorts", "Karaoke", "I
 const videos = [
   // Music Videos
   {
+    id: "DwrDlEikKsM",
+    title: "Gimmie One More Chance",
+    subtitle: "Official Music Video",
+    category: "Music Videos",
+    date: "2026",
+    featured: true,
+  },
+  {
     id: "F-WSjsX9bnU",
     title: "We Neva Have Much",
     subtitle: "Official Music Video",
@@ -75,12 +83,52 @@ const videos = [
   },
   // Shorts
   {
+    id: "VkpkvFdFbyc",
+    title: "Hold a Vibes",
+    subtitle: "Official Short",
+    category: "Shorts",
+    date: "2026",
+    featured: false,
+  },
+  {
+    id: "89X1EojClG0",
+    title: "Fi Yu Forever",
+    subtitle: "Official Short",
+    category: "Shorts",
+    date: "2026",
+    featured: false,
+  },
+  {
     id: "SdK9K9vhaMo",
     title: "One More Chance",
     subtitle: "Official Visualizer",
     category: "Shorts",
     date: "2026",
-    featured: true,
+    featured: false,
+  },
+  {
+    id: "-qFC884yvqA",
+    title: "Fi Yu Forever",
+    subtitle: "Official Short",
+    category: "Shorts",
+    date: "2026",
+    featured: false,
+  },
+  {
+    id: "Bzs9IXKOOOo",
+    title: "Fi Yu Forever",
+    subtitle: "Official Short",
+    category: "Shorts",
+    date: "2026",
+    featured: false,
+  },
+  {
+    id: "MZ35iOBtHD0",
+    title: "Fi Yu Forever",
+    subtitle: "Official Short",
+    category: "Shorts",
+    date: "2026",
+    featured: false,
   },
   {
     id: "JEdH1VKpDnA",
@@ -163,6 +211,14 @@ const videos = [
     featured: false,
   },
   // Karaoke
+  {
+    id: "VU0T_x3ziss",
+    title: "Gimmie One More Chance",
+    subtitle: "Karaoke Version",
+    category: "Karaoke",
+    date: "2026",
+    featured: false,
+  },
   {
     id: "mExYukRHtZ0",
     title: "Karaoke Session",
