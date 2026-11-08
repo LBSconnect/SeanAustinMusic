@@ -11,10 +11,7 @@ const COVER_ART_URL = "/attached_assets/Sean-Austin-One-More-Chance.jpg";
 const FEATURED_VIDEO_ID = "DwrDlEikKsM";
 const FEATURED_VIDEO_TITLE = "Gimmie One More Chance";
 
-// No dedicated Spotify single link is available yet — falls back to a search
-// deep-link (same pattern used for other not-yet-linked tracks in music.tsx).
-// The Apple Music link below is the real, direct single link (verified).
-const SPOTIFY_SEARCH_URL = "https://open.spotify.com/search/Sean%20Austin%20One%20More%20Chance";
+const SPOTIFY_TRACK_URL = "https://open.spotify.com/track/0xwkQyxF4OdCzMV4iStPWo";
 const APPLE_MUSIC_URL = "https://music.apple.com/us/album/one-more-chance/6807165166?i=6807165168";
 
 const RIDDIMS_WORLD_URL = "https://riddimsworld.com/singles/sean-austin-one-more-chance/";
@@ -23,8 +20,8 @@ export default function LatestReleasePage() {
   return (
     <>
       <SEO
-        title="One More Chance — Latest Release"
-        description={`Sean Austin's latest single "One More Chance," produced by XO — a reggae reflection on accountability, forgiveness, and choosing to make things right.`}
+        title="Gimmie One More Chance — Official Video & Listening Notes"
+        description="Watch Sean Austin’s Gimmie One More Chance from The Essentials, produced by The XO. Then hear Fi Yu Forever, produced by Troyton Music, as a first-dance dedication."
         path="/latest-release"
         image={COVER_ART_URL}
         type="music.song"
@@ -37,10 +34,10 @@ export default function LatestReleasePage() {
               Latest Release
             </span>
             <h1 className="font-display text-4xl md:text-6xl font-bold text-white">
-              One More Chance
+              {FEATURED_VIDEO_TITLE}
             </h1>
             <p className="mt-3 text-muted-foreground">
-              2026 · Single · Produced by XO
+              From <em>The Essentials</em> · Produced by The XO
             </p>
           </div>
 
@@ -58,10 +55,7 @@ export default function LatestReleasePage() {
             {/* Info */}
             <div>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                A reggae reflection on accountability, forgiveness, and relationship reconciliation,
-                "One More Chance" finds Sean Austin asking for a second chance after letting someone
-                down. Rooted in his Jamaican upbringing, the song carries themes that reach beyond
-                romance into questions of trust, pride, and personal growth.
+                There are two people in a request for a second chance. One has had time to rehearse the apology; the other is hearing it for the first time. Listen to Sean Austin’s Jamaican reggae song from each side. The words can be sincere and the answer can still be no.
               </p>
               <p className="text-sm text-muted-foreground/80 leading-relaxed mb-6">
                 As featured in{" "}
@@ -79,24 +73,17 @@ export default function LatestReleasePage() {
 
               {/* Streaming links */}
               <div className="flex flex-wrap gap-2 mb-6">
-                <a href={SPOTIFY_SEARCH_URL} target="_blank" rel="noopener noreferrer">
-                  <Button className="gap-2 bg-[#1db954] hover:bg-[#1db954]/85 text-black">
-                    <FaSpotify className="w-4 h-4" />
-                    Stream on Spotify
-                  </Button>
-                </a>
-                <a href={APPLE_MUSIC_URL} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="gap-2">
-                    <FaApple className="w-4 h-4" />
-                    Apple Music
-                  </Button>
-                </a>
-                <a href={`https://www.youtube.com/watch?v=${FEATURED_VIDEO_ID}`} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="gap-2">
-                    <FaYoutube className="w-4 h-4" />
-                    Watch {FEATURED_VIDEO_TITLE}
-                  </Button>
-                </a>
+                <Button asChild className="gap-2">
+                  <a href={`https://youtu.be/${FEATURED_VIDEO_ID}`}>
+                    <FaYoutube aria-hidden="true" /> Watch the official video
+                  </a>
+                </Button>
+                <Button asChild variant="outline" className="gap-2">
+                  <a href={SPOTIFY_TRACK_URL}><FaSpotify aria-hidden="true" /> Spotify</a>
+                </Button>
+                <Button asChild variant="outline" className="gap-2">
+                  <a href={APPLE_MUSIC_URL}><FaApple aria-hidden="true" /> Apple Music</a>
+                </Button>
               </div>
 
               {/* Secondary nav links */}
@@ -140,6 +127,26 @@ export default function LatestReleasePage() {
               />
             </div>
           </div>
+          <section aria-labelledby="second-listen" className="max-w-2xl mx-auto mt-12 space-y-5">
+            <h2 id="second-listen" className="font-display text-3xl font-bold text-white">The apology &amp; the promise</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              What happens the morning after someone says they’re sorry? A call comes when it was promised. A hard question gets a straight answer. Or the day goes exactly as it always did. Try <em>Gimmie One More Chance</em> again with that morning in mind. What would make the request sound different to the person hearing it?
+            </p>
+            <h3 className="font-display text-xl font-bold text-white">A first dance with Fi Yu Forever</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              For a different kind of love song, put on <em>Fi Yu Forever</em>, produced by Troyton Music. Picture the floor after the first dance, once the guests have gone home and the good shoes are off. Which small promise would the two of you still want to keep? That’s something to listen for together before you choose a wedding song.
+            </p>
+            <Button asChild variant="outline" className="gap-2">
+              <a href="https://youtu.be/bXUj-hX-YWc"><FaYoutube aria-hidden="true" /> Watch Fi Yu Forever</a>
+            </Button>
+            <details lang="es" className="border-y border-white/10 py-4 text-muted-foreground">
+              <summary className="cursor-pointer font-semibold text-white">En español: dos canciones para escuchar en pareja</summary>
+              <p className="mt-3 leading-relaxed">
+                En <em>Gimmie One More Chance</em>, escucha primero a quien pide otra oportunidad. Al volver a oírla, ponte del lado de quien tiene que decidir: ¿qué tendría que cambiar para volver a confiar? <em>Fi Yu Forever</em> plantea otra pregunta. Si la eligieran para su primer baile, ¿qué promesa querrían seguir cumpliendo cuando termine la fiesta?
+              </p>
+            </details>
+            <a className="inline-block text-primary underline" href="https://www.youtube.com/@SeanAustinReggae">Hear more from Sean Austin on YouTube</a>
+          </section>
         </Container>
       </div>
     </>
